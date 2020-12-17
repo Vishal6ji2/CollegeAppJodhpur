@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.SyllabusFragment"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/syllabus_cse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Computer science &amp; Engineering"
+        app:cornerRadius="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_margin="5dp"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/syllabus_civil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Civil Engineering"
+        app:cornerRadius="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_margin="5dp"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/syllabus_me"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mechanical Engineering"
+        app:cornerRadius="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_margin="5dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/syllabus_el"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Electronics Engineering"
+        app:cornerRadius="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_margin="5dp"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/syllabus_mca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MCA"
+        app:cornerRadius="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_margin="5dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/syllabus_elective"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Elective Subjects"
+        app:cornerRadius="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_margin="5dp"/>
+
+
+</LinearLayout>

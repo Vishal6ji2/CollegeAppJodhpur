@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.DeptchatFragment"
+    android:background="@android:color/darker_gray">
+
+    <!-- TODO: Update dept chat fragment layout -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/deptfrag_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/deptfrag_msglayout"/>
+
+    <RelativeLayout
+        android:id="@+id/deptfrag_msglayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:elevation="5dp"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:id="@+id/deptfrag_fileimg"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/attachicon"
+            android:layout_centerVertical="true"
+            android:padding="3dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="enter a message"
+            android:background="@null"
+            android:layout_toStartOf="@id/deptfrag_fabsend"
+            android:layout_toEndOf="@id/deptfrag_fileimg"
+            android:layout_centerVertical="true"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/deptfrag_fabsend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabSize="mini"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:backgroundTint="@color/colorPrimaryDark"
+            android:src="@drawable/sendicon"
+            app:tint="@android:color/white"/>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

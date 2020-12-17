@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#dd177d</color>
+    <color name="colorPrimaryDark">#30286f</color>
+    <color name="colorAccent">#0000EE</color>
+
+    <color name="colordarkgrey">#E67C7979</color>
+    <color name="mbmlogo_background">#fff</color>
+    <color name="colorverydarkgrey">#B4000000</color>
+</resources>

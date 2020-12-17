@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="5dp"
+    app:cardCornerRadius="5dp"
+    android:layout_margin="1dp">
+
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@android:color/white"-->
+<!--        android:padding="10dp">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/customnotice_txtnotice"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="sehaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behaviorstring/hide_bottom_view_on_scroll_behavior"-->
+<!--            android:textColor="@color/colordarkgrey"-->
+<!--            android:textSize="15sp"/>-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/customnotice_imgsign"-->
+<!--            android:layout_width="120dp"-->
+<!--            android:layout_height="80dp"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:src="@drawable/signimg"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_below="@id/customnotice_txtnotice"/>-->
+<!--&lt;!&ndash;-->
+<!--    <TextView-->
+<!--        android:id="@+id/customnotice_txttime"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="9:45pm,12-11-2020"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:background="@drawable/roundtext"-->
+<!--        android:backgroundTint="@color/colorPrimaryDark"-->
+<!--        android:textColor="@android:color/white"-->
+<!--        android:textStyle="bold"-->
+<!--        android:paddingStart="10dp"-->
+<!--        android:paddingEnd="10dp"-->
+<!--        android:padding="1dp" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <ImageView-->
+<!--        android:id="@+id/customnotice_img"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:scaleType="fitCenter"-->
+<!--        android:layout_below="@id/customnotice_txttime"-->
+<!--        android:src="@drawable/designerimg"-->
+<!--        android:adjustViewBounds="true"/>&ndash;&gt;-->
+
+<!--    </RelativeLayout>-->
+
+
+    <ImageView
+        android:id="@+id/customnotice_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/signimg"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"/>
+
+
+
+</androidx.cardview.widget.CardView>

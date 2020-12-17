@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="5dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.zolad.zoominimageview.ZoomInImageView
+            android:id="@+id/custompost_postimg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/directorimg"/>
+
+        <TextView
+            android:id="@+id/custompost_posttime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12/11/1998"
+            android:background="@drawable/roundtext"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:elevation="5dp"
+            android:layout_alignBottom="@id/custompost_postimg"
+            android:layout_alignEnd="@id/custompost_postimg"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="5dp"/>
+
+        <TextView
+            android:id="@+id/custompost_txtheading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Regarding BE semester"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_below="@id/custompost_postimg"/>
+
+        <TextView
+            android:id="@+id/custompost_txtdetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="hide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behavior"
+            android:textColor="@android:color/darker_gray"
+            android:padding="10dp"
+            android:layout_below="@id/custompost_txtheading"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/custompost_txtdetails"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/custompost_profileimg"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/mbmlogo"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/custompost_profilename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mukesh Singhvi MBM"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/custompost_profileimg"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/custompost_timeago"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2h ago"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

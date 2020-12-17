@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    android:background="?attr/selectableItemBackground">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/customplacement_cmpcard"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="10dp"
+        app:cardUseCompatPadding="true">
+
+        <ImageView
+            android:id="@+id/customplacement_cmpimg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/designerimg"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_toEndOf="@id/customplacement_cmpcard"
+        android:layout_marginStart="10dp"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/customplacement_cmpname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_red_dark"
+            android:fontFamily="@font/cc_semibold"
+            android:text="TCS"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/customplacement_cmptitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:fontFamily="@font/cc_semibold"
+            android:text="off Campus Recruitment"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_toEndOf="@id/customplacement_cmpname"/>
+
+        <TextView
+            android:id="@+id/customplacement_cmpnews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="All the students of batch 2019-2020 who are placed via off campus recruitment are requested to fill the given google form."
+            android:layout_below="@id/customplacement_cmpname"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:maxLines="2"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/cc_regular"/>
+
+        <TextView
+            android:id="@+id/customplacement_cmptime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="12:11,19nov.2020"
+            android:textColor="@android:color/black"
+            android:gravity="end"
+            android:layout_alignParentBottom="true"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
