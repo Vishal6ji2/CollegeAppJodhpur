@@ -1,40 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.PlacementNewsActivity"
-    android:orientation="vertical">
+    android:background="@android:color/white">
 
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+<!--    <com.google.android.material.appbar.MaterialToolbar-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize"-->
+<!--        android:id="@+id/placement_toolbar"-->
+<!--        android:background="@color/colorAccent"-->
+<!--        app:menu="@menu/chatmenu">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:text="Hello,Vishal kumavat"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            android:gravity="center"-->
+<!--            android:textSize="18sp"-->
+<!--            android:fontFamily="@font/cc_bold"/>-->
+
+
+<!--    </com.google.android.material.appbar.MaterialToolbar>-->
+
+    <include
         android:id="@+id/placement_toolbar"
-        android:background="@color/colorAccent">
-
-        <ImageView
-            android:id="@+id/placement_backimg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/arrowback"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Placement news"
-            android:textSize="18sp"
-            android:fontFamily="@font/cc_semibold"
-            android:textColor="@android:color/white"
-            android:gravity="center"/>
-
-    </com.google.android.material.appbar.MaterialToolbar>
+        layout="@layout/customtoolbarlayout"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/placement_recyclerview"/>
+        android:id="@+id/placement_recyclerview"
+        android:layout_below="@id/placement_toolbar"
+        android:layout_above="@id/bnv"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bnv"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menuitem"/>
 
 
-</LinearLayout>
+</RelativeLayout>

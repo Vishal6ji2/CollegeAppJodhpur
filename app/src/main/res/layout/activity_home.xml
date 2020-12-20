@@ -118,7 +118,7 @@
                         <ImageView
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:src="@drawable/placementicon"
+                            android:src="@drawable/selectedplacementicon"
                             android:layout_marginStart="10dp"/>
 
                         <TextView

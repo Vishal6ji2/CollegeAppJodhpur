@@ -57,6 +57,7 @@ public class HomeActivity extends AppCompatActivity {
                 .withMenuOpened(false)
                 .withContentClickableWhenMenuOpened(false)
                 .withSavedState(savedInstanceState)
+                .withDragDistance(200)
                 .withMenuLayout(R.layout.navigationlayout)
                 .inject();
 
@@ -248,25 +249,6 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        new MenuInflater(this).inflate(R.menu.menuitem,menu);
-
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.chatmenu){
-            startActivity(new Intent(HomeActivity.this,ChatActivity.class));
-            return true;
-        }
-        return true;
-    }
-
     private void initviews() {
 
         layoutplacement = findViewById(R.id.home_layoutplacement);
@@ -278,9 +260,7 @@ public class HomeActivity extends AppCompatActivity {
 
         chatfab = findViewById(R.id.home_fabchat);
 
-
         toolbar = findViewById(R.id.home_toolbar);
-
 
     }
 }

@@ -1,30 +1,41 @@
 package com.mbm.mbmjodhpur.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.mbm.mbmjodhpur.Adapters.NewsPostAdapter;
 import com.mbm.mbmjodhpur.R;
 import com.mbm.mbmjodhpur.Suitcases.NewsPostSuitcase;
+import com.mbm.mbmjodhpur.Suitcases.PlacementSuitcase;
+import com.yarolegovich.slidingrootnav.SlidingRootNav;
+import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
 
 import java.util.ArrayList;
 
 public class PostNewsActivity extends AppCompatActivity {
 
-    ImageView backimg;
 
     MaterialToolbar toolbar;
 
     RecyclerView postsrecyclerview;
 
     ArrayList<NewsPostSuitcase> arrnewspostlist = new ArrayList<>();
+
+    BottomNavigationView bnv;
+
+    SlidingRootNav slidingRootNav;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +45,19 @@ public class PostNewsActivity extends AppCompatActivity {
 
         initviews();
 
-        setSupportActionBar(toolbar);
-//        getSupportActionBar().setTitle("Posts");
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        slidingRootNav =  new SlidingRootNavBuilder(PostNewsActivity.this)
+                .withToolbarMenuToggle(toolbar)
+                .withMenuOpened(false)
+                .withContentClickableWhenMenuOpened(false)
+                .withSavedState(savedInstanceState)
+                .withDragDistance(150)
+                .withMenuLayout(R.layout.navigationlayout)
+                .inject();
 
-        backimg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+
+        bnv.setSelectedItemId(R.id.newsmenu);
+        setSupportActionBar(toolbar);
+
 
         addPostData("Mukesh Singhavi","2h ago","26/10/2020","About Exam Scheduling","Our exam is scheduled on 23 nov. 2020 where we'll start your exam at the center which mbm south campus in mbm of jodhpur ,rajasthan.",R.drawable.mbmlogo,R.drawable.picone);
 
@@ -59,6 +73,31 @@ public class PostNewsActivity extends AppCompatActivity {
         postsrecyclerview.setHasFixedSize(true);
         postsrecyclerview.setLayoutManager(new LinearLayoutManager(this));
         postsrecyclerview.setAdapter(new NewsPostAdapter(this,arrnewspostlist));
+
+        bnv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()){
+                    case R.id.newsmenu:
+                        return true;
+
+                    case R.id.noticemenu:
+                        startActivity(new Intent(PostNewsActivity.this,NoticeBoardActivity.class));
+                        overridePendingTransition(0,0);
+                        finish();
+                        return true;
+
+                    case R.id.placementmenu:
+                        startActivity(new Intent(PostNewsActivity.this, PlacementNewsActivity.class));
+                        overridePendingTransition(0,0);
+                        finish();
+                        return true;
+                }
+
+                return true;
+            }
+        });
 
     }
 
@@ -80,9 +119,9 @@ public class PostNewsActivity extends AppCompatActivity {
 
     private void initviews() {
 
-        backimg = findViewById(R.id.newspost_backimg);
+        bnv = findViewById(R.id.bnv);
 
-        toolbar = findViewById(R.id.newspost_toolbar);
+        toolbar = findViewById(R.id.toolbar);
 
         postsrecyclerview = findViewById(R.id.newspost_recyclerview);
     }

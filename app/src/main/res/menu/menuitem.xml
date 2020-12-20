@@ -3,10 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <item android:id="@+id/chatmenu"
-        android:title="Chat"
+    <item android:id="@+id/newsmenu"
+        android:title="News feed"
         app:showAsAction="never"
-        android:icon="@drawable/chaticon"/>
+        android:icon="@drawable/posticons"/>
+
+    <item android:id="@+id/noticemenu"
+        android:title="Notice"
+        app:showAsAction="never"
+        android:icon="@drawable/noticeicons"/>
+
+    <item android:id="@+id/placementmenu"
+        android:title="Placement news"
+        app:showAsAction="never"
+        android:icon="@drawable/placementicons"/>
 
 
 </menu>

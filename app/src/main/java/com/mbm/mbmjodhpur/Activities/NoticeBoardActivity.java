@@ -1,30 +1,38 @@
 package com.mbm.mbmjodhpur.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.mbm.mbmjodhpur.Adapters.NoticeAdapter;
 import com.mbm.mbmjodhpur.R;
 import com.mbm.mbmjodhpur.Suitcases.NoticeSuitcase;
+import com.yarolegovich.slidingrootnav.SlidingRootNav;
+import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
 
 import java.util.ArrayList;
 
 public class NoticeBoardActivity extends AppCompatActivity {
 
-
-    ImageView backimg;
-
     MaterialToolbar toolbar;
 
     RecyclerView recyclerView;
+
     ArrayList<NoticeSuitcase> arrnoticelist = new ArrayList<>();
+
+    BottomNavigationView bnv;
+
+    SlidingRootNav slidingRootNav;
 
 
     @Override
@@ -34,16 +42,10 @@ public class NoticeBoardActivity extends AppCompatActivity {
 
         initviews();
 
-        setSupportActionBar(toolbar);
-//        getSupportActionBar().setTitle("Notice Board");
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        bnv.setSelectedItemId(R.id.noticemenu);
 
-        backimg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        setSupportActionBar(toolbar);
+
 
         addNoticeData(R.drawable.signimg,"Paragraph Writing (अनुच्छेद-लेखन) - इस लेख में हम अनुच्छेद-लेखन के बारे में जानेंगे। अनुच्छेद-लेखन होता क्या है? अनुच्छेद लिखते समय किन-किन बातों का ध्यान रखना चाहिए? अनुच्छेद की प्रमुख विशेषताएँ कौन-कौन से हैं? और साथ ही इस लेख में हम कुछ अनुच्छेद अदाहरण के रूप में भी दे रहे हैं -");
         addNoticeData(R.drawable.signimg,"Paragraph Writing (अनुच्छेद-लेखन) - इस लेख में हम अनुच्छेद-लेखन के बारे में जानेंगे। अनुच्छेद-लेखन होता क्या है? अनुच्छेद लिखते समय किन-किन बातों का ध्यान रखना चाहिए? अनुच्छेद की प्रमुख विशेषताएँ कौन-कौन से हैं? और साथ ही इस लेख में हम कुछ अनुच्छेद अदाहरण के रूप में भी दे रहे हैं -");
@@ -60,6 +62,42 @@ public class NoticeBoardActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new NoticeAdapter(this,arrnoticelist));
 
+
+        bnv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()){
+                    case R.id.newsmenu:
+                        startActivity(new Intent(NoticeBoardActivity.this,PostNewsActivity.class));
+                        overridePendingTransition(0,0);
+                        finish();
+                        return true;
+
+                    case R.id.noticemenu:
+                        return true;
+
+                    case R.id.placementmenu:
+                        startActivity(new Intent(NoticeBoardActivity.this, PlacementNewsActivity.class));
+                        overridePendingTransition(0,0);
+                        finish();
+                        return true;
+                }
+
+                return true;
+            }
+        });
+
+        slidingRootNav =  new SlidingRootNavBuilder(NoticeBoardActivity.this)
+                .withToolbarMenuToggle(toolbar)
+                .withMenuOpened(false)
+                .withContentClickableWhenMenuOpened(false)
+                .withSavedState(savedInstanceState)
+                .withDragDistance(150)
+                .withMenuLayout(R.layout.navigationlayout)
+                .inject();
+
+
     }
 
     private void addNoticeData(int noticeimg,String text) {
@@ -73,9 +111,9 @@ public class NoticeBoardActivity extends AppCompatActivity {
 
     private void initviews() {
 
-        backimg = findViewById(R.id.notice_backimg);
+        bnv = findViewById(R.id.bnv);
 
-        toolbar = findViewById(R.id.notice_toolbar);
+        toolbar = findViewById(R.id.toolbar);
 
         recyclerView = findViewById(R.id.notice_recyclerview);
     }

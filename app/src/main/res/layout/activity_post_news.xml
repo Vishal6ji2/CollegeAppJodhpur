@@ -1,41 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.PostNewsActivity"
-    android:orientation="vertical"
-    android:id="@+id/newspost_container">
+    android:background="@android:color/white">
 
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/newspost_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimaryDark">
+<!--    <com.google.android.material.appbar.MaterialToolbar-->
+<!--        android:id="@+id/newspost_toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize"-->
+<!--        android:background="@color/colorPrimaryDark"-->
+<!--        app:menu="@menu/chatmenu">-->
 
-        <ImageView
-            android:id="@+id/newspost_backimg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/arrowback"/>
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:text="Hello,Vishal kumavat"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            android:gravity="center"-->
+<!--            android:textSize="18sp"-->
+<!--            android:fontFamily="@font/cc_bold"/>-->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:fontFamily="@font/cc_semibold"
-            android:text="News feed"
-            android:textColor="@android:color/white"/>
+<!--    </com.google.android.material.appbar.MaterialToolbar>-->
 
-    </com.google.android.material.appbar.MaterialToolbar>
+    <include layout="@layout/customtoolbarlayout"
+        android:id="@+id/newspost_include"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/newspost_recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newspost_include"
+        android:layout_above="@id/bnv"/>
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bnv"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menuitem"/>
 
-</LinearLayout>
+</RelativeLayout>

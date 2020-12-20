@@ -155,7 +155,7 @@
                 android:id="@+id/navigation_placementimg"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/placementicon"
+                android:src="@drawable/selectedplacementicon"
                 android:layout_centerVertical="true"/>
 
             <TextView
