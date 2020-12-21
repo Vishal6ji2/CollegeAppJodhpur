@@ -11,14 +11,13 @@
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/fplacement_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@android:color/black">
+        android:layout_height="?attr/actionBarSize">
 
         <ImageView
             android:id="@+id/fplacement_backimg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/arrowback"/>
+            android:src="@drawable/arrowbackblack"/>
 
         <TextView
             android:id="@+id/fplacement_txtcmptitle"
@@ -26,7 +25,7 @@
             android:layout_height="wrap_content"
             android:text="Off campus placement"
             android:gravity="center"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold"
             android:fontFamily="@font/cc_medium"/>

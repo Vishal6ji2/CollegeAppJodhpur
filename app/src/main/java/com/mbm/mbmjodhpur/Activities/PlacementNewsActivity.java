@@ -7,9 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -92,6 +95,94 @@ public class PlacementNewsActivity extends AppCompatActivity {
             }
         });
 
+
+        //side bar menus
+
+        //profile ids
+        ImageView profileimg = findViewById(R.id.navigation_profileimg);
+        TextView profilename = findViewById(R.id.navigation_profilename);
+        TextView profilebranch = findViewById(R.id.navigation_branch);
+        ImageView viewprofileimg = findViewById(R.id.navigation_viewimg);
+
+
+        //menu ids
+        RelativeLayout ebooklayout,syllabuspaperlayout,timetablelayout,sharelayout,settinglayout,contactlayout,aboutlayout,signoutlayout;
+
+        ebooklayout = findViewById(R.id.navigation_ebooklayout);
+        syllabuspaperlayout = findViewById(R.id.navigation_syllabuspaperlayout);
+        timetablelayout = findViewById(R.id.navigation_ttlayout);
+        sharelayout = findViewById(R.id.navigation_sharelayout);
+        settinglayout = findViewById(R.id.navigation_settinglayout);
+        contactlayout = findViewById(R.id.navigation_contactlayout);
+        aboutlayout = findViewById(R.id.navigation_aboutlayout);
+        signoutlayout = findViewById(R.id.navigation_signoutlayout);
+
+
+        ebooklayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PlacementNewsActivity.this,EbooksActivity.class));
+//                slidingRootNav.closeMenu();
+            }
+        });
+
+        syllabuspaperlayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PlacementNewsActivity.this,PreviousPapersActivity.class));
+//                slidingRootNav.closeMenu();
+            }
+        });
+
+        timetablelayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                startActivity(new Intent(PlacementNewsActivity.this,EbooksActivity.class));
+                slidingRootNav.closeMenu();
+            }
+        });
+
+        sharelayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                startActivity(new Intent(PlacementNewsActivity.this,EbooksActivity.class));
+                slidingRootNav.closeMenu();
+            }
+        });
+
+        settinglayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                startActivity(new Intent(PlacementNewsActivity.this,EbooksActivity.class));
+                slidingRootNav.closeMenu();
+            }
+        });
+
+        contactlayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                startActivity(new Intent(PlacementNewsActivity.this,EbooksActivity.class));
+                slidingRootNav.closeMenu();
+            }
+        });
+
+        aboutlayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                startActivity(new Intent(PlacementNewsActivity.this,EbooksActivity.class));
+                slidingRootNav.closeMenu();
+            }
+        });
+
+        signoutlayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                startActivity(new Intent(PlacementNewsActivity.this,EbooksActivity.class));
+                slidingRootNav.closeMenu();
+            }
+        });
+
+
     }
 
     private void addData(int cmpimg,String cmpname,String cmptitle,String cmptime,String cmpnews) {
@@ -105,6 +196,23 @@ public class PlacementNewsActivity extends AppCompatActivity {
 
 
         arrplacementlist.add(placementSuitcase);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.chatmenu,menu);
+
+        return false;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.chatmenu){
+            startActivity(new Intent(PlacementNewsActivity.this,ChatActivity.class));
+            return true;
+        }
+        return false;
     }
 
     private void initviews() {

@@ -13,6 +13,10 @@
         android:layout_height="100dp"
         android:background="@color/colorPrimaryDark">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/navigation_card"
@@ -70,6 +74,8 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"/>
 
+        </RelativeLayout>
+
     </RelativeLayout>
 
     <LinearLayout
@@ -88,8 +94,8 @@
             android:orientation="vertical"
             android:layout_margin="10dp">
 
-        <RelativeLayout
-            android:id="@+id/navigation_homelayout"
+            <RelativeLayout
+            android:id="@+id/navigation_ebooklayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -99,7 +105,7 @@
                 android:id="@+id/navigation_homeimg"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/homeicon"
+                android:src="@drawable/ebookicon"
                 android:layout_centerVertical="true"
                 android:layout_alignBottom="@id/navigation_txthome"
                 android:layout_alignTop="@id/navigation_txthome"/>
@@ -108,8 +114,8 @@
                 android:id="@+id/navigation_txthome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Home"
-                android:textColor="@android:color/white"
+                android:text="Ebook library"
+                android:textColor="@color/colorverydarkgrey"
                 android:textSize="16sp"
                 android:layout_centerVertical="true"
                 android:layout_toEndOf="@id/navigation_homeimg"
@@ -117,26 +123,27 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/navigation_newslayout"
+            <RelativeLayout
+            android:id="@+id/navigation_syllabuspaperlayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/navigation_homelayout"
-            android:padding="10dp">
+            android:layout_below="@id/navigation_ebooklayout"
+            android:padding="10dp"
+            android:background="?attr/selectableItemBackground">
 
             <ImageView
                 android:id="@+id/navigation_newsimg"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/newsicon"
+                android:src="@drawable/papericon"
                 android:layout_centerVertical="true"/>
 
             <TextView
                 android:id="@+id/navigation_txtnews"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="News feed"
-                android:textColor="@android:color/white"
+                android:text="Syllabus &amp; papers"
+                android:textColor="@color/colorverydarkgrey"
                 android:textSize="16sp"
                 android:layout_centerVertical="true"
                 android:layout_toEndOf="@id/navigation_newsimg"
@@ -144,54 +151,27 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/navigation_placementlayout"
+            <RelativeLayout
+            android:id="@+id/navigation_ttlayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/navigation_newslayout"
-            android:padding="10dp">
-
-            <ImageView
-                android:id="@+id/navigation_placementimg"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/selectedplacementicon"
-                android:layout_centerVertical="true"/>
-
-            <TextView
-                android:id="@+id/navigation_txtplacement"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Placement news"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:layout_centerVertical="true"
-                android:layout_toEndOf="@id/navigation_placementimg"
-                android:layout_marginStart="20dp"/>
-
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/navigation_noticelayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/navigation_placementlayout"
+            android:layout_below="@id/navigation_syllabuspaperlayout"
+            android:background="?attr/selectableItemBackground"
             android:padding="10dp">
 
             <ImageView
                 android:id="@+id/navigation_noticeimg"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/noticeboardicon"
+                android:src="@drawable/timetablesicon"
                 android:layout_centerVertical="true"/>
 
             <TextView
                 android:id="@+id/navigation_txtnotice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Notice board"
-                android:textColor="@android:color/white"
+                android:text="Time-table"
+                android:textColor="@color/colorverydarkgrey"
                 android:textSize="16sp"
                 android:layout_centerVertical="true"
                 android:layout_toEndOf="@id/navigation_noticeimg"
@@ -199,59 +179,61 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/navigation_ebooklayout"
+            <RelativeLayout
+            android:id="@+id/navigation_sharelayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/navigation_noticelayout"
-            android:padding="10dp">
-
-            <ImageView
-                android:id="@+id/navigation_ebookimg"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ebookicon"
-                android:layout_centerVertical="true"/>
-
-            <TextView
-                android:id="@+id/navigation_txtebook"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Ebooks library"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:layout_centerVertical="true"
-                android:layout_toEndOf="@id/navigation_ebookimg"
-                android:layout_marginStart="20dp"/>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/navigation_paperlayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/navigation_ebooklayout"
+            android:layout_below="@id/navigation_ttlayout"
+            android:background="?attr/selectableItemBackground"
             android:padding="10dp">
 
             <ImageView
                 android:id="@+id/navigation_paperimg"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/papericon"
+                android:src="@drawable/shareicon"
                 android:layout_centerVertical="true"/>
 
             <TextView
                 android:id="@+id/navigation_txtpaper"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Syllabus &amp; papers"
-                android:textColor="@android:color/white"
+                android:text="Share via"
+                android:textColor="@color/colorverydarkgrey"
                 android:textSize="16sp"
                 android:layout_centerVertical="true"
                 android:layout_toEndOf="@id/navigation_paperimg"
                 android:layout_marginStart="20dp"/>
 
         </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/navigation_settinglayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/navigation_sharelayout"
+                android:background="?attr/selectableItemBackground"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/navigation_settingimg"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/settingicon"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/navigation_txtsetting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Settings"
+                    android:textColor="@color/colorverydarkgrey"
+                    android:textSize="16sp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/navigation_settingimg"
+                    android:layout_marginStart="20dp"/>
+
+            </RelativeLayout>
 
         </RelativeLayout>
 
@@ -265,69 +247,99 @@
         android:layout_below="@id/navigation_optlayout"
         android:layout_margin="10dp">
 
-    <RelativeLayout
-        android:layout_weight="1"
-        android:id="@+id/navigation_signlayout"
-        android:layout_width="0dp"
-        android:layout_height="match_parent">
-
         <RelativeLayout
-            android:id="@+id/navigation_aboutlayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/navigation_signoutlayout"
-            android:padding="10dp">
+            android:layout_weight="1"
+            android:id="@+id/navigation_signlayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/navigation_aboutimg"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/aboutusicon"
-            android:layout_centerVertical="true"/>
+            <RelativeLayout
+                android:id="@+id/navigation_contactlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/navigation_aboutlayout"
+                android:padding="10dp"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:id="@+id/navigation_ebookimg"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/callicon"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/navigation_txtebook"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Contact us"
+                    android:textColor="@color/colorverydarkgrey"
+                    android:textSize="16sp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/navigation_ebookimg"
+                    android:layout_marginStart="20dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/navigation_aboutlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/navigation_signoutlayout"
+                android:padding="10dp"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:id="@+id/navigation_aboutimg"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/aboutusicon"
+                    android:layout_centerVertical="true"/>
 
 
-        <TextView
-            android:id="@+id/navigation_txtabout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="About us"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@id/navigation_aboutimg"
-            android:layout_marginStart="20dp"/>
+                <TextView
+                    android:id="@+id/navigation_txtabout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="About us"
+                    android:textColor="@color/colorverydarkgrey"
+                    android:textSize="16sp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/navigation_aboutimg"
+                    android:layout_marginStart="20dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/navigation_signoutlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:padding="10dp"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:id="@+id/navigation_signoutimg"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/logouticon"
+                    android:layout_centerVertical="true"/>
+
+
+                <TextView
+                    android:id="@+id/navigation_txtsignout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sign out"
+                    android:textColor="@color/colorverydarkgrey"
+                    android:textSize="16sp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/navigation_signoutimg"
+                    android:layout_marginStart="20dp"/>
+
+            </RelativeLayout>
 
         </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/navigation_signoutlayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:padding="10dp">
-
-        <ImageView
-            android:id="@+id/navigation_signoutimg"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/logouticon"
-            android:layout_centerVertical="true"/>
-
-
-        <TextView
-            android:id="@+id/navigation_txtsignout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sign out"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@id/navigation_signoutimg"
-            android:layout_marginStart="20dp"/>
-
-        </RelativeLayout>
-
-    </RelativeLayout>
 
     </LinearLayout>
 
