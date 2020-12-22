@@ -143,7 +143,7 @@ public class PostNewsActivity extends AppCompatActivity {
         timetablelayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(PlacementNewsActivity.this,EbooksActivity.class));
+                startActivity(new Intent(PostNewsActivity.this,TimetableActivity.class));
                 slidingRootNav.closeMenu();
             }
         });

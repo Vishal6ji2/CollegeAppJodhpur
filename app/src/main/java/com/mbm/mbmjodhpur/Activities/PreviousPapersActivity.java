@@ -8,20 +8,14 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.tabs.TabLayout;
-import com.mbm.mbmjodhpur.Adapters.PapersAdapter;
 import com.mbm.mbmjodhpur.Adapters.TabsViewpagerAdapter;
-import com.mbm.mbmjodhpur.Adapters.ViewpagerAdapter;
 import com.mbm.mbmjodhpur.Fragments.PapersFragment;
 import com.mbm.mbmjodhpur.Fragments.SyllabusFragment;
 import com.mbm.mbmjodhpur.R;
-import com.mbm.mbmjodhpur.Suitcases.PapersSuitcase;
-
-import java.util.ArrayList;
 
 public class PreviousPapersActivity extends AppCompatActivity {
 
@@ -42,8 +36,6 @@ public class PreviousPapersActivity extends AppCompatActivity {
         initviews();
 
         setSupportActionBar(toolbar);
-//        getSupportActionBar().setTitle("Syllabus & Papers");
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         backimg.setOnClickListener(new View.OnClickListener() {
             @Override

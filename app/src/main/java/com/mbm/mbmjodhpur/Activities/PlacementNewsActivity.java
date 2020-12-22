@@ -137,8 +137,8 @@ public class PlacementNewsActivity extends AppCompatActivity {
         timetablelayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(PlacementNewsActivity.this,EbooksActivity.class));
-                slidingRootNav.closeMenu();
+                startActivity(new Intent(PlacementNewsActivity.this,TimetableActivity.class));
+//                slidingRootNav.closeMenu();
             }
         });
 

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,7 +23,6 @@ public class NewsPostAdapter extends RecyclerView.Adapter<NewsPostAdapter.ViewHo
 
     Context context;
     ArrayList<NewsPostSuitcase> arrnewspostlist = new ArrayList<>();
-    FragmentManager fragmentManager;
 
     public NewsPostAdapter(Context context, ArrayList<NewsPostSuitcase> arrnewspostlist) {
         this.context = context;
@@ -42,12 +42,13 @@ public class NewsPostAdapter extends RecyclerView.Adapter<NewsPostAdapter.ViewHo
 
         holder.postimg.setImageResource(arrnewspostlist.get(position).postimg);
 
-
         holder.profilename.setText(arrnewspostlist.get(position).profilename);
         holder.txtheading.setText(arrnewspostlist.get(position).txtheading);
         holder.txtdetails.setText(arrnewspostlist.get(position).txtdetails);
         holder.datetime.setText(arrnewspostlist.get(position).datetime);
         holder.timeago.setText(arrnewspostlist.get(position).timeago);
+
+        holder.itemView.startAnimation(AnimationUtils.loadAnimation(context,R.anim.tabsanim));
 
     }
 

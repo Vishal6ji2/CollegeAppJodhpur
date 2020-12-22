@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -36,6 +37,7 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         holder.imageView.setImageResource(arrnoticelist.get(position).img);
+        holder.imageView.startAnimation(AnimationUtils.loadAnimation(context,R.anim.tabsanim));
 //        holder.textView.setText(arrnoticelist.get(position).text);
     }
 

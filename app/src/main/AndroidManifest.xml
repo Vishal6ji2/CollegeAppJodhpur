@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.FullPlacementnewsActivity"></activity>
+        <activity android:name=".Activities.TimetableActivity"></activity>
+        <activity android:name=".Activities.FullPlacementnewsActivity" />
         <activity android:name=".Activities.ChatActivity" />
         <activity android:name=".Activities.OnBoardingActivity" />
         <activity android:name=".Activities.PlacementNewsActivity" />

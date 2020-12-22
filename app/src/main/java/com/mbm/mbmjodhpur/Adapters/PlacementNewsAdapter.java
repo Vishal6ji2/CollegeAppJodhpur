@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,6 +42,8 @@ public class PlacementNewsAdapter extends RecyclerView.Adapter<PlacementNewsAdap
         holder.cmptime.setText(arrplacementlist.get(position).cmptime);
         holder.cmptitle.setText(arrplacementlist.get(position).placementtitle);
         holder.cmpimg.setImageResource(arrplacementlist.get(position).companyimg);
+
+        holder.itemView.startAnimation(AnimationUtils.loadAnimation(context,R.anim.tabsanim));
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

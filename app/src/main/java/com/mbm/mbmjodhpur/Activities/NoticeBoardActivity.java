@@ -141,7 +141,7 @@ public class NoticeBoardActivity extends AppCompatActivity {
         timetablelayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(PlacementNewsActivity.this,EbooksActivity.class));
+                startActivity(new Intent(NoticeBoardActivity.this,TimetableActivity.class));
                 slidingRootNav.closeMenu();
             }
         });
