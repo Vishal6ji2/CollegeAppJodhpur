@@ -52,7 +52,7 @@ public class ChatActivity extends AppCompatActivity {
 //                        tab.setIcon(R.drawable.chaticon);
 
                         BadgeDrawable badgeDrawable = tab.getOrCreateBadge();
-                        badgeDrawable.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                        badgeDrawable.setBackgroundColor(getResources().getColor(R.color.colorAccent));
                         badgeDrawable.setVisible(true);
                         badgeDrawable.setNumber(100);
                         badgeDrawable.setMaxCharacterCount(3);
@@ -64,7 +64,7 @@ public class ChatActivity extends AppCompatActivity {
 //                        tab.setIcon(R.drawable.chaticon);
 
                         BadgeDrawable badgeDrawable1 = tab.getOrCreateBadge();
-                        badgeDrawable1.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                        badgeDrawable1.setBackgroundColor(getResources().getColor(R.color.colorAccent));
                         badgeDrawable1.setVisible(true);
                         badgeDrawable1.setNumber(1024);
 //                        badgeDrawable1.setMaxCharacterCount(3);

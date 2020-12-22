@@ -203,7 +203,7 @@ public class PlacementNewsActivity extends AppCompatActivity {
 
         getMenuInflater().inflate(R.menu.chatmenu,menu);
 
-        return false;
+        return true;
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.mbm.mbmjodhpur.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,6 +23,13 @@ public class FullPlacementnewsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_full_placementnews);
 
         initviews();
+
+        backimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void initviews() {

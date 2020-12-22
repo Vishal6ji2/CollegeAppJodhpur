@@ -41,8 +41,6 @@ public class EbooksActivity extends AppCompatActivity {
         initviews();
 
         setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setTitle("Ebooks library");
 
         backimg.setOnClickListener(new View.OnClickListener() {
             @Override

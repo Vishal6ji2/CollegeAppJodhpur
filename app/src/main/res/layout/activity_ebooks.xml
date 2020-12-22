@@ -34,19 +34,16 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="5dp"
-        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
         android:layout_margin="5dp"
-        app:cardUseCompatPadding="true"
-        app:cardPreventCornerOverlap="false">
+        app:cardUseCompatPadding="true">
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/ebook_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textDirection="firstStrong"
-        style="@style/Widget.AppCompat.Light.DropDownItem.Spinner"/>
+        android:spinnerMode="dialog"
+        android:splitMotionEvents="true"/>
 
     </androidx.cardview.widget.CardView>
 

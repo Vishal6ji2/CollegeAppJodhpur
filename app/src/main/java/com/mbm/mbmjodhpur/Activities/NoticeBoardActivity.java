@@ -149,8 +149,12 @@ public class NoticeBoardActivity extends AppCompatActivity {
         sharelayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(PlacementNewsActivity.this,EbooksActivity.class));
-                slidingRootNav.closeMenu();
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_SUBJECT,"MBM JODHPUR APP");
+                intent.putExtra(Intent.EXTRA_TEXT,"Please download MBM JODHPUR APP in your android mobile");
+                startActivity(Intent.createChooser(intent,"Share via"));
+//                slidingRootNav.closeMenu();
             }
         });
 
@@ -186,7 +190,6 @@ public class NoticeBoardActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
     private void addNoticeData(int noticeimg,String text) {
@@ -203,7 +206,7 @@ public class NoticeBoardActivity extends AppCompatActivity {
 
         getMenuInflater().inflate(R.menu.chatmenu,menu);
 
-        return false;
+        return true;
     }
 
     @Override
