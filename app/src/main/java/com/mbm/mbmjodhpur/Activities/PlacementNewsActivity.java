@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -122,7 +123,7 @@ public class PlacementNewsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(PlacementNewsActivity.this,EbooksActivity.class));
-//                slidingRootNav.closeMenu();
+
             }
         });
 
@@ -130,7 +131,7 @@ public class PlacementNewsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(PlacementNewsActivity.this,PreviousPapersActivity.class));
-//                slidingRootNav.closeMenu();
+
             }
         });
 
@@ -138,31 +139,37 @@ public class PlacementNewsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(PlacementNewsActivity.this,TimetableActivity.class));
-//                slidingRootNav.closeMenu();
+
             }
         });
 
         sharelayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(PlacementNewsActivity.this,EbooksActivity.class));
-                slidingRootNav.closeMenu();
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_SUBJECT,"MBM JODHPUR APP");
+                intent.putExtra(Intent.EXTRA_TEXT,"Please download MBM JODHPUR APP in your android mobile");
+                startActivity(Intent.createChooser(intent,"Share via"));
+
             }
         });
 
         settinglayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(PlacementNewsActivity.this,EbooksActivity.class));
-                slidingRootNav.closeMenu();
+                startActivity(new Intent(PlacementNewsActivity.this,SettingActivity.class));
+
             }
         });
 
         contactlayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(PlacementNewsActivity.this,EbooksActivity.class));
-                slidingRootNav.closeMenu();
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("7239973921"));//change the number
+                startActivity(callIntent);
+
             }
         });
 

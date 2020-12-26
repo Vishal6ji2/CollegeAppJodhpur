@@ -122,11 +122,12 @@ public class NoticeBoardActivity extends AppCompatActivity {
         signoutlayout = findViewById(R.id.navigation_signoutlayout);
 
 
+
         ebooklayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NoticeBoardActivity.this,EbooksActivity.class));
-                slidingRootNav.closeMenu();
+
             }
         });
 
@@ -134,7 +135,7 @@ public class NoticeBoardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NoticeBoardActivity.this,PreviousPapersActivity.class));
-                slidingRootNav.closeMenu();
+
             }
         });
 
@@ -142,7 +143,7 @@ public class NoticeBoardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NoticeBoardActivity.this,TimetableActivity.class));
-                slidingRootNav.closeMenu();
+
             }
         });
 
@@ -154,15 +155,15 @@ public class NoticeBoardActivity extends AppCompatActivity {
                 intent.putExtra(Intent.EXTRA_SUBJECT,"MBM JODHPUR APP");
                 intent.putExtra(Intent.EXTRA_TEXT,"Please download MBM JODHPUR APP in your android mobile");
                 startActivity(Intent.createChooser(intent,"Share via"));
-//                slidingRootNav.closeMenu();
+
             }
         });
 
         settinglayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(PlacementNewsActivity.this,EbooksActivity.class));
-                slidingRootNav.closeMenu();
+                startActivity(new Intent(NoticeBoardActivity.this,SettingActivity.class));
+
             }
         });
 

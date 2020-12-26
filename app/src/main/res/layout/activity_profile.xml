@@ -12,11 +12,16 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
         <ImageView
             android:id="@+id/profile_backimg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/arrowbackblack"/>
+            android:src="@drawable/arrowbackblack"
+            android:layout_centerVertical="true"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -25,25 +30,52 @@
             android:gravity="center"
             android:fontFamily="@font/cc_semibold"
             android:textSize="18sp"
-            android:textColor="@android:color/black"/>
+            android:textColor="@android:color/black"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/profile_edit"/>
+
+        <TextView
+            android:id="@+id/profile_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            android:textColor="@android:color/black"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:background="?attr/selectableItemBackground"/>
+
+        </RelativeLayout>
 
     </com.google.android.material.appbar.MaterialToolbar>
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/profile_profileimg"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/designerimg"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"/>
+
+        <ImageView
+            android:id="@+id/profile_cameraimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cameraicon"
+            android:layout_alignBottom="@id/profile_profileimg"
+            android:layout_alignEnd="@id/profile_profileimg"
+            />
+
+    </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <com.mikhaellopez.circularimageview.CircularImageView
-                android:id="@+id/profile_profileimg"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:src="@drawable/designerimg"
-                android:layout_gravity="center"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -54,6 +86,7 @@
                 android:padding="5dp"/>
 
             <TextView
+                android:id="@+id/profile_txtname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Vishal Kumavat"
@@ -71,6 +104,7 @@
                 android:padding="5dp"/>
 
             <TextView
+                android:id="@+id/profile_txtbranch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Computer Science &amp; Engineering"
@@ -88,6 +122,7 @@
                 android:padding="5dp"/>
 
             <TextView
+                android:id="@+id/profile_txtsem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="IV SEMESTER"
@@ -105,6 +140,7 @@
                 android:padding="5dp"/>
 
             <TextView
+                android:id="@+id/profile_txtemail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Vishal6kumavat7@gmail.com"
@@ -122,6 +158,7 @@
                 android:padding="5dp"/>
 
             <TextView
+                android:id="@+id/profile_txtmob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="7239973921"
@@ -129,16 +166,7 @@
                 android:textSize="17sp"
                 android:textColor="@color/colorverydarkgrey"/>
 
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Edit"
-                android:layout_margin="10dp"/>
-
         </LinearLayout>
-
-    </ScrollView>
 
 
 </LinearLayout>
