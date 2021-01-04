@@ -4,9 +4,11 @@
     <color name="colorPrimaryDark">#30286f</color>
     <color name="colorAccent">#0000EE</color>
 
+
     <color name="colordarkgrey">#E67C7979</color>
     <color name="mbmlogo_background">#fff</color>
     <color name="colorverydarkgrey">#B4000000</color>
-    <color name="colorpink">#dd177d</color>
+    <color name="colorpink">#de0e7c</color>
+    <color name="colorlightgray">#77DDDBDB</color>
 
 </resources>

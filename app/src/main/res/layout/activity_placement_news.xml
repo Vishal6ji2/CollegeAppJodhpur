@@ -8,25 +8,6 @@
     android:background="@android:color/white">
 
 
-<!--    <com.google.android.material.appbar.MaterialToolbar-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="?attr/actionBarSize"-->
-<!--        android:id="@+id/placement_toolbar"-->
-<!--        android:background="@color/colorAccent"-->
-<!--        app:menu="@menu/chatmenu">-->
-
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:text="Hello,Vishal kumavat"-->
-<!--            android:textColor="@android:color/white"-->
-<!--            android:gravity="center"-->
-<!--            android:textSize="18sp"-->
-<!--            android:fontFamily="@font/cc_bold"/>-->
-
-
-<!--    </com.google.android.material.appbar.MaterialToolbar>-->
-
     <include
         android:id="@+id/placement_toolbar"
         layout="@layout/customtoolbarlayout"/>
@@ -36,14 +17,22 @@
         android:layout_height="wrap_content"
         android:id="@+id/placement_recyclerview"
         android:layout_below="@id/placement_toolbar"
-        android:layout_above="@id/bnv"/>
+        android:layout_above="@id/placement_card"
+        android:background="@color/colorlightgray"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/placement_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp"
+        android:layout_alignParentBottom="true">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bnv"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:layout_alignParentBottom="true"
         app:menu="@menu/menuitem"/>
 
+    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

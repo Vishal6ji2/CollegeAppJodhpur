@@ -3,6 +3,7 @@
     package="com.mbm.mbmjodhpur">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.SettingActivity"></activity>
+        <activity android:name=".Activities.SettingActivity"/>
         <activity android:name=".Activities.ProfileActivity" />
         <activity android:name=".Activities.TimetableActivity" />
         <activity android:name=".Activities.FullPlacementnewsActivity" />
@@ -20,19 +21,15 @@
         <activity android:name=".Activities.PlacementNewsActivity" />
         <activity
             android:name=".Activities.NoticeBoardActivity"
-            android:parentActivityName=".Activities.HomeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Activities.PreviousPapersActivity"
-            android:parentActivityName=".Activities.HomeActivity" />
+            android:name=".Activities.PreviousPapersActivity" />
         <activity
             android:name=".Activities.EbooksActivity"
-            android:parentActivityName=".Activities.HomeActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".Activities.ImageGalleryActivity" />
         <activity
             android:name=".Activities.PostNewsActivity"
-            android:parentActivityName=".Activities.HomeActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.HomeActivity"

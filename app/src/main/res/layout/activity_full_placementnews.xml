@@ -8,6 +8,11 @@
     android:orientation="vertical">
 
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="3dp">
+
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/fplacement_toolbar"
         android:layout_width="match_parent"
@@ -31,6 +36,8 @@
             android:fontFamily="@font/cc_medium"/>
 
     </com.google.android.material.appbar.MaterialToolbar>
+
+    </androidx.cardview.widget.CardView>
 
     <ScrollView
         android:layout_width="match_parent"

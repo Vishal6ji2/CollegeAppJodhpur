@@ -47,6 +47,7 @@ public class PostNewsActivity extends AppCompatActivity {
 
 
         initviews();
+        setSupportActionBar(toolbar);
 
         slidingRootNav =  new SlidingRootNavBuilder(PostNewsActivity.this)
                 .withToolbarMenuToggle(toolbar)
@@ -59,7 +60,7 @@ public class PostNewsActivity extends AppCompatActivity {
 
 
         bnv.setSelectedItemId(R.id.newsmenu);
-        setSupportActionBar(toolbar);
+
 
 
         addPostData("Mukesh Singhavi","2h ago","26/10/2020","About Exam Scheduling","Our exam is scheduled on 23 nov. 2020 where we'll start your exam at the center which mbm south campus in mbm of jodhpur ,rajasthan.",R.drawable.mbmlogo,R.drawable.picone);

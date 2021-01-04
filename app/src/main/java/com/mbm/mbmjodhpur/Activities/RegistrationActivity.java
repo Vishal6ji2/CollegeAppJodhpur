@@ -57,15 +57,13 @@ public class RegistrationActivity extends AppCompatActivity {
                 if (edtname.getText().toString().equals("") && edtemail.getText().toString().equals("")
                     && edtmob.getText().toString().equals("") && edtpassword.getText().toString().equals("")
                     && spinnerbranch.getSelectedItemPosition() == 0){
-
+                    toast = Toast.makeText(RegistrationActivity.this,"Please Enter your Credentials",Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER,0,0);
-                    toast.setText("Please Enter your Credentials");
-                    toast.setDuration(Toast.LENGTH_SHORT);
                     toast.show();
 
                 }else {
+                    toast = Toast.makeText(RegistrationActivity.this,"Register Successfully",Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER,0,0);
-                    toast.setText("Register Successfully");
                     toast.show();
                 }
             }

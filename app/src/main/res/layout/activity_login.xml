@@ -62,6 +62,7 @@
         android:text="Login"
         android:textAllCaps="false"
         android:textSize="20sp"
+        android:backgroundTint="@color/colorpink"
         android:textColor="@android:color/white"
         app:cornerRadius="5dp"
         android:padding="10dp"

@@ -15,30 +15,55 @@
         android:layout_height="match_parent"
         android:layout_above="@id/deptfrag_msglayout"/>
 
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/deptfrag_fabimg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@android:color/white"
+        android:src="@android:drawable/ic_menu_report_image"
+        android:layout_above="@id/deptfrag_fabdocs"
+        android:visibility="invisible"
+        app:fabSize="mini"/>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/deptfrag_fabdocs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@android:color/white"
+        android:src="@android:drawable/ic_menu_upload"
+        android:layout_above="@id/deptfrag_msglayout"
+        android:visibility="invisible"
+        app:fabSize="mini"/>
+
+
     <RelativeLayout
         android:id="@+id/deptfrag_msglayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:elevation="5dp"
-        android:background="@android:color/white">
+        android:layout_marginBottom="2dp">
 
-        <ImageView
-            android:id="@+id/deptfrag_fileimg"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/attachicon"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/deptfrag_fabfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:padding="3dp"/>
+            app:backgroundTint="@android:color/white"
+            android:src="@android:drawable/ic_input_add"
+            app:fabSize="mini"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="enter a message"
-            android:background="@null"
+            android:background="@drawable/roundtext"
             android:layout_toStartOf="@id/deptfrag_fabsend"
-            android:layout_toEndOf="@id/deptfrag_fileimg"
-            android:layout_centerVertical="true"/>
+            android:layout_toEndOf="@id/deptfrag_fabfile"
+            android:layout_centerVertical="true"
+            android:padding="8dp"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/deptfrag_fabsend"

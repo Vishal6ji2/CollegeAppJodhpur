@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="10dp"
+    app:cardCornerRadius="5dp"
     app:cardUseCompatPadding="true"
     app:cardElevation="5dp">
 
@@ -53,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="hide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behavior"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="@color/colorverydarkgrey"
             android:padding="10dp"
             android:layout_below="@id/custompost_txtheading"/>
 

@@ -27,18 +27,15 @@ public class LoginActivity extends AppCompatActivity {
 
         initviews();
 
-
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (edtemail.getText().toString().equals("") && edtpassword.getText().toString().equals("")) {
+                    toast = Toast.makeText(LoginActivity.this,"Please enter yor credentials",Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER, 0, 0);
-                    toast.setText("Please enter your credentials");
-                    toast.setDuration(Toast.LENGTH_SHORT);
                     toast.show();
                 } else {
-
-                    toast.setText("Login Successfully");
+                    toast = Toast.makeText(LoginActivity.this,"Login Successfully",Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER, 0, 0);
                     toast.show();
                     startActivity(new Intent(LoginActivity.this, HomeActivity.class));

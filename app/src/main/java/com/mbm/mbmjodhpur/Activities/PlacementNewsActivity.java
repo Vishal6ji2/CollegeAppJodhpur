@@ -45,6 +45,8 @@ public class PlacementNewsActivity extends AppCompatActivity {
 
         initviews();
 
+        setSupportActionBar(toolbar);
+
         slidingRootNav =  new SlidingRootNavBuilder(PlacementNewsActivity.this)
                 .withToolbarMenuToggle(toolbar)
                 .withMenuOpened(false)
