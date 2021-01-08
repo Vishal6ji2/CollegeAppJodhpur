@@ -61,7 +61,6 @@ public class PapersFragment extends Fragment {
         addPapersData("2015");
         addPapersData("2014");
         addPapersData("2013");
-        addPapersData("2012");
 
 
         recyclerView.setHasFixedSize(true);

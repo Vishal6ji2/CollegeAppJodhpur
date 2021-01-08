@@ -31,11 +31,16 @@ public class PlacementNewsActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
 
-    BottomNavigationView bnv;
-
     ArrayList<PlacementSuitcase> arrplacementlist = new ArrayList<>();
 
     SlidingRootNav slidingRootNav;
+
+    MenuItem menuItem;
+
+    TextView menunoti;
+
+    int pendingnoti = 5;
+
 
 
     @Override
@@ -47,31 +52,9 @@ public class PlacementNewsActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
-        slidingRootNav =  new SlidingRootNavBuilder(PlacementNewsActivity.this)
-                .withToolbarMenuToggle(toolbar)
-                .withMenuOpened(false)
-                .withContentClickableWhenMenuOpened(false)
-                .withSavedState(savedInstanceState)
-                .withDragDistance(150)
-                .withMenuLayout(R.layout.navigationlayout)
-                .inject();
+        BottomNavigationView bnv = findViewById(R.id.bnv);
 
         bnv.setSelectedItemId(R.id.placementmenu);
-
-        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
-        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
-        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
-        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
-        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
-        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
-        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
-        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
-        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
-        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
-
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new PlacementNewsAdapter(this,arrplacementlist));
 
         bnv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -98,6 +81,16 @@ public class PlacementNewsActivity extends AppCompatActivity {
             }
         });
 
+        slidingRootNav =  new SlidingRootNavBuilder(PlacementNewsActivity.this)
+                .withToolbarMenuToggle(toolbar)
+                .withMenuOpened(false)
+                .withContentClickableWhenMenuOpened(false)
+                .withSavedState(savedInstanceState)
+                .withDragDistance(150)
+                .withMenuLayout(R.layout.navigationlayout)
+                .inject();
+
+
 
         //side bar menus
 
@@ -106,6 +99,34 @@ public class PlacementNewsActivity extends AppCompatActivity {
         TextView profilename = findViewById(R.id.navigation_profilename);
         TextView profilebranch = findViewById(R.id.navigation_branch);
         ImageView viewprofileimg = findViewById(R.id.navigation_viewimg);
+
+        profileimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PlacementNewsActivity.this,ProfileActivity.class));
+            }
+        });
+
+        profilename.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PlacementNewsActivity.this,ProfileActivity.class));
+            }
+        });
+
+        profilebranch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PlacementNewsActivity.this,ProfileActivity.class));
+            }
+        });
+
+        viewprofileimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PlacementNewsActivity.this,ProfileActivity.class));
+            }
+        });
 
 
         //menu ids
@@ -194,7 +215,27 @@ public class PlacementNewsActivity extends AppCompatActivity {
 
     }
 
-    private void addData(int cmpimg,String cmpname,String cmptitle,String cmptime,String cmpnews) {
+    @Override
+    protected void onStart() {
+        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
+        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
+        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
+        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
+        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
+        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
+        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
+        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
+        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
+        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
+
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(new PlacementNewsAdapter(this,arrplacementlist));
+
+        super.onStart();
+    }
+
+    private void addData(int cmpimg, String cmpname, String cmptitle, String cmptime, String cmpnews) {
 
         PlacementSuitcase placementSuitcase = new PlacementSuitcase();
         placementSuitcase.companyname = cmpname;
@@ -211,6 +252,29 @@ public class PlacementNewsActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
 
         getMenuInflater().inflate(R.menu.chatmenu,menu);
+        menuItem = menu.findItem(R.id.chatmenu);
+
+
+        menuItem.setActionView(R.layout.badgenotification);
+        View view = menuItem.getActionView();
+        menunoti = view.findViewById(R.id.badgecounter);
+
+        if (pendingnoti == 0){
+            menuItem.setActionView(null);
+            return true;
+
+        }else {
+            menunoti.setText(String.valueOf(pendingnoti));
+        }
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(PlacementNewsActivity.this,ChatActivity.class));
+                pendingnoti = 0;
+                menunoti.setVisibility(View.INVISIBLE);
+            }
+        });
 
         return true;
     }
@@ -225,8 +289,6 @@ public class PlacementNewsActivity extends AppCompatActivity {
     }
 
     private void initviews() {
-
-        bnv = findViewById(R.id.bnv);
 
         toolbar = findViewById(R.id.toolbar);
 

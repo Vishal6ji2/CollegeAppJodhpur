@@ -13,30 +13,33 @@
         android:layout_height="wrap_content"
         app:cardElevation="3dp">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:id="@+id/setting_toolbar">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/arrowbackblack"/>
-
-        <TextView
+        <com.google.android.material.appbar.MaterialToolbar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Setting"
-            android:textSize="18sp"
-            android:fontFamily="@font/cc_semibold"
-            android:textColor="@android:color/black"
-            android:gravity="center"/>
+            android:layout_height="?attr/actionBarSize"
+            android:id="@+id/setting_toolbar"
+            android:background="@color/colorPrimaryDark">
 
-    </com.google.android.material.appbar.MaterialToolbar>
+            <ImageView
+                android:id="@+id/setting_backimg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrowback"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Setting"
+                android:textSize="18sp"
+                android:fontFamily="@font/cc_semibold"
+                android:textColor="@android:color/white"
+                android:gravity="center"/>
+
+        </com.google.android.material.appbar.MaterialToolbar>
 
     </androidx.cardview.widget.CardView>
 
     <RelativeLayout
+        android:id="@+id/setting_mylayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
@@ -70,6 +73,7 @@
         android:textColor="@color/colordarkgrey"/>
 
     <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/setting_allswitch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="All"
@@ -80,6 +84,7 @@
 
 
     <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/setting_deptswitch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Department chat"
@@ -89,6 +94,7 @@
 
 
     <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/setting_clgswitch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="College chat"
@@ -98,6 +104,7 @@
 
 
     <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/setting_noticeswitch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Notice"
@@ -107,6 +114,7 @@
         android:checked="true"/>
 
     <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/setting_newsswitch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="News feed"
@@ -115,6 +123,7 @@
         android:textColor="@color/colorverydarkgrey"/>
 
     <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/setting_placementswitch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Placement news"

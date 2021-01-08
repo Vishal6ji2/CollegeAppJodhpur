@@ -56,7 +56,7 @@ public class OnBoardingActivity extends AppCompatActivity {
 
                     viewPager.setCurrentItem(currpage + 1);
                 }else if (btnnext.getText().toString().equals("FINISH")){
-                    startActivity(new Intent(OnBoardingActivity.this,PostNewsActivity.class));
+                    startActivity(new Intent(OnBoardingActivity.this,HomeActivity.class));
                 }
             }
         });

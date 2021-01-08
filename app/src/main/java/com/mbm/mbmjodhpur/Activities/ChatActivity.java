@@ -63,10 +63,12 @@ public class ChatActivity extends AppCompatActivity {
                         tab.setText("College");
 //                        tab.setIcon(R.drawable.chaticon);
 
+                        int no = 5;
                         BadgeDrawable badgeDrawable1 = tab.getOrCreateBadge();
-                        badgeDrawable1.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                        badgeDrawable1.setBackgroundColor(getResources().getColor(android.R.color.white));
+                        badgeDrawable1.setBadgeTextColor(getResources().getColor(R.color.colorPrimaryDark));
                         badgeDrawable1.setVisible(true);
-                        badgeDrawable1.setNumber(1024);
+                        badgeDrawable1.setNumber(no);
 //                        badgeDrawable1.setMaxCharacterCount(3);
 
                         break;

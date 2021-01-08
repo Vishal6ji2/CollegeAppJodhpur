@@ -12,11 +12,9 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="5dp"
-        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
         android:layout_margin="5dp"
-        app:cardUseCompatPadding="true"
-        app:cardPreventCornerOverlap="false">
+        app:cardUseCompatPadding="true">
 
         <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/papers_spinbranch"
@@ -31,11 +29,9 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="5dp"
-        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
         android:layout_margin="5dp"
-        app:cardUseCompatPadding="true"
-        app:cardPreventCornerOverlap="false">
+        app:cardUseCompatPadding="true">
 
         <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/papers_spinyear"
@@ -50,11 +46,9 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="5dp"
-        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
         android:layout_margin="5dp"
-        app:cardUseCompatPadding="true"
-        app:cardPreventCornerOverlap="false">
+        app:cardUseCompatPadding="true">
 
         <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/papers_spinsubject"

@@ -1,12 +1,17 @@
 package com.mbm.mbmjodhpur.Activities;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.mbm.mbmjodhpur.R;
 import com.mikhaellopez.circularimageview.CircularImageView;
@@ -35,7 +40,30 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+        cameraimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");
+                startActivityForResult(intent,100);
+            }
+        });
 
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
+        if (requestCode == 100 && resultCode == RESULT_OK && data != null){
+
+            Uri uri = data.getData();
+
+            Glide.with(this).load(uri).placeholder(R.drawable.mbmlogo).into(profileimg);
+
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     private void initviews() {

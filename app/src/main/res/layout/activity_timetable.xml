@@ -16,20 +16,21 @@
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/tt_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize">
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark">
 
         <ImageView
             android:id="@+id/tt_backimg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/arrowbackblack"/>
+            android:src="@drawable/arrowback"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Time-tables"
             android:gravity="center"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold"
             android:fontFamily="@font/cc_medium"/>

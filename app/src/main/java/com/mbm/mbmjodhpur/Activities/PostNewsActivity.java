@@ -35,9 +35,15 @@ public class PostNewsActivity extends AppCompatActivity {
 
     ArrayList<NewsPostSuitcase> arrnewspostlist = new ArrayList<>();
 
-    BottomNavigationView bnv;
+//    BottomNavigationView bnv;
 
     SlidingRootNav slidingRootNav;
+
+    MenuItem menuItem;
+
+    TextView menunoti;
+
+    int pendingnoti = 5;
 
 
     @Override
@@ -49,34 +55,10 @@ public class PostNewsActivity extends AppCompatActivity {
         initviews();
         setSupportActionBar(toolbar);
 
-        slidingRootNav =  new SlidingRootNavBuilder(PostNewsActivity.this)
-                .withToolbarMenuToggle(toolbar)
-                .withMenuOpened(false)
-                .withContentClickableWhenMenuOpened(false)
-                .withSavedState(savedInstanceState)
-                .withDragDistance(150)
-                .withMenuLayout(R.layout.navigationlayout)
-                .inject();
 
+        BottomNavigationView bnv = findViewById(R.id.bnv);
 
         bnv.setSelectedItemId(R.id.newsmenu);
-
-
-
-        addPostData("Mukesh Singhavi","2h ago","26/10/2020","About Exam Scheduling","Our exam is scheduled on 23 nov. 2020 where we'll start your exam at the center which mbm south campus in mbm of jodhpur ,rajasthan.",R.drawable.mbmlogo,R.drawable.picone);
-
-        addPostData("N.C. Barwar","5h ago","25/10/2020","About Timetable","Our exam is scheduled on 23 nov. 2020 where we'll start your exam at the center which mbm south campus in mbm of jodhpur ,rajasthan.",R.drawable.profilefive,R.drawable.directorimg);
-
-        addPostData("Simran choudhary","2d ago","10/10/2020","About Practical exam","Our exam is scheduled on 23 nov. 2020 where we'll start your exam at the center which mbm south campus in mbm of jodhpur ,rajasthan.",R.drawable.profilefour,R.drawable.screenshot);
-
-        addPostData("Aditya sawant","5d ago","12/10/2020","About Seminar","Our exam is scheduled on 23 nov. 2020 where we'll start your exam at the center which mbm south campus in mbm of jodhpur ,rajasthan.",R.drawable.mbmlogo,R.drawable.pictwo);
-
-        addPostData("Anil gupta","7d ago","10/12/2020","About Mid-Term","Our exam is scheduled on 23 nov. 2020 where we'll start your exam at the center which mbm south campus in mbm of jodhpur ,rajasthan.",R.drawable.profilefour,R.drawable.editorimg);
-
-
-        postsrecyclerview.setHasFixedSize(true);
-        postsrecyclerview.setLayoutManager(new LinearLayoutManager(this));
-        postsrecyclerview.setAdapter(new NewsPostAdapter(this,arrnewspostlist));
 
         bnv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -103,6 +85,14 @@ public class PostNewsActivity extends AppCompatActivity {
             }
         });
 
+        slidingRootNav =  new SlidingRootNavBuilder(PostNewsActivity.this)
+                .withToolbarMenuToggle(toolbar)
+                .withMenuOpened(false)
+                .withContentClickableWhenMenuOpened(false)
+                .withSavedState(savedInstanceState)
+                .withDragDistance(150)
+                .withMenuLayout(R.layout.navigationlayout)
+                .inject();
         //side bar menus
 
         //profile ids
@@ -110,6 +100,34 @@ public class PostNewsActivity extends AppCompatActivity {
         TextView profilename = findViewById(R.id.navigation_profilename);
         TextView profilebranch = findViewById(R.id.navigation_branch);
         ImageView viewprofileimg = findViewById(R.id.navigation_viewimg);
+
+        profileimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PostNewsActivity.this,ProfileActivity.class));
+            }
+        });
+
+        profilename.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PostNewsActivity.this,ProfileActivity.class));
+            }
+        });
+
+        profilebranch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PostNewsActivity.this,ProfileActivity.class));
+            }
+        });
+
+        viewprofileimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PostNewsActivity.this,ProfileActivity.class));
+            }
+        });
 
 
         //menu ids
@@ -195,7 +213,28 @@ public class PostNewsActivity extends AppCompatActivity {
 
     }
 
-    public void addPostData(String profilename,String timeago,String datetime,String txtheading,String txtdetails, int profileimg, int postimg){
+    @Override
+    protected void onStart() {
+
+        addPostData("Mukesh Singhavi","2h ago","26/10/2020","About Exam Scheduling","Our exam is scheduled on 23 nov. 2020 where we'll start your exam at the center which mbm south campus in mbm of jodhpur ,rajasthan.",R.drawable.mbmlogo,R.drawable.picone);
+
+        addPostData("N.C. Barwar","5h ago","25/10/2020","About Timetable","Our exam is scheduled on 23 nov. 2020 where we'll start your exam at the center which mbm south campus in mbm of jodhpur ,rajasthan.",R.drawable.profilefive,R.drawable.directorimg);
+
+        addPostData("Simran choudhary","2d ago","10/10/2020","About Practical exam","Our exam is scheduled on 23 nov. 2020 where we'll start your exam at the center which mbm south campus in mbm of jodhpur ,rajasthan.",R.drawable.profilefour,R.drawable.screenshot);
+
+        addPostData("Aditya sawant","5d ago","12/10/2020","About Seminar","Our exam is scheduled on 23 nov. 2020 where we'll start your exam at the center which mbm south campus in mbm of jodhpur ,rajasthan.",R.drawable.mbmlogo,R.drawable.pictwo);
+
+        addPostData("Anil gupta","7d ago","10/12/2020","About Mid-Term","Our exam is scheduled on 23 nov. 2020 where we'll start your exam at the center which mbm south campus in mbm of jodhpur ,rajasthan.",R.drawable.profilefour,R.drawable.editorimg);
+
+
+        postsrecyclerview.setHasFixedSize(true);
+        postsrecyclerview.setLayoutManager(new LinearLayoutManager(this));
+        postsrecyclerview.setAdapter(new NewsPostAdapter(this,arrnewspostlist));
+
+        super.onStart();
+    }
+
+    public void addPostData(String profilename, String timeago, String datetime, String txtheading, String txtdetails, int profileimg, int postimg){
 
         NewsPostSuitcase newsPostSuitcase = new NewsPostSuitcase();
 
@@ -216,6 +255,30 @@ public class PostNewsActivity extends AppCompatActivity {
 
         getMenuInflater().inflate(R.menu.chatmenu,menu);
 
+        menuItem = menu.findItem(R.id.chatmenu);
+
+
+        menuItem.setActionView(R.layout.badgenotification);
+        View view = menuItem.getActionView();
+        menunoti = view.findViewById(R.id.badgecounter);
+
+        if (pendingnoti == 0){
+            menuItem.setActionView(null);
+            return true;
+
+        }else {
+            menunoti.setText(String.valueOf(pendingnoti));
+        }
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(PostNewsActivity.this,ChatActivity.class));
+                menunoti.setVisibility(View.INVISIBLE);
+                pendingnoti = 0;
+            }
+        });
+
         return true;
     }
 
@@ -231,7 +294,7 @@ public class PostNewsActivity extends AppCompatActivity {
 
     private void initviews() {
 
-        bnv = findViewById(R.id.bnv);
+//        bnv = findViewById(R.id.bnv);
 
         toolbar = findViewById(R.id.toolbar);
 

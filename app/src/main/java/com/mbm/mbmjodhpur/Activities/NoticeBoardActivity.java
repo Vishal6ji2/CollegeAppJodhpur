@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.mbm.mbmjodhpur.Adapters.NoticeAdapter;
 import com.mbm.mbmjodhpur.R;
@@ -33,9 +34,13 @@ public class NoticeBoardActivity extends AppCompatActivity {
 
     ArrayList<NoticeSuitcase> arrnoticelist = new ArrayList<>();
 
-    BottomNavigationView bnv;
-
     SlidingRootNav slidingRootNav;
+
+    MenuItem menuItem;
+
+    TextView menunoti;
+
+    int pendingnoti = 5;
 
 
     @Override
@@ -45,26 +50,10 @@ public class NoticeBoardActivity extends AppCompatActivity {
 
         initviews();
 
-        bnv.setSelectedItemId(R.id.noticemenu);
-
         setSupportActionBar(toolbar);
+        BottomNavigationView bnv = findViewById(R.id.bnv);
 
-
-        addNoticeData(R.drawable.signimg,"Paragraph Writing (अनुच्छेद-लेखन) - इस लेख में हम अनुच्छेद-लेखन के बारे में जानेंगे। अनुच्छेद-लेखन होता क्या है? अनुच्छेद लिखते समय किन-किन बातों का ध्यान रखना चाहिए? अनुच्छेद की प्रमुख विशेषताएँ कौन-कौन से हैं? और साथ ही इस लेख में हम कुछ अनुच्छेद अदाहरण के रूप में भी दे रहे हैं -");
-        addNoticeData(R.drawable.signimg,"Paragraph Writing (अनुच्छेद-लेखन) - इस लेख में हम अनुच्छेद-लेखन के बारे में जानेंगे। अनुच्छेद-लेखन होता क्या है? अनुच्छेद लिखते समय किन-किन बातों का ध्यान रखना चाहिए? अनुच्छेद की प्रमुख विशेषताएँ कौन-कौन से हैं? और साथ ही इस लेख में हम कुछ अनुच्छेद अदाहरण के रूप में भी दे रहे हैं -");
-        addNoticeData(R.drawable.signimg,"किसी एक भाव या विचार को व्यक्त करने के लिए लिखे गये सम्बद्ध और लघु वाक्य-समूह को अनुच्छेद-लेखन कहते हैं।\n" +
-                "दूसरे शब्दों में - किसी घटना, दृश्य अथवा विषय को संक्षिप्त (कम शब्दों में) किन्तु सारगर्भित (अर्थपूर्ण) ढंग से जिस लेखन-शैली में प्रस्तुत किया जाता है, उसे अनुच्छेद-लेखन कहते हैं।\n" +
-                "'अनुच्छेद' शब्द अंग्रेजी भाषा के 'Paragraph' शब्द का हिंदी पर्याय है। अनुच्छेद 'निबंध' का संक्षिप्त रूप होता है। इसमें किसी विषय के किसी एक पक्ष पर 80 से 100 शब्दों में अपने विचार व्यक्त किए जाते हैं।\n" +
-                "अनुच्छेद अपने-आप में स्वतन्त्र और पूर्ण होते हैं। अनुच्छेद का मुख्य विचार या भाव की कुंजी या तो आरम्भ में रहती है या अन्त में। एक अच्छे अनुच्छेद-लेखन में मुख्य विचार अन्त में दिया जाता है।");
-        addNoticeData(R.drawable.signimg,"किसी एक भाव या विचार को व्यक्त करने के लिए लिखे गये सम्बद्ध और लघु वाक्य-समूह को अनुच्छेद-लेखन कहते हैं।\n" +
-                "दूसरे शब्दों में - किसी घटना, दृश्य अथवा विषय को संक्षिप्त (कम शब्दों में) किन्तु सारगर्भित (अर्थपूर्ण) ढंग से जिस लेखन-शैली में प्रस्तुत किया जाता है, उसे अनुच्छेद-लेखन कहते हैं।\n" +
-                "'अनुच्छेद' शब्द अंग्रेजी भाषा के 'Paragraph' शब्द का हिंदी पर्याय है। अनुच्छेद 'निबंध' का संक्षिप्त रूप होता है। इसमें किसी विषय के किसी एक पक्ष पर 80 से 100 शब्दों में अपने विचार व्यक्त किए जाते हैं।\n" +
-                "अनुच्छेद अपने-आप में स्वतन्त्र और पूर्ण होते हैं। अनुच्छेद का मुख्य विचार या भाव की कुंजी या तो आरम्भ में रहती है या अन्त में। एक अच्छे अनुच्छेद-लेखन में मुख्य विचार अन्त में दिया जाता है।");
-
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new NoticeAdapter(this,arrnoticelist));
-
+        bnv.setSelectedItemId(R.id.noticemenu);
 
         bnv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -91,6 +80,7 @@ public class NoticeBoardActivity extends AppCompatActivity {
             }
         });
 
+
         slidingRootNav =  new SlidingRootNavBuilder(NoticeBoardActivity.this)
                 .withToolbarMenuToggle(toolbar)
                 .withMenuOpened(false)
@@ -107,6 +97,34 @@ public class NoticeBoardActivity extends AppCompatActivity {
         TextView profilename = findViewById(R.id.navigation_profilename);
         TextView profilebranch = findViewById(R.id.navigation_branch);
         ImageView viewprofileimg = findViewById(R.id.navigation_viewimg);
+
+        profileimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NoticeBoardActivity.this,ProfileActivity.class));
+            }
+        });
+
+        profilename.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NoticeBoardActivity.this,ProfileActivity.class));
+            }
+        });
+
+        profilebranch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NoticeBoardActivity.this,ProfileActivity.class));
+            }
+        });
+
+        viewprofileimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NoticeBoardActivity.this,ProfileActivity.class));
+            }
+        });
 
 
         //menu ids
@@ -193,7 +211,27 @@ public class NoticeBoardActivity extends AppCompatActivity {
 
     }
 
-    private void addNoticeData(int noticeimg,String text) {
+    @Override
+    protected void onStart() {
+
+        addNoticeData(R.drawable.signimg,"Paragraph Writing (अनुच्छेद-लेखन) - इस लेख में हम अनुच्छेद-लेखन के बारे में जानेंगे। अनुच्छेद-लेखन होता क्या है? अनुच्छेद लिखते समय किन-किन बातों का ध्यान रखना चाहिए? अनुच्छेद की प्रमुख विशेषताएँ कौन-कौन से हैं? और साथ ही इस लेख में हम कुछ अनुच्छेद अदाहरण के रूप में भी दे रहे हैं -");
+        addNoticeData(R.drawable.signimg,"Paragraph Writing (अनुच्छेद-लेखन) - इस लेख में हम अनुच्छेद-लेखन के बारे में जानेंगे। अनुच्छेद-लेखन होता क्या है? अनुच्छेद लिखते समय किन-किन बातों का ध्यान रखना चाहिए? अनुच्छेद की प्रमुख विशेषताएँ कौन-कौन से हैं? और साथ ही इस लेख में हम कुछ अनुच्छेद अदाहरण के रूप में भी दे रहे हैं -");
+        addNoticeData(R.drawable.signimg,"किसी एक भाव या विचार को व्यक्त करने के लिए लिखे गये सम्बद्ध और लघु वाक्य-समूह को अनुच्छेद-लेखन कहते हैं।\n" +
+                "दूसरे शब्दों में - किसी घटना, दृश्य अथवा विषय को संक्षिप्त (कम शब्दों में) किन्तु सारगर्भित (अर्थपूर्ण) ढंग से जिस लेखन-शैली में प्रस्तुत किया जाता है, उसे अनुच्छेद-लेखन कहते हैं।\n" +
+                "'अनुच्छेद' शब्द अंग्रेजी भाषा के 'Paragraph' शब्द का हिंदी पर्याय है। अनुच्छेद 'निबंध' का संक्षिप्त रूप होता है। इसमें किसी विषय के किसी एक पक्ष पर 80 से 100 शब्दों में अपने विचार व्यक्त किए जाते हैं।\n" +
+                "अनुच्छेद अपने-आप में स्वतन्त्र और पूर्ण होते हैं। अनुच्छेद का मुख्य विचार या भाव की कुंजी या तो आरम्भ में रहती है या अन्त में। एक अच्छे अनुच्छेद-लेखन में मुख्य विचार अन्त में दिया जाता है।");
+        addNoticeData(R.drawable.signimg,"किसी एक भाव या विचार को व्यक्त करने के लिए लिखे गये सम्बद्ध और लघु वाक्य-समूह को अनुच्छेद-लेखन कहते हैं।\n" +
+                "दूसरे शब्दों में - किसी घटना, दृश्य अथवा विषय को संक्षिप्त (कम शब्दों में) किन्तु सारगर्भित (अर्थपूर्ण) ढंग से जिस लेखन-शैली में प्रस्तुत किया जाता है, उसे अनुच्छेद-लेखन कहते हैं।\n" +
+                "'अनुच्छेद' शब्द अंग्रेजी भाषा के 'Paragraph' शब्द का हिंदी पर्याय है। अनुच्छेद 'निबंध' का संक्षिप्त रूप होता है। इसमें किसी विषय के किसी एक पक्ष पर 80 से 100 शब्दों में अपने विचार व्यक्त किए जाते हैं।\n" +
+                "अनुच्छेद अपने-आप में स्वतन्त्र और पूर्ण होते हैं। अनुच्छेद का मुख्य विचार या भाव की कुंजी या तो आरम्भ में रहती है या अन्त में। एक अच्छे अनुच्छेद-लेखन में मुख्य विचार अन्त में दिया जाता है।");
+
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(NoticeBoardActivity.this));
+        recyclerView.setAdapter(new NoticeAdapter(NoticeBoardActivity.this,arrnoticelist));
+        super.onStart();
+    }
+
+    private void addNoticeData(int noticeimg, String text) {
 
         NoticeSuitcase noticeSuitcase = new NoticeSuitcase();
         noticeSuitcase.img = noticeimg;
@@ -207,6 +245,32 @@ public class NoticeBoardActivity extends AppCompatActivity {
 
         getMenuInflater().inflate(R.menu.chatmenu,menu);
 
+        menuItem = menu.findItem(R.id.chatmenu);
+
+
+        menuItem.setActionView(R.layout.badgenotification);
+        View view = menuItem.getActionView();
+        menunoti = view.findViewById(R.id.badgecounter);
+
+        if (pendingnoti == 0){
+            menuItem.setActionView(null);
+            return true;
+
+        }else {
+            menunoti.setText(String.valueOf(pendingnoti));
+        }
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(NoticeBoardActivity.this,ChatActivity.class));
+                pendingnoti = 0;
+                menunoti.setVisibility(View.INVISIBLE);
+
+
+            }
+        });
+
         return true;
     }
 
@@ -214,6 +278,8 @@ public class NoticeBoardActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.chatmenu){
             startActivity(new Intent(NoticeBoardActivity.this,ChatActivity.class));
+//            menunoti.setVisibility(View.INVISIBLE);
+            pendingnoti = 0;
             return true;
         }
         return false;
@@ -222,7 +288,7 @@ public class NoticeBoardActivity extends AppCompatActivity {
 
     private void initviews() {
 
-        bnv = findViewById(R.id.bnv);
+//        bnv = findViewById(R.id.bnv);
 
         toolbar = findViewById(R.id.toolbar);
 
