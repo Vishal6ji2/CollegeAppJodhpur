@@ -11,7 +11,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="3dp">
+        app:cardElevation="@dimen/_3sdp">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:layout_width="match_parent"
@@ -21,15 +21,15 @@
 
             <ImageView
                 android:id="@+id/setting_backimg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
                 android:src="@drawable/arrowback"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Setting"
-                android:textSize="18sp"
+                android:textSize="@dimen/_16ssp"
                 android:fontFamily="@font/cc_semibold"
                 android:textColor="@android:color/white"
                 android:gravity="center"/>
@@ -43,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="@dimen/_5sdp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -51,13 +51,13 @@
             android:text="My Account"
             android:textColor="@android:color/black"
             android:layout_centerVertical="true"
-            android:textSize="16sp"
-            android:padding="10dp"/>
+            android:textSize="@dimen/_14ssp"
+            android:padding="@dimen/_8sdp"/>
 
         <com.mikhaellopez.circularimageview.CircularImageView
             android:id="@+id/setting_profileimg"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/_48sdp"
+            android:layout_height="@dimen/_48sdp"
             android:src="@drawable/musicianimg"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"/>
@@ -68,8 +68,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Mute Notifications"
-        android:textSize="16sp"
-        android:padding="10dp"
+        android:textSize="@dimen/_13ssp"
+        android:padding="@dimen/_8sdp"
         android:textColor="@color/colordarkgrey"/>
 
     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -77,8 +77,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="All"
-        android:padding="10dp"
-        android:textSize="16sp"
+        android:padding="@dimen/_8sdp"
+        android:textSize="@dimen/_13ssp"
         android:checked="true"
         android:textColor="@color/colorverydarkgrey"/>
 
@@ -88,8 +88,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Department chat"
-        android:padding="10dp"
-        android:textSize="16sp"
+        android:padding="@dimen/_8sdp"
+        android:textSize="@dimen/_13ssp"
         android:textColor="@color/colorverydarkgrey"/>
 
 
@@ -98,8 +98,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="College chat"
-        android:padding="10dp"
-        android:textSize="16sp"
+        android:padding="@dimen/_8sdp"
+        android:textSize="@dimen/_13ssp"
         android:textColor="@color/colorverydarkgrey"/>
 
 
@@ -108,8 +108,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Notice"
-        android:padding="10dp"
-        android:textSize="16sp"
+        android:padding="@dimen/_8sdp"
+        android:textSize="@dimen/_13ssp"
         android:textColor="@color/colorverydarkgrey"
         android:checked="true"/>
 
@@ -118,8 +118,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="News feed"
-        android:padding="10dp"
-        android:textSize="16sp"
+        android:padding="@dimen/_8sdp"
+        android:textSize="@dimen/_13ssp"
         android:textColor="@color/colorverydarkgrey"/>
 
     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -127,11 +127,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Placement news"
-        android:padding="10dp"
-        android:textSize="16sp"
+        android:padding="@dimen/_8sdp"
+        android:textSize="@dimen/_13ssp"
         android:textColor="@color/colorverydarkgrey"/>
-
-
 
 
 </LinearLayout>

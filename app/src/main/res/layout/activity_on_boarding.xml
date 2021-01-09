@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.OnBoardingActivity"
-    android:layout_margin="5dp">
+    android:layout_margin="@dimen/_5sdp">
 
 
     <androidx.viewpager.widget.ViewPager
@@ -30,7 +30,7 @@
         android:text="Next"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
-        app:cornerRadius="20dp"
+        app:cornerRadius="@dimen/_15sdp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"/>

@@ -6,19 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".Activities.LoginActivity"
     android:orientation="vertical"
-    android:layout_margin="10dp"
+    android:layout_margin="@dimen/_10sdp"
     android:gravity="center">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_120sdp"
         android:src="@drawable/mbmlogo"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email id"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="@dimen/_8sdp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_edtemailid"
@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/_8sdp"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -51,8 +51,8 @@
         android:layout_height="wrap_content"
         android:text="Forgot Password?"
         android:gravity="end"
-        android:textSize="17sp"
-        android:textColor="#de0e7c"
+        android:textSize="@dimen/_14ssp"
+        android:textColor="@color/colorPrimaryDark"
         android:layout_marginTop="10dp"/>
 
     <com.google.android.material.button.MaterialButton
@@ -62,32 +62,32 @@
         android:text="Login"
         android:textAllCaps="false"
         android:textSize="20sp"
-        android:backgroundTint="@color/colorpink"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:textColor="@android:color/white"
-        app:cornerRadius="5dp"
-        android:padding="10dp"
-        android:layout_marginTop="20dp"/>
+        app:cornerRadius="@dimen/_3sdp"
+        android:padding="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_18sdp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:padding="10dp">
+        android:layout_marginTop="@dimen/_8sdp"
+        android:padding="@dimen/_8sdp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Don't have an account?"
-            android:textSize="17sp"/>
+            android:textSize="@dimen/_14ssp"/>
 
         <TextView
             android:id="@+id/login_txtregister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Register Now"
-            android:textSize="16sp"
+            android:textSize="@dimen/_15ssp"
             android:textColor="#de0e7c" />
 
     </LinearLayout>

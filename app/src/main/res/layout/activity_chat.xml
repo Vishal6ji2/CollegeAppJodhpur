@@ -11,7 +11,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="3dp">
+        app:cardElevation="@dimen/_3sdp">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/chat_toolbar"
@@ -21,8 +21,8 @@
 
         <ImageView
             android:id="@+id/chat_backimg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
             android:src="@drawable/arrowback"/>
 
 
@@ -32,7 +32,7 @@
             android:id="@+id/chat_tablayout"
             app:tabMode="fixed"
             app:tabIndicatorColor="@android:color/white"
-            app:tabIndicatorHeight="2dp"
+            app:tabIndicatorHeight="@dimen/_2sdp"
             app:tabSelectedTextColor="@android:color/white"
             app:tabTextColor="@android:color/darker_gray"
             android:background="@color/colorPrimaryDark"/>
