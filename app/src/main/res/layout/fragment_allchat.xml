@@ -41,8 +41,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:elevation="5dp"
-        android:layout_marginBottom="2dp">
+        android:elevation="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_2sdp">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/allfrag_fabfile"
@@ -62,7 +62,7 @@
             android:background="@drawable/roundtext"
             android:layout_toStartOf="@id/allfrag_fabsend"
             android:layout_toEndOf="@id/allfrag_fabfile"
-            android:padding="8dp"
+            android:padding="@dimen/_6sdp"
             android:layout_centerVertical="true"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton

@@ -6,8 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.ChatonboardingFrag"
     android:orientation="vertical"
-    android:weightSum="2"
-    android:layout_margin="10dp">
+    android:weightSum="2">
 
     <!-- TODO: Update blank fragment layout -->
     <com.airbnb.lottie.LottieAnimationView
@@ -17,28 +16,31 @@
         app:lottie_rawRes="@raw/chatlottie"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        android:layout_margin="20dp"/>
+        android:layout_margin="@dimen/_20sdp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.5"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_margin="@dimen/_8sdp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Discussion"
+            android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="20sp"
+            android:textSize="@dimen/_16ssp"
             android:textStyle="bold"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Students can discuss with department and college people where student can ask questions in department and college also"
-            android:textColor="@android:color/black"/>
+            android:textColor="@color/colorverydarkgrey"
+            android:textSize="@dimen/_12ssp"/>
 
     </LinearLayout>
 

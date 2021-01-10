@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:text="MBM "
         android:gravity="center"
-        android:textSize="28sp"
+        android:textSize="@dimen/_20ssp"
         android:textStyle="bold"
         android:textColor="@android:color/white"/>
 
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:text="Faith &amp; Labour"
         android:gravity="center"
-        android:textSize="16sp"
+        android:textSize="@dimen/_14ssp"
         android:textStyle="bold"
         android:textColor="@android:color/white"
         android:padding="10dp"/>

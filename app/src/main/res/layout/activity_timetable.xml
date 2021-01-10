@@ -11,7 +11,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="3dp">
+        app:cardElevation="@dimen/_3sdp">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/tt_toolbar"
@@ -21,8 +21,8 @@
 
         <ImageView
             android:id="@+id/tt_backimg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
             android:src="@drawable/arrowback"/>
 
         <TextView
@@ -31,7 +31,7 @@
             android:text="Time-tables"
             android:gravity="center"
             android:textColor="@android:color/white"
-            android:textSize="18sp"
+            android:textSize="@dimen/_16ssp"
             android:textStyle="bold"
             android:fontFamily="@font/cc_medium"/>
 
@@ -42,9 +42,9 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="3dp"
+        app:cardElevation="@dimen/_3sdp"
         app:cardUseCompatPadding="true"
-        android:layout_margin="5dp">
+        android:layout_margin="@dimen/_5sdp">
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/tt_spinner"

@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
+    android:layout_margin="@dimen/_8sdp"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/customtime_txtsem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="BE iv sem"
-        android:textColor="@android:color/black"
+        android:text="BE IV SEM"
+        android:textColor="@color/colorverydarkgrey"
         android:textStyle="normal"
-        android:textSize="16sp"
-        android:padding="1dp"/>
+        android:textSize="@dimen/_14ssp"
+        android:padding="@dimen/_1sdp"/>
 
     <com.zolad.zoominimageview.ZoomInImageView
         android:id="@+id/customtime_semimg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/picone"
+        android:maxHeight="@dimen/_250sdp"
+        android:minHeight="@dimen/_200sdp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"/>
 

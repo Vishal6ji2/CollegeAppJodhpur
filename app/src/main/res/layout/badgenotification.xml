@@ -5,23 +5,23 @@
     android:layout_height="?attr/actionBarSize">
 
     <ImageView
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="@dimen/_22sdp"
+        android:layout_height="@dimen/_22sdp"
         android:src="@drawable/chaticon"
         android:layout_gravity="center"/>
     
     <TextView
         android:id="@+id/badgecounter"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
         android:background="@drawable/chatbadge"
         android:text="11"
-        android:textSize="10sp"
+        android:textSize="@dimen/_9ssp"
         android:textColor="@android:color/white"
         android:layout_gravity="center"
         android:gravity="center"
         android:textAlignment="center"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_8sdp"/>
 
 </FrameLayout>

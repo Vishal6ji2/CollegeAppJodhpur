@@ -10,29 +10,29 @@
     <RelativeLayout
         android:id="@+id/navigation_prolayout"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/_80sdp"
         android:background="@color/colorPrimaryDark">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10dp">
+            android:layout_margin="@dimen/_10sdp">
 
             <com.mikhaellopez.circularimageview.CircularImageView
                 android:id="@+id/navigation_profileimg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/designerimg"
+                android:src="@drawable/directorimg"
                 android:background="?attr/selectableItemBackground"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical"
             android:layout_toEndOf="@id/navigation_profileimg"
             android:layout_toStartOf="@id/navigation_viewimg"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="@dimen/_18sdp"
             android:background="?attr/selectableItemBackground">
 
             <TextView
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:text="Vishal Kumavat"
                 android:textColor="@android:color/white"
-                android:textSize="17sp"
+                android:textSize="@dimen/_15ssp"
                 android:textStyle="bold"
                 android:background="?attr/selectableItemBackground"/>
 
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:text="CSE"
                 android:textColor="@android:color/darker_gray"
-                android:textSize="15sp"
+                android:textSize="@dimen/_13ssp"
                 android:textStyle="bold"/>
 
         </LinearLayout>
@@ -83,19 +83,19 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="@dimen/_8sdp">
 
             <RelativeLayout
             android:id="@+id/navigation_ebooklayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="@dimen/_8sdp"
             android:background="?attr/selectableItemBackground">
 
             <ImageView
                 android:id="@+id/navigation_homeimg"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
                 android:src="@drawable/ebookicon"
                 android:layout_centerVertical="true"
                 android:layout_alignBottom="@id/navigation_txthome"
@@ -107,10 +107,10 @@
                 android:layout_height="wrap_content"
                 android:text="Ebook library"
                 android:textColor="@color/colorverydarkgrey"
-                android:textSize="16sp"
+                android:textSize="@dimen/_12ssp"
                 android:layout_centerVertical="true"
                 android:layout_toEndOf="@id/navigation_homeimg"
-                android:layout_marginStart="20dp"/>
+                android:layout_marginStart="@dimen/_15sdp"/>
 
         </RelativeLayout>
 
@@ -119,13 +119,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/navigation_ebooklayout"
-            android:padding="10dp"
+            android:padding="@dimen/_8sdp"
             android:background="?attr/selectableItemBackground">
 
             <ImageView
                 android:id="@+id/navigation_newsimg"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
                 android:src="@drawable/papericon"
                 android:layout_centerVertical="true"/>
 
@@ -135,10 +135,10 @@
                 android:layout_height="wrap_content"
                 android:text="Syllabus &amp; papers"
                 android:textColor="@color/colorverydarkgrey"
-                android:textSize="16sp"
+                android:textSize="@dimen/_12ssp"
                 android:layout_centerVertical="true"
                 android:layout_toEndOf="@id/navigation_newsimg"
-                android:layout_marginStart="20dp"/>
+                android:layout_marginStart="@dimen/_15sdp"/>
 
         </RelativeLayout>
 
@@ -148,12 +148,12 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/navigation_syllabuspaperlayout"
             android:background="?attr/selectableItemBackground"
-            android:padding="10dp">
+            android:padding="@dimen/_8sdp">
 
             <ImageView
                 android:id="@+id/navigation_noticeimg"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
                 android:src="@drawable/timetablesicon"
                 android:layout_centerVertical="true"/>
 
@@ -163,10 +163,10 @@
                 android:layout_height="wrap_content"
                 android:text="Time-table"
                 android:textColor="@color/colorverydarkgrey"
-                android:textSize="16sp"
+                android:textSize="@dimen/_12ssp"
                 android:layout_centerVertical="true"
                 android:layout_toEndOf="@id/navigation_noticeimg"
-                android:layout_marginStart="20dp"/>
+                android:layout_marginStart="@dimen/_15sdp"/>
 
         </RelativeLayout>
 
@@ -176,12 +176,12 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/navigation_ttlayout"
             android:background="?attr/selectableItemBackground"
-            android:padding="10dp">
+            android:padding="@dimen/_8sdp">
 
             <ImageView
                 android:id="@+id/navigation_paperimg"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
                 android:src="@drawable/shareicon"
                 android:layout_centerVertical="true"/>
 
@@ -191,10 +191,10 @@
                 android:layout_height="wrap_content"
                 android:text="Share via"
                 android:textColor="@color/colorverydarkgrey"
-                android:textSize="16sp"
+                android:textSize="@dimen/_12ssp"
                 android:layout_centerVertical="true"
                 android:layout_toEndOf="@id/navigation_paperimg"
-                android:layout_marginStart="20dp"/>
+                android:layout_marginStart="@dimen/_15sdp"/>
 
         </RelativeLayout>
 
@@ -204,12 +204,12 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/navigation_sharelayout"
                 android:background="?attr/selectableItemBackground"
-                android:padding="10dp">
+                android:padding="@dimen/_8sdp">
 
                 <ImageView
                     android:id="@+id/navigation_settingimg"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
                     android:src="@drawable/settingicon"
                     android:layout_centerVertical="true"/>
 
@@ -219,10 +219,10 @@
                     android:layout_height="wrap_content"
                     android:text="Settings"
                     android:textColor="@color/colorverydarkgrey"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/_12ssp"
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@id/navigation_settingimg"
-                    android:layout_marginStart="20dp"/>
+                    android:layout_marginStart="@dimen/_15sdp"/>
 
             </RelativeLayout>
 
@@ -236,7 +236,7 @@
         android:weightSum="2"
         android:orientation="horizontal"
         android:layout_below="@id/navigation_optlayout"
-        android:layout_margin="10dp">
+        android:layout_margin="@dimen/_8sdp">
 
         <RelativeLayout
             android:layout_weight="1"
@@ -249,13 +249,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/navigation_aboutlayout"
-                android:padding="10dp"
+                android:padding="@dimen/_8sdp"
                 android:background="?attr/selectableItemBackground">
 
                 <ImageView
                     android:id="@+id/navigation_ebookimg"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
                     android:src="@drawable/callicon"
                     android:layout_centerVertical="true"/>
 
@@ -265,10 +265,10 @@
                     android:layout_height="wrap_content"
                     android:text="Contact us"
                     android:textColor="@color/colorverydarkgrey"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/_12ssp"
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@id/navigation_ebookimg"
-                    android:layout_marginStart="20dp"/>
+                    android:layout_marginStart="@dimen/_15sdp"/>
 
             </RelativeLayout>
 
@@ -277,13 +277,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_above="@id/navigation_signoutlayout"
-                android:padding="10dp"
+                android:padding="@dimen/_8sdp"
                 android:background="?attr/selectableItemBackground">
 
                 <ImageView
                     android:id="@+id/navigation_aboutimg"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
                     android:src="@drawable/aboutusicon"
                     android:layout_centerVertical="true"/>
 
@@ -294,10 +294,10 @@
                     android:layout_height="wrap_content"
                     android:text="About us"
                     android:textColor="@color/colorverydarkgrey"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/_12ssp"
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@id/navigation_aboutimg"
-                    android:layout_marginStart="20dp"/>
+                    android:layout_marginStart="@dimen/_15sdp"/>
 
             </RelativeLayout>
 
@@ -306,13 +306,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:padding="10dp"
+                android:padding="@dimen/_8sdp"
                 android:background="?attr/selectableItemBackground">
 
                 <ImageView
                     android:id="@+id/navigation_signoutimg"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
                     android:src="@drawable/logouticon"
                     android:layout_centerVertical="true"/>
 
@@ -323,10 +323,10 @@
                     android:layout_height="wrap_content"
                     android:text="Sign out"
                     android:textColor="@color/colorverydarkgrey"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/_12ssp"
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@id/navigation_signoutimg"
-                    android:layout_marginStart="20dp"/>
+                    android:layout_marginStart="@dimen/_15sdp"/>
 
             </RelativeLayout>
 

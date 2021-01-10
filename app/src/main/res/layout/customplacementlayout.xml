@@ -3,21 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="5dp"
+    android:layout_margin="@dimen/_5sdp"
     android:background="?attr/selectableItemBackground">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_80sdp"
         android:background="@android:color/white">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/customplacement_cmpcard"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            app:cardElevation="3dp"
-            app:cardCornerRadius="10dp"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="match_parent"
+            app:cardElevation="@dimen/_3sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
             app:cardUseCompatPadding="true">
 
             <ImageView
@@ -32,10 +32,10 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="match_parent"
             android:layout_toEndOf="@id/customplacement_cmpcard"
-            android:layout_marginStart="10dp"
-            android:padding="5dp">
+            android:layout_marginStart="@dimen/_8sdp"
+            android:padding="@dimen/_4sdp">
 
             <TextView
                 android:id="@+id/customplacement_cmpname"
@@ -44,16 +44,16 @@
                 android:background="@android:color/holo_red_dark"
                 android:fontFamily="@font/cc_semibold"
                 android:text="TCS"
-                android:paddingStart="5dp"
-                android:paddingEnd="5dp"
+                android:paddingStart="@dimen/_4sdp"
+                android:paddingEnd="@dimen/_4sdp"
                 android:textColor="@android:color/white"
-                android:textSize="15sp" />
+                android:textSize="@dimen/_13ssp" />
 
             <TextView
                 android:id="@+id/customplacement_cmptitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="@dimen/_13ssp"
                 android:fontFamily="@font/cc_semibold"
                 android:text="off Campus Recruitment"
                 android:textColor="@android:color/black"
@@ -67,7 +67,7 @@
                 android:text="All the students of batch 2019-2020 who are placed via off campus recruitment are requested to fill the given google form."
                 android:layout_below="@id/customplacement_cmpname"
                 android:textColor="@android:color/black"
-                android:textSize="15sp"
+                android:textSize="@dimen/_12ssp"
                 android:maxLines="2"
                 android:layout_centerVertical="true"
                 android:fontFamily="@font/cc_regular"/>
@@ -79,6 +79,7 @@
                 android:text="12:11,19nov.2020"
                 android:textColor="@android:color/black"
                 android:gravity="end"
+                android:textSize="@dimen/_10ssp"
                 android:layout_alignParentBottom="true"/>
 
 

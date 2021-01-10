@@ -12,7 +12,7 @@
         app:cardBackgroundColor="@android:color/transparent"
         android:backgroundTint="@android:color/transparent"
         app:cardUseCompatPadding="true"
-        app:cardElevation="3dp">
+        app:cardElevation="@dimen/_3sdp">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -24,9 +24,9 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="@dimen/_5sdp"
         app:cardUseCompatPadding="true"
-        app:cardElevation="2dp">
+        app:cardElevation="@dimen/_2sdp">
 
         <com.zolad.zoominimageview.ZoomInImageView
             android:id="@+id/customnotice_img"

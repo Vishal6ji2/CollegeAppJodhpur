@@ -12,8 +12,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="3dp"
-        android:layout_margin="5dp"
+        app:cardElevation="@dimen/_3sdp"
+        android:layout_margin="@dimen/_5sdp"
         app:cardUseCompatPadding="true">
 
         <androidx.appcompat.widget.AppCompatSpinner
@@ -29,8 +29,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="3dp"
-        android:layout_margin="5dp"
+        app:cardElevation="@dimen/_3sdp"
+        android:layout_margin="@dimen/_5sdp"
         app:cardUseCompatPadding="true">
 
         <androidx.appcompat.widget.AppCompatSpinner
@@ -46,8 +46,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="3dp"
-        android:layout_margin="5dp"
+        app:cardElevation="@dimen/_3sdp"
+        android:layout_margin="@dimen/_5sdp"
         app:cardUseCompatPadding="true">
 
         <androidx.appcompat.widget.AppCompatSpinner
