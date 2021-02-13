@@ -6,56 +6,87 @@
     android:layout_height="match_parent"
     tools:context=".SplashActivity"
     android:orientation="vertical"
-    android:weightSum="2"
-    android:background="@color/colorPrimaryDark">
+    android:gravity="center">
 
 
     <LinearLayout
         android:id="@+id/linearlayout"
-        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="center">
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/_50sdp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="M\nB\nM\n \n "
+            android:textColor="@color/colorpink"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="@dimen/_20ssp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UGNEERAM\nANGUR\nEMORIAL\nCOLLEGE\nJODHPUR"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:gravity="start"
+            android:textSize="@dimen/_20ssp"/>
+
+        <TextView
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="@dimen/_110sdp"
+            android:background="@color/colorpink"
+            android:layout_gravity="center"/>
 
         <com.mikhaellopez.circularimageview.CircularImageView
             android:id="@+id/splash_logoimg"
-            android:layout_width="@dimen/_120sdp"
-            android:layout_height="@dimen/_120sdp"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
             android:src="@drawable/mbmlogo"
+            android:padding="@dimen/_2sdp"
+            android:layout_gravity="center"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter" />
 
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical">
+<!--    <LinearLayout-->
+<!--        android:layout_weight="1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:orientation="vertical"-->
+<!--        android:visibility="gone">-->
 
-    <TextView
-        android:id="@+id/splash_txtmbm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MBM "
-        android:gravity="center"
-        android:textSize="@dimen/_20ssp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"/>
+<!--    <TextView-->
+<!--        android:id="@+id/splash_txtmbm"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="MBM "-->
+<!--        android:gravity="center"-->
+<!--        android:textSize="@dimen/_20ssp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:visibility="gone"-->
+<!--        android:textColor="@android:color/black"/>-->
 
+<!--    <TextView-->
+<!--        android:id="@+id/splash_txteng"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Faith &amp; Labour"-->
+<!--        android:gravity="center"-->
+<!--        android:textSize="@dimen/_14ssp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:visibility="gone"-->
+<!--        android:textColor="@android:color/black"-->
+<!--        android:padding="10dp"/>-->
 
-    <TextView
-        android:id="@+id/splash_txteng"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Faith &amp; Labour"
-        android:gravity="center"
-        android:textSize="@dimen/_14ssp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:padding="10dp"/>
-
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
 </LinearLayout>

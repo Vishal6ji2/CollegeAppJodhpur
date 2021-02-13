@@ -6,8 +6,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
@@ -22,7 +25,8 @@ public class EbooksActivity extends AppCompatActivity {
 
     ImageView backimg;
 
-    Spinner spinner;
+//    Spinner spinner;
+    EditText edtsearch;
 
     ArrayList<String> arrbranchlist = new ArrayList<>();
 
@@ -31,6 +35,8 @@ public class EbooksActivity extends AppCompatActivity {
     MaterialToolbar toolbar;
 
     ArrayList<EbooksSuitcase> arrbookslist = new ArrayList<>();
+
+    EbooksAdapter ebooksAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,10 +62,30 @@ public class EbooksActivity extends AppCompatActivity {
         arrbranchlist.add("Petrolium Engineering");
         arrbranchlist.add("Electrical Engineering");
 
+        ebooksAdapter = new EbooksAdapter(this,arrbookslist);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,arrbranchlist);
+        
+        edtsearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                
+            }
 
-        spinner.setAdapter(adapter);
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                filter(s.toString());
+
+            }
+        });
+        
+//      spinner.setAdapter(adapter);
 
         addEbookData(R.drawable.designerimg,"C++ programming language","7th edition","Vishal kumavat");
         addEbookData(R.drawable.designerimg,"C++  language","7th edition","Vishal kumavat");
@@ -74,9 +100,21 @@ public class EbooksActivity extends AppCompatActivity {
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new EbooksAdapter(this,arrbookslist));
+        recyclerView.setAdapter(ebooksAdapter);
 
 
+    }
+
+    private void filter(String string) {
+
+        ArrayList<EbooksSuitcase> filterlist = new ArrayList<>();
+
+        for (EbooksSuitcase ebooksSuitcase : arrbookslist){
+            if (ebooksSuitcase.bookname.toLowerCase().contains(string.toLowerCase())){
+                filterlist.add(ebooksSuitcase);
+            }
+        }
+        ebooksAdapter.filterlist(filterlist);
     }
 
 
@@ -99,7 +137,9 @@ public class EbooksActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.ebook_toolbar);
 
         recyclerView = findViewById(R.id.ebook_recyclerview);
+        
+        edtsearch = findViewById(R.id.ebook_edtsearch);
 
-        spinner = findViewById(R.id.ebook_spinner);
+//        spinner = findViewById(R.id.ebook_spinner);
     }
 }

@@ -36,7 +36,7 @@ public class NewsPostAdapter extends RecyclerView.Adapter<NewsPostAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NewsPostAdapter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final NewsPostAdapter.ViewHolder holder, final int position) {
 
         holder.profileimg.setImageResource(arrnewspostlist.get(position).profileimg);
 
@@ -48,6 +48,21 @@ public class NewsPostAdapter extends RecyclerView.Adapter<NewsPostAdapter.ViewHo
         holder.datetime.setText(arrnewspostlist.get(position).datetime);
         holder.timeago.setText(arrnewspostlist.get(position).timeago);
 
+        /*int length = holder.txtdetails.getLineCount();
+        if (length>3){
+            final int lines = holder.txtdetails.getLineCount();
+            holder.txtdetails.setMaxLines(3);
+            holder.txtmore.setVisibility(View.VISIBLE);
+            holder.txtmore.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    holder.txtdetails.setMaxLines(lines);
+                    holder.txtmore.setVisibility(View.GONE);
+                }
+            });
+        }else {
+            holder.txtmore.setVisibility(View.GONE);
+        }*/
         holder.itemView.startAnimation(AnimationUtils.loadAnimation(context,R.anim.tabsanim));
 
     }
@@ -59,7 +74,7 @@ public class NewsPostAdapter extends RecyclerView.Adapter<NewsPostAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView profilename,txtheading,txtdetails,datetime,timeago;
+        TextView profilename,txtheading,txtdetails,datetime,timeago,txtmore;
         CircularImageView profileimg;
         ImageView postimg;
 
@@ -71,6 +86,7 @@ public class NewsPostAdapter extends RecyclerView.Adapter<NewsPostAdapter.ViewHo
             txtdetails = itemView.findViewById(R.id.custompost_txtdetails);
             datetime = itemView.findViewById(R.id.custompost_posttime);
             timeago = itemView.findViewById(R.id.custompost_timeago);
+            txtmore = itemView.findViewById(R.id.custompost_txtmore);
 
             profileimg = itemView.findViewById(R.id.custompost_profileimg);
 

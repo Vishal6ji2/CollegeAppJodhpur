@@ -16,7 +16,7 @@
             android:id="@+id/customplacement_cmpcard"
             android:layout_width="@dimen/_80sdp"
             android:layout_height="match_parent"
-            app:cardElevation="@dimen/_3sdp"
+            app:cardElevation="@dimen/_1sdp"
             app:cardCornerRadius="@dimen/_8sdp"
             app:cardUseCompatPadding="true">
 
@@ -34,8 +34,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_toEndOf="@id/customplacement_cmpcard"
-            android:layout_marginStart="@dimen/_8sdp"
-            android:padding="@dimen/_4sdp">
+            android:layout_marginStart="@dimen/_2sdp"
+            android:padding="@dimen/_2sdp">
 
             <TextView
                 android:id="@+id/customplacement_cmpname"
@@ -43,7 +43,9 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/holo_red_dark"
                 android:fontFamily="@font/cc_semibold"
-                android:text="TCS"
+                android:text="ADOBE"
+                android:maxLines="1"
+                android:longClickable="true"
                 android:paddingStart="@dimen/_4sdp"
                 android:paddingEnd="@dimen/_4sdp"
                 android:textColor="@android:color/white"
@@ -55,9 +57,10 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/_13ssp"
                 android:fontFamily="@font/cc_semibold"
-                android:text="off Campus Recruitment"
+                android:text="off Campus Recruitment student"
                 android:textColor="@android:color/black"
                 android:gravity="center"
+                android:maxLines="1"
                 android:layout_toEndOf="@id/customplacement_cmpname"/>
 
             <TextView
@@ -68,6 +71,7 @@
                 android:layout_below="@id/customplacement_cmpname"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/_12ssp"
+                android:autoLink="all"
                 android:maxLines="2"
                 android:layout_centerVertical="true"
                 android:fontFamily="@font/cc_regular"/>
@@ -80,6 +84,7 @@
                 android:textColor="@android:color/black"
                 android:gravity="end"
                 android:textSize="@dimen/_10ssp"
+                android:maxLines="1"
                 android:layout_alignParentBottom="true"/>
 
 

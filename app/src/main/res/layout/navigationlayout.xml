@@ -97,9 +97,7 @@
                 android:layout_width="@dimen/_22sdp"
                 android:layout_height="@dimen/_22sdp"
                 android:src="@drawable/ebookicon"
-                android:layout_centerVertical="true"
-                android:layout_alignBottom="@id/navigation_txthome"
-                android:layout_alignTop="@id/navigation_txthome"/>
+                android:layout_centerVertical="true"/>
 
             <TextView
                 android:id="@+id/navigation_txthome"

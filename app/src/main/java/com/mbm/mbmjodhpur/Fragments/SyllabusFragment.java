@@ -4,19 +4,30 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 
 import com.google.android.material.button.MaterialButton;
+import com.mbm.mbmjodhpur.Adapters.SyllabusAdapter;
 import com.mbm.mbmjodhpur.R;
+import com.mbm.mbmjodhpur.Suitcases.SyllabusSuitcase;
+
+import java.util.ArrayList;
 
 public class SyllabusFragment extends Fragment {
 
+    AppCompatSpinner spinbranch;
+    ArrayList<String> arrspinbranch = new ArrayList<>();
 
-    MaterialButton btncse,btnel,btncivil,btnme,btnelective,btnmca;
+    RecyclerView recyclerView;
+    ArrayList<SyllabusSuitcase> arrsyllabuslist = new ArrayList<>();
 
     public SyllabusFragment() {
         // Required empty public constructor
@@ -29,112 +40,49 @@ public class SyllabusFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_syllabus, container, false);
 
-        btncse = view.findViewById(R.id.syllabus_cse);
-        btnel = view.findViewById(R.id.syllabus_el);
-        btncivil = view.findViewById(R.id.syllabus_civil);
-        btnelective = view.findViewById(R.id.syllabus_elective);
-        btnme = view.findViewById(R.id.syllabus_me);
-        btnmca = view.findViewById(R.id.syllabus_mca);
+        spinbranch = view.findViewById(R.id.syllabus_branchspin);
+        recyclerView = view.findViewById(R.id.syllabus_recyclerview);
+
+        addBranchspindata();
 
 
-        btncse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                String url = "http://www.pdf995.com/samples/pdf.pdf";
-
-                Uri targetUri = Uri.parse(url);
-
-                Intent intent;
-                intent = new Intent(Intent.ACTION_VIEW);
-                intent.setDataAndType(targetUri, "application/pdf");
-
-                startActivity(intent);
-
-            }
-        });
+        addData("BE Computer Science & Engineering");
+        addData("BE Mechanical Engineering");
+        addData("BE Electrical Engineering");
+        addData("BE Electronic Engineering");
+        addData("BE Civil Engineering");
+        addData("BE Computer Science & Engineering");
+        addData("BE Mechanical Engineering");
+        addData("BE Electrical Engineering");
+        addData("BE Electronic Engineering");
+        addData("BE Civil Engineering");
 
 
-        btncivil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String url = "http://www.pdf995.com/samples/pdf.pdf";
-
-                Uri targetUri = Uri.parse(url);
-
-                Intent intent;
-                intent = new Intent(Intent.ACTION_VIEW);
-                intent.setDataAndType(targetUri, "application/pdf");
-
-                startActivity(intent);
-
-            }
-        });
-
-        btnmca.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String url = "http://www.pdf995.com/samples/pdf.pdf";
-
-                Uri targetUri = Uri.parse(url);
-
-                Intent intent;
-                intent = new Intent(Intent.ACTION_VIEW);
-                intent.setDataAndType(targetUri, "application/pdf");
-
-                startActivity(intent);
-
-            }
-        });
-
-        btnel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String url = "http://www.pdf995.com/samples/pdf.pdf";
-
-                Uri targetUri = Uri.parse(url);
-
-                Intent intent;
-                intent = new Intent(Intent.ACTION_VIEW);
-                intent.setDataAndType(targetUri, "application/pdf");
-
-                startActivity(intent);
-
-            }
-        });
-
-        btnme.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String url = "http://www.pdf995.com/samples/pdf.pdf";
-
-                Uri targetUri = Uri.parse(url);
-
-                Intent intent;
-                intent = new Intent(Intent.ACTION_VIEW);
-                intent.setDataAndType(targetUri, "application/pdf");
-
-                startActivity(intent);
-
-            }
-        });
-
-        btnelective.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String url = "http://www.pdf995.com/samples/pdf.pdf";
-
-                Uri targetUri = Uri.parse(url);
-
-                Intent intent;
-                intent = new Intent(Intent.ACTION_VIEW);
-                intent.setDataAndType(targetUri, "application/pdf");
-
-                startActivity(intent);
-
-            }
-        });
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(new SyllabusAdapter(getActivity(),arrsyllabuslist));
 
         return view;
     }
+
+    public void addData(String pdfname){
+        SyllabusSuitcase syllabusSuitcase = new SyllabusSuitcase();
+        syllabusSuitcase.pdfname = pdfname;
+
+        arrsyllabuslist.add(syllabusSuitcase);
+    }
+
+    private void addBranchspindata() {
+
+        arrspinbranch.add("Computer Science & Engineering");
+        arrspinbranch.add("Electrical Engineering");
+        arrspinbranch.add("Electronics Engineering");
+        arrspinbranch.add("Civil Engineering");
+        arrspinbranch.add("Mechanical Engineering");
+
+        ArrayAdapter<String> adapterbranch = new ArrayAdapter<>(getActivity(),android.R.layout.simple_spinner_dropdown_item,arrspinbranch);
+
+        spinbranch.setAdapter(adapterbranch);
+
+    }
+
 }

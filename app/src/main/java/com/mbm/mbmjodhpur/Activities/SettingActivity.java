@@ -2,8 +2,10 @@ package com.mbm.mbmjodhpur.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -38,6 +40,45 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
 
+        accountlayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SettingActivity.this,ProfileActivity.class));
+            }
+        });
+
+
+        allswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    checkswitches();
+                }else {
+                    checkswitches();
+                }
+            }
+        });
+
+    }
+
+    public void checkswitches(){
+
+        if (allswitch.isChecked()){
+            allswitch.setEnabled(true);
+            deptswitch.setEnabled(false);
+            clgswitch.setEnabled(false);
+            notiswitch.setEnabled(false);
+            newsswitch.setEnabled(false);
+            placementswitch.setEnabled(false);
+        }else {
+
+            allswitch.setEnabled(true);
+            deptswitch.setEnabled(true);
+            clgswitch.setEnabled(true);
+            notiswitch.setEnabled(true);
+            newsswitch.setEnabled(true);
+            placementswitch.setEnabled(true);
+        }
     }
 
     private void initviews() {

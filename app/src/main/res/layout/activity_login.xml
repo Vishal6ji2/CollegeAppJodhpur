@@ -52,7 +52,7 @@
         android:text="Forgot Password?"
         android:gravity="end"
         android:textSize="@dimen/_14ssp"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorpink"
         android:layout_marginTop="10dp"/>
 
     <com.google.android.material.button.MaterialButton
@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:text="Login"
         android:textAllCaps="false"
-        android:textSize="20sp"
+        android:textSize="@dimen/_16ssp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:textColor="@android:color/white"
         app:cornerRadius="@dimen/_3sdp"
@@ -88,7 +88,7 @@
             android:layout_height="wrap_content"
             android:text="Register Now"
             android:textSize="@dimen/_15ssp"
-            android:textColor="#de0e7c" />
+            android:textColor="@color/colorpink" />
 
     </LinearLayout>
 

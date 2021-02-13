@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.ContactusActivity"
+    android:orientation="vertical">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/_3sdp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimaryDark">
+
+            <ImageView
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:src="@drawable/arrowback"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact us"
+                android:textSize="@dimen/_16ssp"
+                android:textColor="@android:color/white"
+                android:gravity="center"/>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Prof. Sunil Sharma, Dean &amp; Chief Warden : +91 94141 31991\n"
+        android:autoLink="all"
+        android:textSize="@dimen/_14ssp"
+        android:textAlignment="textStart"
+        android:layout_margin="@dimen/_2sdp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Prof. Arvind Verma, TPO : +91 8079006631, +91 94149 18856\n"
+        android:autoLink="all"
+        android:textSize="@dimen/_14ssp"
+        android:textAlignment="textStart"
+        android:layout_margin="@dimen/_2sdp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Prof. S. S. Sankhla, Admission &amp; Examination Incharge : +91 94141 31859\n"
+        android:autoLink="all"
+        android:textSize="@dimen/_14ssp"
+        android:textAlignment="textStart"
+        android:layout_margin="@dimen/_2sdp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Prof. N.C. Barwar, Director, Computer Centre : +91 98291 80029\n"
+        android:autoLink="all"
+        android:textSize="@dimen/_14ssp"
+        android:textAlignment="textStart"
+        android:layout_margin="@dimen/_2sdp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Assistant Registrar (FoEA) : 0291 2514448\n"
+        android:autoLink="all"
+        android:textSize="@dimen/_14ssp"
+        android:textAlignment="textStart"
+        android:layout_margin="@dimen/_2sdp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email : deanmbm@jnvu.edu.in, tpo@mbm.ac.in , tpocellmbm@gmail.com"
+        android:autoLink="all"
+        android:textSize="@dimen/_14ssp"
+        android:textAlignment="textStart"
+        android:layout_margin="@dimen/_2sdp"/>
+
+
+</LinearLayout>

@@ -22,6 +22,7 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textDirection="firstStrong"
+            android:spinnerMode="dropdown"
             style="@style/Widget.AppCompat.Light.DropDownItem.Spinner"/>
 
     </androidx.cardview.widget.CardView>

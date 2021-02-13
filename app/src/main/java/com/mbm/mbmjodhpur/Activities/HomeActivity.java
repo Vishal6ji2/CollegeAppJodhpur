@@ -73,7 +73,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 Fragment fragment = null;
 
-                switch (item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.newsmenu:
                         fragment = new NewsFeedFragment();
                         break;
@@ -86,7 +86,9 @@ public class HomeActivity extends AppCompatActivity {
                         fragment = new PlacementFragment();
                         break;
                 }
-                getSupportFragmentManager().beginTransaction().replace(R.id.home_framelayout,fragment).commit();
+                if (fragment != null) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.home_framelayout, fragment).commit();
+                }
 
                 return true;
             }
@@ -199,24 +201,25 @@ public class HomeActivity extends AppCompatActivity {
         contactlayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(HomeActivity.this,EbooksActivity.class));
-                slidingRootNav.closeMenu();
+                startActivity(new Intent(HomeActivity.this,ContactusActivity.class));
+
             }
         });
 
         aboutlayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(HomeActivity.this,EbooksActivity.class));
-                slidingRootNav.closeMenu();
+                startActivity(new Intent(HomeActivity.this,AboutusActivity.class));
+
             }
         });
 
         signoutlayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(HomeActivity.this,EbooksActivity.class));
-                slidingRootNav.closeMenu();
+                startActivity(new Intent(HomeActivity.this,LoginActivity.class));
+                finish();
+
             }
         });
 

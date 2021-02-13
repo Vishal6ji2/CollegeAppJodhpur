@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mbm.mbmjodhpur.R;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
@@ -21,8 +22,10 @@ public class ProfileActivity extends AppCompatActivity {
     MaterialToolbar toolbar;
 
     CircularImageView profileimg;
-    ImageView cameraimg,backimg;
-    TextView txtname,txtemail,txtmob,txtbranch,txtsem,txtedit;
+    ImageView backimg;
+    TextView txtname,txtemail,txtmob,txtbranch,txtedit;
+
+    FloatingActionButton cameraimg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +82,7 @@ public class ProfileActivity extends AppCompatActivity {
         txtemail = findViewById(R.id.profile_txtemail);
         txtmob = findViewById(R.id.profile_txtmob);
         txtbranch = findViewById(R.id.profile_txtbranch);
-        txtsem = findViewById(R.id.profile_txtsem);
+
         txtedit = findViewById(R.id.profile_edit);
     }
 }

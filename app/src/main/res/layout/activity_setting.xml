@@ -79,7 +79,6 @@
         android:text="All"
         android:padding="@dimen/_8sdp"
         android:textSize="@dimen/_13ssp"
-        android:checked="true"
         android:textColor="@color/colorverydarkgrey"/>
 
 
@@ -110,8 +109,7 @@
         android:text="Notice"
         android:padding="@dimen/_8sdp"
         android:textSize="@dimen/_13ssp"
-        android:textColor="@color/colorverydarkgrey"
-        android:checked="true"/>
+        android:textColor="@color/colorverydarkgrey"/>
 
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/setting_newsswitch"

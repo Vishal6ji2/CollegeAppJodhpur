@@ -9,67 +9,27 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/syllabus_cse"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Computer science &amp; Engineering"
-        app:cornerRadius="@dimen/_15sdp"
-        android:layout_marginEnd="@dimen/_8sdp"
-        android:layout_marginStart="@dimen/_8sdp"
-        android:layout_margin="@dimen/_5sdp"/>
+        app:cardElevation="@dimen/_3sdp"
+        android:layout_margin="@dimen/_5sdp"
+        app:cardUseCompatPadding="true">
 
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/syllabus_branchspin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center"
+            android:textDirection="firstStrong"
+            style="@style/Widget.AppCompat.Light.DropDownItem.Spinner"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/syllabus_civil"
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/syllabus_recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Civil Engineering"
-        app:cornerRadius="@dimen/_15sdp"
-        android:layout_marginEnd="@dimen/_8sdp"
-        android:layout_marginStart="@dimen/_8sdp"
-        android:layout_margin="@dimen/_5sdp"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/syllabus_me"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Mechanical Engineering"
-        app:cornerRadius="@dimen/_15sdp"
-        android:layout_marginEnd="@dimen/_8sdp"
-        android:layout_marginStart="@dimen/_8sdp"
-        android:layout_margin="@dimen/_5sdp"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/syllabus_el"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Electronics Engineering"
-        app:cornerRadius="@dimen/_15sdp"
-        android:layout_marginEnd="@dimen/_8sdp"
-        android:layout_marginStart="@dimen/_8sdp"
-        android:layout_margin="@dimen/_5sdp"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/syllabus_mca"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MCA"
-        app:cornerRadius="@dimen/_15sdp"
-        android:layout_marginEnd="@dimen/_8sdp"
-        android:layout_marginStart="@dimen/_8sdp"
-        android:layout_margin="@dimen/_5sdp"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/syllabus_elective"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Elective Subjects"
-        app:cornerRadius="@dimen/_15sdp"
-        android:layout_marginEnd="@dimen/_8sdp"
-        android:layout_marginStart="@dimen/_8sdp"
-        android:layout_margin="@dimen/_5sdp"/>
-
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

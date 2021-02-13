@@ -3,7 +3,7 @@
     package="com.mbm.mbmjodhpur">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.SettingActivity"/>
+        <activity android:name=".Activities.ContactusActivity"></activity>
+        <activity android:name=".Activities.AboutusActivity" />
+        <activity android:name=".Activities.SettingActivity" />
         <activity android:name=".Activities.ProfileActivity" />
         <activity android:name=".Activities.TimetableActivity" />
         <activity android:name=".Activities.FullPlacementnewsActivity" />
@@ -22,8 +24,7 @@
         <activity
             android:name=".Activities.NoticeBoardActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Activities.PreviousPapersActivity" />
+        <activity android:name=".Activities.PreviousPapersActivity" />
         <activity
             android:name=".Activities.EbooksActivity"
             android:screenOrientation="portrait" />

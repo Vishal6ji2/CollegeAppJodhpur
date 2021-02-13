@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (edtemail.getText().toString().equals("") && edtpassword.getText().toString().equals("")) {
-                    toast = Toast.makeText(LoginActivity.this,"Please enter yor credentials",Toast.LENGTH_SHORT);
+                    toast = Toast.makeText(LoginActivity.this,"Please enter your credentials",Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER, 0, 0);
                     toast.show();
                 } else {
@@ -39,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
                     toast.setGravity(Gravity.CENTER, 0, 0);
                     toast.show();
                     startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                    finish();
                 }
             }
         });
@@ -56,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(LoginActivity.this, RegistrationActivity.class));
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                finish();
             }
         });
     }

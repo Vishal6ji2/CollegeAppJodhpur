@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ebooks library"
-            android:textSize=""
+            android:textSize="@dimen/_16ssp"
             android:fontFamily="@font/cc_semibold"
             android:textColor="@android:color/white"
             android:gravity="center"/>
@@ -38,21 +38,29 @@
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardElevation="3dp"
-        android:layout_margin="5dp"
-        app:cardUseCompatPadding="true">
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:cardElevation="3dp"-->
+<!--        android:layout_margin="5dp"-->
+<!--        app:cardUseCompatPadding="true">-->
 
-    <androidx.appcompat.widget.AppCompatSpinner
-        android:id="@+id/ebook_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:spinnerMode="dialog"
-        android:splitMotionEvents="true"/>
+        <EditText
+            android:id="@+id/ebook_edtsearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search ebooks"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:layout_margin="@dimen/_10sdp"/>
 
-    </androidx.cardview.widget.CardView>
+<!--    <androidx.appcompat.widget.AppCompatSpinner-->
+<!--        android:id="@+id/ebook_spinner"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:spinnerMode="dialog"-->
+<!--        android:splitMotionEvents="true"/>-->
+
+<!--    </androidx.cardview.widget.CardView>-->
 
 
     <androidx.recyclerview.widget.RecyclerView

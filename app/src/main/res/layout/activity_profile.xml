@@ -65,15 +65,16 @@
             android:id="@+id/profile_profileimg"
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_100sdp"
-            android:src="@drawable/designerimg"
             android:layout_gravity="center"
             android:layout_centerInParent="true"/>
 
-        <ImageView
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/profile_cameraimg"
-            android:layout_width="@dimen/_22sdp"
-            android:layout_height="@dimen/_22sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@android:color/white"
             android:src="@drawable/cameraicon"
+            app:fabSize="mini"
             android:layout_alignBottom="@id/profile_profileimg"
             android:layout_alignEnd="@id/profile_profileimg" />
 
@@ -125,7 +126,7 @@
                 android:textColor="@color/colorverydarkgrey"/>
 
 
-            <TextView
+          <!--  <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Semester"
@@ -141,7 +142,10 @@
                 android:padding="@dimen/_8sdp"
                 android:textSize="@dimen/_14ssp"
                 android:textColor="@color/colorverydarkgrey"/>
-
+-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
             <TextView
                 android:layout_width="match_parent"
@@ -150,6 +154,16 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/_13ssp"
                 android:padding="@dimen/_4sdp"/>
+
+            <ImageView
+                android:id="@+id/profile_emaileditimg"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:src="@android:drawable/ic_menu_edit"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"/>
+
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/profile_txtemail"
@@ -160,20 +174,34 @@
                 android:textSize="@dimen/_14ssp"
                 android:textColor="@color/colorverydarkgrey"/>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Phone/mob no."
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/_13ssp"
                 android:padding="@dimen/_4sdp"/>
 
+                <ImageView
+                    android:id="@+id/profile_mobeditimg"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@android:drawable/ic_menu_edit"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"/>
+
+            </RelativeLayout>
+
             <TextView
                 android:id="@+id/profile_txtmob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="7239973921"
+                android:text="+917239973921"
                 android:padding="@dimen/_8sdp"
                 android:textSize="@dimen/_14ssp"
                 android:textColor="@color/colorverydarkgrey"/>

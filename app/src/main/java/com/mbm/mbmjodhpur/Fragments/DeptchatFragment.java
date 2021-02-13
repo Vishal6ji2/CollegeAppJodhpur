@@ -1,7 +1,9 @@
 package com.mbm.mbmjodhpur.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -13,6 +15,8 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mbm.mbmjodhpur.R;
+
+import static android.app.Activity.RESULT_OK;
 
 public class DeptchatFragment extends Fragment {
 
@@ -74,6 +78,9 @@ public class DeptchatFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(),"Image clicked",Toast.LENGTH_SHORT).show();
+                Intent imgintent = new Intent(Intent.ACTION_GET_CONTENT);
+                imgintent.setType("image/*");
+                startActivityForResult(imgintent,10);
             }
         });
 
@@ -82,9 +89,25 @@ public class DeptchatFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(),"docs clicked",Toast.LENGTH_SHORT).show();
+                Intent imgintent = new Intent(Intent.ACTION_GET_CONTENT);
+                imgintent.setType("*/*");
+                startActivityForResult(imgintent,20);
+
             }
         });
 
         return view;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (resultCode == RESULT_OK && data != null){
+
+            if (requestCode == 10){
+                Toast.makeText(getActivity(), "Image selected", Toast.LENGTH_SHORT).show();
+            }else if (requestCode == 20){
+                Toast.makeText(getActivity(),"Docs selected", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }

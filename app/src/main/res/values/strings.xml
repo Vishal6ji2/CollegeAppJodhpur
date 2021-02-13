@@ -2,4 +2,30 @@
     <string name="app_name">MBM JODHPUR</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--    <string name="mbm"><h3>MBM</h3></string>-->
+
+    <string name="mbmfirst">Engineering College, established on 15th of August, 1951 by the Government of Rajasthan, is one of the oldest engineering institutions in the country. Later in 1962, the college became a constituent faculty of Jai Narain Vyas University, Jodhpur. The college boasts of its high standards of education, prestigious legacy and a flourishing environment that caters for the overall development of its students, faculties and staff members.</string>
+
+    <string name="mbmsecond">\nLocated on a 98-acre academic campus and situated within the 5 Km radius of all major landmarks of the Jodhpur City, the college is applauded for its vast campus and geographical advantage. Further, staff quarters and college hostels (accommodating 800+ students every year) offers a residential advantage in close vicinity to the college."\n\n"
+
+The college is proud of its high academic and technical standards since its inception. With a vision to cater to the growing needs of the society and industry, the institute has always been a pioneer in incorporating latest domains of engineering education and research. Currently, the institute offers 14 undergraduate, 25 postgraduate and 10 doctoral research programmes to the aspiring students. Several factors including good infrastructure, cutting-edge curriculum, reputed faculties, low educational costs and nourishing environment makes M.B.M.Engineering College, a first choice for students within Rajasthan as well as from other states across the country."\n\n"
+
+The college is proud of its huge alumni base who have always excelled in their career and are contributing through top positions within industry, governmental bodies and academia. Many of them are also working as professors in IITs, IIMs and other prestigious technical institutions. The institute strives to maintain a culture and environment that enables our students to become responsible, ethical and true professionals.\n\n</string>
+
+    <string name="mbmfaculty">The faculty members at M.B.M. Engineering College are highly qualified and have obtained degrees from leading technical institutions in India and abroad. The contribution of the faculty members from their respective departments, as members of various international and national societies, governmental committees, organizers of conferences &amp; seminars etc., has been significant to the country’s growth in science and technology.\n\n
+
+Besides research, our faculties are well known among students for their teaching competence and mentorship. Our talented teachers have established applaudable reputation and have authored number of books in their fields of specialization. Most of these books are used as textbooks and references at some of the premier institutions of the country.\n\n</string>
+
+    <string name="mbmstudents">A graduate degree program at M.B.M., compounded by a comprehensively devised course structure &amp; curriculum, highly advanced laboratories and most importantly the guidance of experienced faculties, is a perfect platform for students to enhance their technical skills. Our students spend over 3 months in industry as part of their Practical training. This exposes them with real life applications of their course work and acquaints them with a professional working environment. Over the years our students have continuously proved their mettle in various competitive examinations like IES, GATE, GRE our students are involved in a broad range of volunteer activities in the community. Outside of the classroom, active participation in self-developing clubs, staff organizations and management groups help students to groom their overall personality.\n\n</string>
+
+    <string name="mbmhighlights">   \t\t\t\t Recently, the State Government has entrusted the college to establish the “Department of Petroleum Engineering” to provide technical support and skilled resources for proper utilization of the natural resources found in Rajasthan State.\n\n
+    Department of Electrical Engineering, at MBM, has one of the most exclusive labs of India in form of “High Voltage Laboratory“. In this lab, we’re able to generate 450kV DC impulse and 220kV AC, ability to carry out testing of Air-Breakdown and Oil-Breakdown.\n\n
+    Department of Electrical Engineering, at MBM, is the testing station for the entire “power grid” system of the Rajasthan State .\n\n
+    The “Environmental Engineering Laboratory” of the Civil Department is recognized as “State Laboratory” by Govt. of Rajasthan to carry out testing of water, waste water and pollutants for prevention and control of pollution.\n\n
+    At Department of Mechanical Engineering , we have a production grade “Rolls Royce Turbo Draft Engine” for experimentation and routine study.\n\n
+    Our Mining Department is one of those unique departments which have an Artificial Underground Mine, creating skillful mining engineers worldwide. This specialty of M.B.M Engineering College in providing practically demonstrable skills has maintained the legacy.\n\n
+    Computer Science &amp; Engineering Department at MBM has been a pioneer in Information Technology and Computer Science Education in Rajasthan State.\n\n
+    At Computer Centre, we have the “TANDEM HIMALAYA SERVER nsk-2000”, which is the only fault tolerant non-stop server in the entire academia. This machine kept the foundation of Non-stop Kernel machines and was most advanced machine of its time.\n\n
+    Focusing on the “ALL-ROUND DEVELOPMENT” of our students, college fosters activities under several technical and creative student clubs. These student clubs have been very successful in creating a peer-learning environment and encouraging alumni engagement at the campus. These efforts have helped our students win many awards and demonstrate their skills at all major platforms.\n\n</string>
+
 </resources>

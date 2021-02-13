@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.DeptchatFragment"
-    android:background="@android:color/darker_gray">
+    android:background="@color/colorlightgray">
 
     <!-- TODO: Update dept chat fragment layout -->
 
@@ -63,6 +63,7 @@
             android:layout_toStartOf="@id/deptfrag_fabsend"
             android:layout_toEndOf="@id/deptfrag_fabfile"
             android:layout_centerVertical="true"
+            android:maxLines="3"
             android:padding="@dimen/_6sdp"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton

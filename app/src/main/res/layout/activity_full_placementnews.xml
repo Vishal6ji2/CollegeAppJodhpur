@@ -52,43 +52,15 @@
                 android:id="@+id/fplacement_txtnews"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="All the students of batch 2019-2020 who are placed via off campus recruitment are requested to fill the given google form.\nYour responses will provide valuable feedback and are used internally to help analyse current programs and guide future institutional planning. We encourage you to complete the survey. Graduate responses are confidential and no personally identifiable information is reported in our print or online formats.Data may be made available to our academic,administrative and support departments and will not be disclosed to external organisations."
+                android:text="All the students of batch https://www.tutorialspoint.com/how-to-create-clickable-links-in-a-textview-on-android 2019-2020 who are placed via off campus recruitment are requested to fill the given google form.\nYour responses will provide valuable feedback and are used internally to help analyse current programs and guide future institutional planning. We encourage you to complete the survey. Graduate responses are confidential and no personally identifiable information is reported in our print or online formats.Data may be made available to our academic,administrative and support departments and will not be disclosed to external organisations.\nAll the students of batch https://www.tutorialspoint.com/how-to-create-clickable-links-in-a-textview-on-android 2019-2020 who are placed via off campus recruitment are requested to fill the given google form.\nYour responses will provide valuable feedback and are used internally to help analyse current programs and guide future institutional planning. We encourage you to complete the survey. Graduate responses are confidential and no personally identifiable information is reported in our print or online formats.Data may be made available to our academic,administrative and support departments and will not be disclosed to external organisations."
                 android:textSize="@dimen/_12ssp"
+                android:autoLink="all"
+                android:textIsSelectable="true"
                 android:padding="@dimen/_3sdp"
                 android:layout_margin="@dimen/_8sdp"
                 android:lineSpacingExtra="@dimen/_2sdp"
                 android:textColor="@color/colorverydarkgrey"/>
 
-            <TextView
-                android:id="@+id/fplacement_txtlink"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="https://www.tutorialspoint.com/how-to-create-clickable-links-in-a-textview-on-android"
-                android:layout_margin="@dimen/_8sdp"
-                android:linksClickable="true"
-                android:autoLink="web"
-                android:textColor="@color/colorAccent"/>
-
-            <TextView
-                android:id="@+id/fplacement_txtlist"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="All the students of batch 2019-2020 who are placed via off campus recruitment are requested to fill the given google form.\nYour responses will provide valuable feedback and are used internally to help analyse current programs and guide future institutional planning. We encourage you to complete the survey. Graduate responses are confidential and no personally identifiable information is reported in our print or online formats.Data may be made available to our academic,administrative and support departments and will not be disclosed to external organisations."
-                android:textSize="@dimen/_12ssp"
-                android:padding="5dp"
-                android:layout_margin="@dimen/_8sdp"
-                android:lineSpacingExtra="@dimen/_2sdp"
-                android:textColor="@color/colorverydarkgrey"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="All the students of batch 2019-2020 who are placed via off campus recruitment are requested to fill the given google form.\nYour responses will provide valuable feedback and are used internally to help analyse current programs and guide future institutional planning. We encourage you to complete the survey. Graduate responses are confidential and no personally identifiable information is reported in our print or online formats.Data may be made available to our academic,administrative and support departments and will not be disclosed to external organisations."
-                android:textSize="15sp"
-                android:padding="5dp"
-                android:layout_margin="10dp"
-                android:lineSpacingExtra="3dp"
-                android:textColor="@color/colorverydarkgrey"/>
 
         </LinearLayout>
 

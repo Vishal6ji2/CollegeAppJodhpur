@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,10 +19,11 @@ import com.mbm.mbmjodhpur.Suitcases.EbooksSuitcase;
 
 import java.util.ArrayList;
 
-public class EbooksAdapter extends RecyclerView.Adapter<EbooksAdapter.ViewHolder> {
+public class EbooksAdapter extends RecyclerView.Adapter<EbooksAdapter.ViewHolder> implements Filterable {
 
     Context context;
     ArrayList<EbooksSuitcase> arrebooklist = new ArrayList<>();
+    ArrayList<EbooksSuitcase> arrfilterlist = new ArrayList<>();
 
     public EbooksAdapter(Context context, ArrayList<EbooksSuitcase> arrebooklist) {
         this.context = context;
@@ -56,6 +59,7 @@ public class EbooksAdapter extends RecyclerView.Adapter<EbooksAdapter.ViewHolder
 
                 context.startActivity(intent);
 
+
             }
         });
 
@@ -64,6 +68,16 @@ public class EbooksAdapter extends RecyclerView.Adapter<EbooksAdapter.ViewHolder
     @Override
     public int getItemCount() {
         return arrebooklist.size();
+    }
+
+    @Override
+    public Filter getFilter() {
+        return null;
+    }
+
+    public void filterlist(ArrayList<EbooksSuitcase> filterlist) {
+        arrebooklist = filterlist;
+        notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

@@ -37,12 +37,20 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        txtmbm = findViewById(R.id.splash_txtmbm);
-        txteng = findViewById(R.id.splash_txteng);
+//        txtmbm = findViewById(R.id.splash_txtmbm);
+//        txteng = findViewById(R.id.splash_txteng);
         logo = findViewById(R.id.splash_logoimg);
 
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(new Intent(SplashActivity.this,OnBoardingActivity.class));
+                finish();
+            }
+        },3000);
 
-        txtenganimation = AnimationUtils.loadAnimation(this,R.anim.mbmlogoanim);
+
+        /*txtenganimation = AnimationUtils.loadAnimation(this,R.anim.mbmlogoanim);
         txtmbmanimation = AnimationUtils.loadAnimation(this,R.anim.moveanim);
 
 //        logo.startAnimation(AnimationUtils.loadAnimation(this,R.anim.mbmlogoanim));
@@ -59,6 +67,7 @@ public class SplashActivity extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
 
                 startActivity(new Intent(SplashActivity.this, OnBoardingActivity.class));
+                finish();
 //                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
             }
 
@@ -67,7 +76,7 @@ public class SplashActivity extends AppCompatActivity {
 
             }
         });
-
+*/
     }
 
 }

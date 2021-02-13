@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.AboutusActivity"
+    android:orientation="vertical">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/_2sdp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/aboutus_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimaryDark">
+
+            <ImageView
+                android:id="@+id/aboutus_backimg"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:src="@drawable/arrowback"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="About us"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/cc_semibold"
+                android:gravity="center"
+                android:textSize="@dimen/_16ssp"/>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/aboutus_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/_5sdp">
+
+            <TextView
+                android:id="@+id/aboutus_txtabout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MBM"
+                android:textSize="@dimen/_50sdp"
+                android:textColor="@color/colorverydarkgrey"
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:gravity="center"
+                android:layout_marginEnd="@dimen/_2sdp"/>
+
+            <TextView
+                android:id="@+id/txtmbm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mbmfirst"
+                android:textAlignment="textStart"
+                android:justificationMode="inter_word"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mbmsecond"
+                android:justificationMode="inter_word"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FACULTY"
+                android:textSize="@dimen/_25ssp"
+                android:textColor="@color/colorverydarkgrey"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mbmfaculty"
+                android:justificationMode="inter_word"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="STUDENTS"
+                android:textColor="@color/colorverydarkgrey"
+                android:textSize="@dimen/_25ssp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mbmstudents"
+                android:justificationMode="inter_word"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CAMPUS HIGHLIGHTS"
+                android:textSize="@dimen/_25ssp"
+                android:textColor="@color/colorverydarkgrey"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mbmhighlights"
+                android:justificationMode="inter_word"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

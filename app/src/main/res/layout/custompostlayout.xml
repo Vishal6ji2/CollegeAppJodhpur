@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,14 +11,15 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="wrap_content">
 
         <com.zolad.zoominimageview.ZoomInImageView
             android:id="@+id/custompost_postimg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
+            android:maxHeight="@dimen/_250sdp"
+            android:minHeight="@dimen/_150sdp"
             android:scaleType="fitCenter"
             android:src="@drawable/directorimg"/>
 
@@ -46,23 +48,36 @@
             android:textColor="@android:color/black"
             android:textStyle="bold"
             android:padding="@dimen/_8sdp"
+            android:maxLines="2"
             android:layout_below="@id/custompost_postimg"/>
 
         <TextView
             android:id="@+id/custompost_txtdetails"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="hide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behavior"
+            android:text="hide_bottom_view_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behavior"
             android:textColor="@color/colorverydarkgrey"
             android:padding="@dimen/_8sdp"
             android:textSize="@dimen/_12ssp"
-            android:layout_below="@id/custompost_txtheading"/>
+            android:autoLink="all"
+            android:textIsSelectable="true"
+            android:justificationMode="inter_word"
+            android:layout_below="@id/custompost_txtheading"
+            tools:targetApi="o"/>
+
+        <TextView
+            android:id="@+id/custompost_txtmore"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/colorlightgray"
+            android:layout_below="@id/custompost_txtdetails"
+            android:layout_margin="@dimen/_2sdp"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/custompost_txtdetails"
             android:orientation="horizontal"
+            android:layout_below="@id/custompost_txtmore"
             android:padding="@dimen/_4sdp">
 
 

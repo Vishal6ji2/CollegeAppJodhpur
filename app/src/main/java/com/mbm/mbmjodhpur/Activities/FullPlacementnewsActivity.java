@@ -14,7 +14,7 @@ public class FullPlacementnewsActivity extends AppCompatActivity {
 
     MaterialToolbar toolbar;
     ImageView backimg;
-    TextView txtlink,txtnews,txtcmptitle,txtlist;
+    TextView txtnews,txtcmptitle;
 
 
     @Override
@@ -39,9 +39,7 @@ public class FullPlacementnewsActivity extends AppCompatActivity {
         backimg = findViewById(R.id.fplacement_backimg);
 
         txtcmptitle = findViewById(R.id.fplacement_txtcmptitle);
-        txtlink = findViewById(R.id.fplacement_txtlink);
         txtnews = findViewById(R.id.fplacement_txtnews);
-        txtlist = findViewById(R.id.fplacement_txtlist);
 
 
     }

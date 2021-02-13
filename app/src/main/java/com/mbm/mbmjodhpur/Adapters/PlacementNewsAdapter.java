@@ -50,7 +50,7 @@ public class PlacementNewsAdapter extends RecyclerView.Adapter<PlacementNewsAdap
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "clicked "+position, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, "clicked "+position, Toast.LENGTH_SHORT).show();
                 holder.cmptitle.setTextColor(context.getResources().getColor(R.color.colordarkgrey));
                 holder.cmpnews.setTextColor(context.getResources().getColor(R.color.colordarkgrey));
                 holder.cmptime.setTextColor(context.getResources().getColor(R.color.colordarkgrey));
@@ -59,7 +59,6 @@ public class PlacementNewsAdapter extends RecyclerView.Adapter<PlacementNewsAdap
 
             }
         });
-
     }
 
     @Override
