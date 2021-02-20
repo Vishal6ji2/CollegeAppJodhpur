@@ -36,10 +36,9 @@
             android:fontFamily="@font/cc_semibold"
             android:textSize="@dimen/_16ssp"
             android:textColor="@android:color/white"
-            android:layout_centerVertical="true"
-            android:layout_toStartOf="@id/profile_edit"/>
+            android:layout_centerVertical="true"/>
 
-        <TextView
+        <!--<TextView
             android:id="@+id/profile_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -49,7 +48,7 @@
             android:textSize="@dimen/_14ssp"
             android:layout_centerVertical="true"
             android:layout_marginEnd="5dp"
-            android:background="?attr/selectableItemBackground"/>
+            android:background="?attr/selectableItemBackground"/>-->
 
         </RelativeLayout>
 
@@ -94,7 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Name"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/colorverydarkgrey"
                 android:textSize="@dimen/_13ssp"
                 android:padding="@dimen/_4sdp"/>
 
@@ -105,16 +104,17 @@
                 android:text="Vishal Kumavat"
                 android:padding="@dimen/_8sdp"
                 android:textSize="@dimen/_14ssp"
-                android:textColor="@color/colorverydarkgrey"/>
+                android:textColor="@color/colorPrimaryDark"/>
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Branch"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/_13ssp"
-                android:padding="@dimen/_4sdp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Branch"
+                    android:textColor="@color/colorverydarkgrey"
+                    android:textSize="@dimen/_13ssp"
+                    android:padding="@dimen/_4sdp"/>
+
 
             <TextView
                 android:id="@+id/profile_txtbranch"
@@ -123,7 +123,7 @@
                 android:text="Computer Science &amp; Engineering"
                 android:padding="@dimen/_8sdp"
                 android:textSize="@dimen/_14ssp"
-                android:textColor="@color/colorverydarkgrey"/>
+                android:textColor="@color/colorPrimaryDark"/>
 
 
           <!--  <TextView
@@ -151,7 +151,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Email-id"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/colorverydarkgrey"
                 android:textSize="@dimen/_13ssp"
                 android:padding="@dimen/_4sdp"/>
 
@@ -172,7 +172,7 @@
                 android:text="Vishal6kumavat7@gmail.com"
                 android:padding="@dimen/_8sdp"
                 android:textSize="@dimen/_14ssp"
-                android:textColor="@color/colorverydarkgrey"/>
+                android:textColor="@color/colorPrimaryDark"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -183,7 +183,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Phone/mob no."
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/colorverydarkgrey"
                 android:textSize="@dimen/_13ssp"
                 android:padding="@dimen/_4sdp"/>
 
@@ -204,7 +204,7 @@
                 android:text="+917239973921"
                 android:padding="@dimen/_8sdp"
                 android:textSize="@dimen/_14ssp"
-                android:textColor="@color/colorverydarkgrey"/>
+                android:textColor="@color/colorPrimaryDark"/>
 
         </LinearLayout>
 

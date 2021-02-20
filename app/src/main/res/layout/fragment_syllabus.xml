@@ -9,23 +9,15 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <androidx.cardview.widget.CardView
+    <EditText
+        android:id="@+id/syllabus_edtsearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="@dimen/_3sdp"
-        android:layout_margin="@dimen/_5sdp"
-        app:cardUseCompatPadding="true">
+        android:hint="Search syllabus"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textCursorDrawable="@drawable/cursorcolor"
+        android:layout_margin="@dimen/_10sdp"/>
 
-        <androidx.appcompat.widget.AppCompatSpinner
-            android:id="@+id/syllabus_branchspin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:spinnerMode="dropdown"
-            android:textAlignment="center"
-            android:textDirection="firstStrong"
-            style="@style/Widget.AppCompat.Light.DropDownItem.Spinner"/>
-
-    </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/syllabus_recyclerview"

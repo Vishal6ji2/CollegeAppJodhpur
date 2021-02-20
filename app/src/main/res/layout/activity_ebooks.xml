@@ -38,12 +38,6 @@
 
     </androidx.cardview.widget.CardView>
 
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:cardElevation="3dp"-->
-<!--        android:layout_margin="5dp"-->
-<!--        app:cardUseCompatPadding="true">-->
 
         <EditText
             android:id="@+id/ebook_edtsearch"
@@ -51,16 +45,8 @@
             android:layout_height="wrap_content"
             android:hint="Search ebooks"
             android:backgroundTint="@color/colorPrimaryDark"
+            android:textCursorDrawable="@drawable/cursorcolor"
             android:layout_margin="@dimen/_10sdp"/>
-
-<!--    <androidx.appcompat.widget.AppCompatSpinner-->
-<!--        android:id="@+id/ebook_spinner"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:spinnerMode="dialog"-->
-<!--        android:splitMotionEvents="true"/>-->
-
-<!--    </androidx.cardview.widget.CardView>-->
 
 
     <androidx.recyclerview.widget.RecyclerView

@@ -25,10 +25,7 @@ public class EbooksActivity extends AppCompatActivity {
 
     ImageView backimg;
 
-//    Spinner spinner;
     EditText edtsearch;
-
-    ArrayList<String> arrbranchlist = new ArrayList<>();
 
     RecyclerView recyclerView;
 
@@ -55,16 +52,10 @@ public class EbooksActivity extends AppCompatActivity {
             }
         });
 
-        arrbranchlist.add("Computer Science & Engineering");
-        arrbranchlist.add("Mechanical Engineering");
-        arrbranchlist.add("Electronics Engineering");
-        arrbranchlist.add("Civil Engineering");
-        arrbranchlist.add("Petrolium Engineering");
-        arrbranchlist.add("Electrical Engineering");
 
         ebooksAdapter = new EbooksAdapter(this,arrbookslist);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,arrbranchlist);
+
         
         edtsearch.addTextChangedListener(new TextWatcher() {
             @Override
@@ -84,8 +75,7 @@ public class EbooksActivity extends AppCompatActivity {
 
             }
         });
-        
-//      spinner.setAdapter(adapter);
+
 
         addEbookData(R.drawable.designerimg,"C++ programming language","7th edition","Vishal kumavat");
         addEbookData(R.drawable.designerimg,"C++  language","7th edition","Vishal kumavat");
@@ -140,6 +130,5 @@ public class EbooksActivity extends AppCompatActivity {
         
         edtsearch = findViewById(R.id.ebook_edtsearch);
 
-//        spinner = findViewById(R.id.ebook_spinner);
     }
 }

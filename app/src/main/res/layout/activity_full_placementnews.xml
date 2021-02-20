@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,6 +9,7 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/fplacement_cardtoolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardElevation="@dimen/_3sdp">
@@ -40,8 +41,10 @@
     </androidx.cardview.widget.CardView>
 
     <ScrollView
+        android:layout_below="@id/fplacement_cardtoolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_above="@id/fplacement_llfile">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,9 +55,9 @@
                 android:id="@+id/fplacement_txtnews"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="All the students of batch https://www.tutorialspoint.com/how-to-create-clickable-links-in-a-textview-on-android 2019-2020 who are placed via off campus recruitment are requested to fill the given google form.\nYour responses will provide valuable feedback and are used internally to help analyse current programs and guide future institutional planning. We encourage you to complete the survey. Graduate responses are confidential and no personally identifiable information is reported in our print or online formats.Data may be made available to our academic,administrative and support departments and will not be disclosed to external organisations.\nAll the students of batch https://www.tutorialspoint.com/how-to-create-clickable-links-in-a-textview-on-android 2019-2020 who are placed via off campus recruitment are requested to fill the given google form.\nYour responses will provide valuable feedback and are used internally to help analyse current programs and guide future institutional planning. We encourage you to complete the survey. Graduate responses are confidential and no personally identifiable information is reported in our print or online formats.Data may be made available to our academic,administrative and support departments and will not be disclosed to external organisations."
+                android:text="All the students of batch https://www.tutorialspoint.com/how-to-create-clickable-links-in-a-textview-on-android  2019-2020 who are placed via off campus recruitment are requested to fill the given google form.\nYour responses will provide valuable feedback and are used internally to help analyse current programs and guide future institutional planning. We encourage you to complete the survey. Graduate responses are confidential and no personally identifiable information is reported in our print or online formats.Data may be made available to our academic,administrative and support departments and will not be disclosed to external organisations.\nAll the students of batch https://www.tutorialspoint.com/how-to-create-clickable-links-in-a-textview-on-android 2019-2020 who are placed via off campus recruitment are requested to fill the given google form.\nYour responses will provide valuable feedback and are used internally to help analyse current programs and guide future institutional planning. We encourage you to complete the survey. Graduate responses are confidential and no personally identifiable information is reported in our print or online formats.Data may be made available to our academic,administrative and support departments and will not be disclosed to external organisations."
                 android:textSize="@dimen/_12ssp"
-                android:autoLink="all"
+                android:autoLink="web|email"
                 android:textIsSelectable="true"
                 android:padding="@dimen/_3sdp"
                 android:layout_margin="@dimen/_8sdp"
@@ -66,4 +69,47 @@
 
     </ScrollView>
 
-</LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/fplacement_llfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="?attr/selectableItemBackground"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/fplacement_lineone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/colorlightgray"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"/>
+
+        <ImageView
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/txticon"
+            android:id="@+id/fplacement_fileicon"
+            android:padding="@dimen/_10sdp"
+            android:layout_below="@id/fplacement_lineone"/>
+
+        <TextView
+            android:id="@+id/fplacement_filename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BE Computer Science &amp; Engineering"
+            android:textColor="@color/colorverydarkgrey"
+            android:textSize="@dimen/_13ssp"
+            android:maxLines="1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_below="@id/fplacement_lineone"
+            android:layout_toEndOf="@id/fplacement_fileicon"
+            android:layout_alignBottom="@id/fplacement_fileicon"
+            android:layout_alignTop="@id/fplacement_fileicon"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

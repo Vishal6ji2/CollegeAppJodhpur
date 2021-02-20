@@ -9,25 +9,31 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 
 import com.google.android.material.button.MaterialButton;
 import com.mbm.mbmjodhpur.Adapters.SyllabusAdapter;
 import com.mbm.mbmjodhpur.R;
+import com.mbm.mbmjodhpur.Suitcases.EbooksSuitcase;
 import com.mbm.mbmjodhpur.Suitcases.SyllabusSuitcase;
 
 import java.util.ArrayList;
 
 public class SyllabusFragment extends Fragment {
 
-    AppCompatSpinner spinbranch;
-    ArrayList<String> arrspinbranch = new ArrayList<>();
-
     RecyclerView recyclerView;
+
+    EditText edtsearch;
+
     ArrayList<SyllabusSuitcase> arrsyllabuslist = new ArrayList<>();
+
+    SyllabusAdapter syllabusAdapter ;
 
     public SyllabusFragment() {
         // Required empty public constructor
@@ -40,10 +46,9 @@ public class SyllabusFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_syllabus, container, false);
 
-        spinbranch = view.findViewById(R.id.syllabus_branchspin);
         recyclerView = view.findViewById(R.id.syllabus_recyclerview);
+        edtsearch = view.findViewById(R.id.syllabus_edtsearch);
 
-        addBranchspindata();
 
 
         addData("BE Computer Science & Engineering");
@@ -57,9 +62,30 @@ public class SyllabusFragment extends Fragment {
         addData("BE Electronic Engineering");
         addData("BE Civil Engineering");
 
+        syllabusAdapter = new SyllabusAdapter(getActivity(),arrsyllabuslist);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(new SyllabusAdapter(getActivity(),arrsyllabuslist));
+        recyclerView.setAdapter(syllabusAdapter);
+
+        edtsearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                filter(s.toString());
+
+            }
+        });
+
 
         return view;
     }
@@ -71,18 +97,16 @@ public class SyllabusFragment extends Fragment {
         arrsyllabuslist.add(syllabusSuitcase);
     }
 
-    private void addBranchspindata() {
+    private void filter(String string) {
 
-        arrspinbranch.add("Computer Science & Engineering");
-        arrspinbranch.add("Electrical Engineering");
-        arrspinbranch.add("Electronics Engineering");
-        arrspinbranch.add("Civil Engineering");
-        arrspinbranch.add("Mechanical Engineering");
+        ArrayList<SyllabusSuitcase> filterlist = new ArrayList<>();
 
-        ArrayAdapter<String> adapterbranch = new ArrayAdapter<>(getActivity(),android.R.layout.simple_spinner_dropdown_item,arrspinbranch);
-
-        spinbranch.setAdapter(adapterbranch);
-
+        for (SyllabusSuitcase syllabusSuitcase : arrsyllabuslist){
+            if (syllabusSuitcase.pdfname.toLowerCase().contains(string.toLowerCase())){
+                filterlist.add(syllabusSuitcase);
+            }
+        }
+        syllabusAdapter.filterlist(filterlist);
     }
 
 }

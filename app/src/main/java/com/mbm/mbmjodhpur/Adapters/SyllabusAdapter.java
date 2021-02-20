@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,11 +16,12 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mbm.mbmjodhpur.R;
+import com.mbm.mbmjodhpur.Suitcases.EbooksSuitcase;
 import com.mbm.mbmjodhpur.Suitcases.SyllabusSuitcase;
 
 import java.util.ArrayList;
 
-public class SyllabusAdapter extends RecyclerView.Adapter<SyllabusAdapter.ViewHolder> {
+public class SyllabusAdapter extends RecyclerView.Adapter<SyllabusAdapter.ViewHolder> implements Filterable {
 
     Context context;
     ArrayList<SyllabusSuitcase> arrsyllabuslist = new ArrayList<>();
@@ -61,6 +64,17 @@ public class SyllabusAdapter extends RecyclerView.Adapter<SyllabusAdapter.ViewHo
     public int getItemCount() {
         return arrsyllabuslist.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return null;
+    }
+
+    public void filterlist(ArrayList<SyllabusSuitcase> filterlist) {
+        arrsyllabuslist = filterlist;
+        notifyDataSetChanged();
+    }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
