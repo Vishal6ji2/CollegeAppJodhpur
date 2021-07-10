@@ -1,34 +1,29 @@
 package com.mbm.mbmjodhpur.Activities;
 
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatSpinner;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.widget.ViewPager2;
-
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.tabs.TabLayout;
-import com.mbm.mbmjodhpur.Adapters.TabsViewpagerAdapter;
-import com.mbm.mbmjodhpur.Adapters.TimeTableAdapter;
-import com.mbm.mbmjodhpur.Adapters.ViewpagerAdapter;
-import com.mbm.mbmjodhpur.Fragments.PapersFragment;
-import com.mbm.mbmjodhpur.Fragments.SyllabusFragment;
+import com.mbm.mbmjodhpur.ModelResponse.StudentAppAdminResponse;
+import com.mbm.mbmjodhpur.ModelResponse.StudentAppResponse;
 import com.mbm.mbmjodhpur.R;
-import com.mbm.mbmjodhpur.Suitcases.TimetableSuitcase;
+import com.mbm.mbmjodhpur.Sessions.AdminDashboardSession;
+import com.mbm.mbmjodhpur.Sessions.StudentDashboardSession;
 
 import java.util.ArrayList;
+
+import static com.mbm.mbmjodhpur.Activities.HomeActivity.user;
+import static com.mbm.mbmjodhpur.Activities.OtpVerifyActivity.getStudentAppAdminResponse;
+import static com.mbm.mbmjodhpur.Activities.OtpVerifyActivity.getStudentAppResponse;
+
 
 public class TimetableActivity extends AppCompatActivity {
 
     MaterialToolbar toolbar;
-
-    ImageView backimg;
 
     AppCompatSpinner spinbranch;
 
@@ -36,7 +31,13 @@ public class TimetableActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
 
-    ArrayList<TimetableSuitcase> arrtimelist = new ArrayList<>();
+    ArrayList<StudentAppResponse.Data.Timetable> arrStudTimeList = new ArrayList<>();
+
+    ArrayList<StudentAppAdminResponse.Data.Timetable> arrAdminTimeList = new ArrayList<>();
+
+    StudentDashboardSession studentDashboardSession;
+
+    AdminDashboardSession adminDashboardSession;
 
 
     @Override
@@ -46,65 +47,37 @@ public class TimetableActivity extends AppCompatActivity {
 
         initviews();
 
+        studentDashboardSession = new StudentDashboardSession(this);
+        adminDashboardSession = new AdminDashboardSession(this);
+
+        if (user.equals("student")){
+            getStudentAppResponse(this);
+        }else if (user.equals("admin")){
+            getStudentAppAdminResponse(this);
+        }
+
         setSupportActionBar(toolbar);
 
-        backimg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        toolbar.setNavigationOnClickListener(v -> finish());
 
         addBranchspindata();
 
-        addTimetabledata("BE I SEM",R.drawable.picone);
-        addTimetabledata("BE II SEM",R.drawable.picone);
-        addTimetabledata("BE III SEM",R.drawable.picone);
-        addTimetabledata("BE IV SEM",R.drawable.picone);
-        addTimetabledata("BE V SEM",R.drawable.picone);
-        addTimetabledata("BE VI SEM",R.drawable.picone);
-        addTimetabledata("BE VII SEM",R.drawable.picone);
-        addTimetabledata("BE VIII SEM",R.drawable.picone);
-
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(new TimeTableAdapter(this,arrtimelist));
-
     }
 
-    public void addTimetabledata(String txtsem,int semimg){
-        TimetableSuitcase timetableSuitcase = new TimetableSuitcase();
-        timetableSuitcase.semimg = semimg;
-        timetableSuitcase.txtsem = txtsem;
-
-        arrtimelist.add(timetableSuitcase);
-    }
 
     private void addBranchspindata() {
-
-        arrbranch.add("Computer Science & Engineering");
-        arrbranch.add("Electrical Engineering");
-        arrbranch.add("Electronics Engineering");
-        arrbranch.add("Civil Engineering");
-        arrbranch.add("Mechanical Engineering");
 
         ArrayAdapter<String> adapterbranch = new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,arrbranch);
 
         spinbranch.setAdapter(adapterbranch);
 
-
-
     }
-
 
     private void initviews() {
 
         recyclerView = findViewById(R.id.tt_recyclerview);
 
         toolbar = findViewById(R.id.tt_toolbar);
-
-        backimg = findViewById(R.id.tt_backimg);
 
         spinbranch = findViewById(R.id.tt_spinner);
 

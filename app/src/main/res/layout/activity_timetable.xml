@@ -13,29 +13,15 @@
         android:layout_height="wrap_content"
         app:cardElevation="@dimen/_3sdp">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/tt_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimaryDark">
-
-        <ImageView
-            android:id="@+id/tt_backimg"
-            android:layout_width="@dimen/_22sdp"
-            android:layout_height="@dimen/_22sdp"
-            android:src="@drawable/arrowback"/>
-
-        <TextView
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/tt_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Time-tables"
-            android:gravity="center"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/_16ssp"
-            android:textStyle="bold"
-            android:fontFamily="@font/cc_medium"/>
-
-    </com.google.android.material.appbar.MaterialToolbar>
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimaryDark"
+            app:title="Time-tables"
+            app:titleTextColor="@android:color/white"
+            app:titleTextAppearance="@style/titlestyle"
+            app:navigationIcon="@drawable/arrowback"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -46,19 +32,19 @@
         app:cardUseCompatPadding="true"
         android:layout_margin="@dimen/_5sdp">
 
-    <androidx.appcompat.widget.AppCompatSpinner
-        android:id="@+id/tt_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:splitMotionEvents="true"
-        android:spinnerMode="dialog"/>
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/tt_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:splitMotionEvents="true"
+            android:spinnerMode="dropdown"/>
 
     </androidx.cardview.widget.CardView>
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tt_recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/customtimelayout"/>
 
 </LinearLayout>

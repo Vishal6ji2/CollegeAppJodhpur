@@ -8,20 +8,10 @@
     android:layout_margin="@dimen/_5sdp">
 
 
-    <androidx.viewpager.widget.ViewPager
+    <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/onboard_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-
-    <com.google.android.material.tabs.TabLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/onboard_tablayout"
-        app:tabBackground="@drawable/tabselecter"
-        app:tabIndicatorHeight="0dp"
-        app:tabGravity="center"
-        android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@id/onboard_btnnext"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/onboard_btnnext"

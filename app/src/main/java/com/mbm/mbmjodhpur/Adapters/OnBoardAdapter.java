@@ -3,27 +3,29 @@ package com.mbm.mbmjodhpur.Adapters;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.lifecycle.Lifecycle;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import java.util.ArrayList;
 
-public class OnBoardAdapter extends FragmentStatePagerAdapter {
+public class OnBoardAdapter extends FragmentStateAdapter {
 
-    ArrayList<Fragment> arrfraglist = new ArrayList<>();
+    ArrayList<Fragment> arrfraglist;
 
-    public OnBoardAdapter(@NonNull FragmentManager fm, ArrayList<Fragment> arrfraglist) {
-        super(fm);
+    public OnBoardAdapter(@NonNull FragmentManager fm, ArrayList<Fragment> arrfraglist,Lifecycle lifecycle) {
+        super(fm, lifecycle);
+
         this.arrfraglist = arrfraglist;
     }
 
     @NonNull
     @Override
-    public Fragment getItem(int position) {
+    public Fragment createFragment(int position) {
         return arrfraglist.get(position);
     }
 
     @Override
-    public int getCount() {
+    public int getItemCount() {
         return arrfraglist.size();
     }
 }

@@ -7,77 +7,22 @@
     tools:context=".Activities.ProfileActivity"
     android:orientation="vertical">
 
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/profile_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimaryDark">
-
-        <RelativeLayout
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/profile_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        <ImageView
-            android:id="@+id/profile_backimg"
-            android:layout_width="@dimen/_22sdp"
-            android:layout_height="@dimen/_22sdp"
-            android:src="@drawable/arrowback"
-            android:layout_centerVertical="true"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Profile"
-            android:gravity="center"
-            android:fontFamily="@font/cc_semibold"
-            android:textSize="@dimen/_16ssp"
-            android:textColor="@android:color/white"
-            android:layout_centerVertical="true"/>
-
-        <!--<TextView
-            android:id="@+id/profile_edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Edit"
-            android:textColor="@android:color/white"
-            android:layout_alignParentEnd="true"
-            android:textSize="@dimen/_14ssp"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="5dp"
-            android:background="?attr/selectableItemBackground"/>-->
-
-        </RelativeLayout>
-
-    </com.google.android.material.appbar.MaterialToolbar>
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimaryDark"
+            app:navigationIcon="@drawable/arrowback"
+            app:title="Profile"
+            app:titleTextColor="@android:color/white"
+            app:titleTextAppearance="@style/titlestyle"/>
 
     </androidx.cardview.widget.CardView>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.mikhaellopez.circularimageview.CircularImageView
-            android:id="@+id/profile_profileimg"
-            android:layout_width="@dimen/_100sdp"
-            android:layout_height="@dimen/_100sdp"
-            android:layout_gravity="center"
-            android:layout_centerInParent="true"/>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/profile_cameraimg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:backgroundTint="@android:color/white"
-            android:src="@drawable/cameraicon"
-            app:fabSize="mini"
-            android:layout_alignBottom="@id/profile_profileimg"
-            android:layout_alignEnd="@id/profile_profileimg" />
-
-    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -88,6 +33,43 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_margin="@dimen/_4sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/profile_cardprofileimg"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    app:cardCornerRadius="@dimen/_50sdp"
+                    android:layout_centerHorizontal="true">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/profile_profileimg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorlightgray"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/profilefive"
+                        android:transitionName="profileimg"
+                        android:layout_centerInParent="true"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/profile_cameraimg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:backgroundTint="@android:color/white"
+                    android:src="@drawable/editicon"
+                    app:fabSize="mini"
+                    android:layout_alignBottom="@id/profile_cardprofileimg"
+                    android:layout_alignEnd="@id/profile_cardprofileimg"
+                    tools:ignore="ContentDescription" />
+
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -106,15 +88,31 @@
                 android:textSize="@dimen/_14ssp"
                 android:textColor="@color/colorPrimaryDark"/>
 
+            <TextView
+                android:id="@+id/profile_txtreg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registration No."
+                android:textColor="@color/colorverydarkgrey"
+                android:textSize="@dimen/_13ssp"
+                android:padding="@dimen/_4sdp"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Branch"
-                    android:textColor="@color/colorverydarkgrey"
-                    android:textSize="@dimen/_13ssp"
-                    android:padding="@dimen/_4sdp"/>
+            <TextView
+                android:id="@+id/profile_txtregno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="J19U939598"
+                android:padding="@dimen/_8sdp"
+                android:textSize="@dimen/_14ssp"
+                android:textColor="@color/colorPrimaryDark"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Branch"
+                android:textColor="@color/colorverydarkgrey"
+                android:textSize="@dimen/_13ssp"
+                android:padding="@dimen/_4sdp"/>
 
             <TextView
                 android:id="@+id/profile_txtbranch"
@@ -125,45 +123,15 @@
                 android:textSize="@dimen/_14ssp"
                 android:textColor="@color/colorPrimaryDark"/>
 
-
-          <!--  <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Semester"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/_13ssp"
-                android:padding="@dimen/_4sdp"/>
-
             <TextView
-                android:id="@+id/profile_txtsem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="IV SEMESTER"
-                android:padding="@dimen/_8sdp"
-                android:textSize="@dimen/_14ssp"
-                android:textColor="@color/colorverydarkgrey"/>
--->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            <TextView
+                android:id="@+id/profile_txteditemail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Email-id"
                 android:textColor="@color/colorverydarkgrey"
                 android:textSize="@dimen/_13ssp"
-                android:padding="@dimen/_4sdp"/>
-
-            <ImageView
-                android:id="@+id/profile_emaileditimg"
-                android:layout_width="@dimen/_15sdp"
-                android:layout_height="@dimen/_15sdp"
-                android:src="@android:drawable/ic_menu_edit"
-                android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true"/>
-
-            </RelativeLayout>
+                android:padding="@dimen/_4sdp"
+                app:drawableEndCompat="@drawable/editicon" />
 
             <TextView
                 android:id="@+id/profile_txtemail"
@@ -174,28 +142,15 @@
                 android:textSize="@dimen/_14ssp"
                 android:textColor="@color/colorPrimaryDark"/>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/profile_txteditmob"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Phone/mob no."
                 android:textColor="@color/colorverydarkgrey"
                 android:textSize="@dimen/_13ssp"
-                android:padding="@dimen/_4sdp"/>
-
-                <ImageView
-                    android:id="@+id/profile_mobeditimg"
-                    android:layout_width="@dimen/_15sdp"
-                    android:layout_height="@dimen/_15sdp"
-                    android:src="@android:drawable/ic_menu_edit"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentEnd="true"/>
-
-            </RelativeLayout>
+                android:padding="@dimen/_4sdp"
+                app:drawableEndCompat="@drawable/editicon" />
 
             <TextView
                 android:id="@+id/profile_txtmob"
@@ -209,6 +164,5 @@
         </LinearLayout>
 
     </ScrollView>
-
 
 </LinearLayout>

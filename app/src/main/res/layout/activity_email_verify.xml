@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.EmailVerifyActivity"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/_10sdp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_50sdp">
+
+        <ImageView
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:src="@drawable/mbmlogo"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email Verification"
+            android:textSize="@dimen/_17ssp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:textColor="@android:color/black"
+            android:padding="@dimen/_5sdp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="We will send you an One Time Password on the \n Registered Email-id"
+            android:gravity="center"
+            android:textStyle="normal"
+            android:padding="@dimen/_5sdp"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_50sdp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_emaillayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email -id">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email_edtemailid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/email_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/email_emaillayout"
+            android:text="I am Admin"
+            tools:ignore="HardcodedText"
+            android:checked="false"
+            android:textSize="@dimen/_12ssp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/email_btnget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get OTP"
+            android:textAllCaps="false"
+            android:enabled="true"
+            android:layout_below="@id/email_checkbox"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:textSize="@dimen/_15ssp"
+            android:textColor="@android:color/white"
+            app:cornerRadius="@dimen/_5sdp"
+            android:padding="@dimen/_8sdp"/>
+
+        <ProgressBar
+            android:id="@+id/email_progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:visibility="visible"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.mbm.mbmjodhpur">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Activities.ContactusActivity"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="RtlEnabled,UnusedAttribute">
+        <activity android:name=".Activities.FullImageShowActivity"/>
+        <activity android:name=".Activities.LinksActivity" />
+        <activity android:name=".Activities.ContactusActivity" />
         <activity android:name=".Activities.AboutusActivity" />
         <activity android:name=".Activities.SettingActivity" />
         <activity android:name=".Activities.ProfileActivity" />
@@ -20,32 +31,20 @@
         <activity android:name=".Activities.FullPlacementnewsActivity" />
         <activity android:name=".Activities.ChatActivity" />
         <activity android:name=".Activities.OnBoardingActivity" />
-        <activity android:name=".Activities.PlacementNewsActivity" />
-        <activity
-            android:name=".Activities.NoticeBoardActivity"
-            android:screenOrientation="portrait" />
         <activity android:name=".Activities.PreviousPapersActivity" />
         <activity
             android:name=".Activities.EbooksActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"/>
         <activity android:name=".Activities.ImageGalleryActivity" />
-        <activity
-            android:name=".Activities.PostNewsActivity"
-            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.HomeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Activities.RegistrationActivity"
+            android:name=".Activities.OtpVerifyActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Activities.ResetPasswordActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Activities.ForgotPasswordActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Activities.LoginActivity"
+            android:name=".Activities.EmailVerifyActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".SplashActivity"

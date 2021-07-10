@@ -17,14 +17,8 @@
         android:id="@+id/chat_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimaryDark">
-
-        <ImageView
-            android:id="@+id/chat_backimg"
-            android:layout_width="@dimen/_22sdp"
-            android:layout_height="@dimen/_22sdp"
-            android:src="@drawable/arrowback"/>
-
+        android:background="@color/colorPrimaryDark"
+        app:navigationIcon="@drawable/arrowback">
 
         <com.google.android.material.tabs.TabLayout
             android:layout_width="match_parent"
@@ -36,7 +30,6 @@
             app:tabSelectedTextColor="@android:color/white"
             app:tabTextColor="@android:color/darker_gray"
             android:background="@color/colorPrimaryDark"/>
-
 
     </com.google.android.material.appbar.MaterialToolbar>
 

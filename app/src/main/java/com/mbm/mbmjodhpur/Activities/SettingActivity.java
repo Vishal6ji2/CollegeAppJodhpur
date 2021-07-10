@@ -1,23 +1,22 @@
 package com.mbm.mbmjodhpur.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.CompoundButton;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.mbm.mbmjodhpur.R;
 
+import static com.mbm.mbmjodhpur.Activities.HomeActivity.user;
+import static com.mbm.mbmjodhpur.Activities.OtpVerifyActivity.getStudentAppAdminResponse;
+import static com.mbm.mbmjodhpur.Activities.OtpVerifyActivity.getStudentAppResponse;
+
 public class SettingActivity extends AppCompatActivity {
 
     MaterialToolbar toolbar;
-
-    ImageView backimg;
 
     SwitchMaterial allswitch,deptswitch,clgswitch,notiswitch,newsswitch,placementswitch;
 
@@ -33,29 +32,22 @@ public class SettingActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
-        backimg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        if (user.equals("student")){
+            getStudentAppResponse(this);
+        }else if (user.equals("admin")){
+            getStudentAppAdminResponse(this);
+        }
 
-        accountlayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(SettingActivity.this,ProfileActivity.class));
-            }
-        });
+        toolbar.setNavigationOnClickListener(v -> finish());
+
+        accountlayout.setOnClickListener(v -> startActivity(new Intent(SettingActivity.this,ProfileActivity.class)));
 
 
-        allswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked){
-                    checkswitches();
-                }else {
-                    checkswitches();
-                }
+        allswitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked){
+                checkswitches();
+            }else {
+                checkswitches();
             }
         });
 
@@ -64,12 +56,20 @@ public class SettingActivity extends AppCompatActivity {
     public void checkswitches(){
 
         if (allswitch.isChecked()){
+
+            deptswitch.setChecked(true);
+            clgswitch.setChecked(true);
+            notiswitch.setChecked(true);
+            newsswitch.setChecked(true);
+            placementswitch.setChecked(true);
+
             allswitch.setEnabled(true);
             deptswitch.setEnabled(false);
             clgswitch.setEnabled(false);
             notiswitch.setEnabled(false);
             newsswitch.setEnabled(false);
             placementswitch.setEnabled(false);
+
         }else {
 
             allswitch.setEnabled(true);
@@ -78,14 +78,13 @@ public class SettingActivity extends AppCompatActivity {
             notiswitch.setEnabled(true);
             newsswitch.setEnabled(true);
             placementswitch.setEnabled(true);
+
         }
     }
 
     private void initviews() {
 
         toolbar = findViewById(R.id.setting_toolbar);
-
-        backimg = findViewById(R.id.setting_backimg);
 
         accountlayout = findViewById(R.id.setting_mylayout);
 

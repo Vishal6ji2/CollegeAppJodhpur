@@ -10,5 +10,6 @@
     <color name="colorverydarkgrey">#B4000000</color>
     <color name="colorpink">#de0e7c</color>
     <color name="colorlightgray">#1E373434</color>
+    <color name="mixwhitecolor">#DDDBE1</color>
 
 </resources>

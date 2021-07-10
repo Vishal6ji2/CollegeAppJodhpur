@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,32 +8,39 @@
     android:focusable="true">
 
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/navigation_prolayout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_80sdp"
-        android:background="@color/colorPrimaryDark">
+        android:background="@color/colorPrimaryDark"
+        android:orientation="horizontal">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/_10sdp">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/navigation_cardprofileimg"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            app:cardCornerRadius="@dimen/_25sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/_10sdp">
 
-            <com.mikhaellopez.circularimageview.CircularImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/navigation_profileimg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/directorimg"
-                android:background="?attr/selectableItemBackground"/>
+                android:src="@drawable/profilefive"
+                android:scaleType="centerCrop"
+                android:transitionName="profileimg"
+                android:background="@color/mixwhitecolor"/>
+
+        </androidx.cardview.widget.CardView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical"
-            android:layout_toEndOf="@id/navigation_profileimg"
-            android:layout_toStartOf="@id/navigation_viewimg"
             android:layout_marginStart="@dimen/_18sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
             android:background="?attr/selectableItemBackground">
 
             <TextView
@@ -40,295 +48,178 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Vishal Kumavat"
+                android:maxLines="1"
                 android:textColor="@android:color/white"
-                android:textSize="@dimen/_15ssp"
+                android:textSize="@dimen/_14ssp"
                 android:textStyle="bold"
-                android:background="?attr/selectableItemBackground"/>
+                android:background="?attr/selectableItemBackground"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/navigation_branch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="CSE"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="@dimen/_13ssp"
-                android:textStyle="bold"/>
+                android:maxLines="2"
+                android:textColor="@color/mixwhitecolor"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/navigation_viewimg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/arrowforwardicon"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:background="?attr/selectableItemBackground"/>
+    </LinearLayout>
 
-        </RelativeLayout>
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:id="@+id/navigation_optlayout"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="2"
-        android:orientation="horizontal"
         android:layout_below="@id/navigation_prolayout">
 
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_margin="@dimen/_8sdp">
-
-            <RelativeLayout
-            android:id="@+id/navigation_ebooklayout"
+        <LinearLayout
+            android:id="@+id/navigation_optlayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_8sdp"
-            android:background="?attr/selectableItemBackground">
-
-            <ImageView
-                android:id="@+id/navigation_homeimg"
-                android:layout_width="@dimen/_22sdp"
-                android:layout_height="@dimen/_22sdp"
-                android:src="@drawable/ebookicon"
-                android:layout_centerVertical="true"/>
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_10sdp">
 
             <TextView
-                android:id="@+id/navigation_txthome"
+                android:id="@+id/navigation_txtlink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Important links"
+                android:textColor="@color/colorverydarkgrey"
+                android:textSize="@dimen/_13ssp"
+                android:padding="@dimen/_7sdp"
+                android:drawablePadding="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                app:drawableStartCompat="@drawable/linkicon"
+                tools:ignore="HardcodedText"
+                android:background="?attr/selectableItemBackground"/>
+
+
+            <TextView
+                android:id="@+id/navigation_txtebook"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ebook library"
                 android:textColor="@color/colorverydarkgrey"
-                android:textSize="@dimen/_12ssp"
-                android:layout_centerVertical="true"
-                android:layout_toEndOf="@id/navigation_homeimg"
-                android:layout_marginStart="@dimen/_15sdp"/>
+                android:textSize="@dimen/_13ssp"
+                android:padding="@dimen/_7sdp"
+                android:drawablePadding="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                app:drawableStartCompat="@drawable/ebookicon"
+                tools:ignore="HardcodedText"
+                android:background="?attr/selectableItemBackground"/>
 
-        </RelativeLayout>
-
-            <RelativeLayout
-            android:id="@+id/navigation_syllabuspaperlayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/navigation_ebooklayout"
-            android:padding="@dimen/_8sdp"
-            android:background="?attr/selectableItemBackground">
-
-            <ImageView
-                android:id="@+id/navigation_newsimg"
-                android:layout_width="@dimen/_22sdp"
-                android:layout_height="@dimen/_22sdp"
-                android:src="@drawable/papericon"
-                android:layout_centerVertical="true"/>
-
-            <TextView
-                android:id="@+id/navigation_txtnews"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Syllabus &amp; papers"
-                android:textColor="@color/colorverydarkgrey"
-                android:textSize="@dimen/_12ssp"
-                android:layout_centerVertical="true"
-                android:layout_toEndOf="@id/navigation_newsimg"
-                android:layout_marginStart="@dimen/_15sdp"/>
-
-        </RelativeLayout>
-
-            <RelativeLayout
-            android:id="@+id/navigation_ttlayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/navigation_syllabuspaperlayout"
-            android:background="?attr/selectableItemBackground"
-            android:padding="@dimen/_8sdp">
-
-            <ImageView
-                android:id="@+id/navigation_noticeimg"
-                android:layout_width="@dimen/_22sdp"
-                android:layout_height="@dimen/_22sdp"
-                android:src="@drawable/timetablesicon"
-                android:layout_centerVertical="true"/>
-
-            <TextView
-                android:id="@+id/navigation_txtnotice"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Time-table"
-                android:textColor="@color/colorverydarkgrey"
-                android:textSize="@dimen/_12ssp"
-                android:layout_centerVertical="true"
-                android:layout_toEndOf="@id/navigation_noticeimg"
-                android:layout_marginStart="@dimen/_15sdp"/>
-
-        </RelativeLayout>
-
-            <RelativeLayout
-            android:id="@+id/navigation_sharelayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/navigation_ttlayout"
-            android:background="?attr/selectableItemBackground"
-            android:padding="@dimen/_8sdp">
-
-            <ImageView
-                android:id="@+id/navigation_paperimg"
-                android:layout_width="@dimen/_22sdp"
-                android:layout_height="@dimen/_22sdp"
-                android:src="@drawable/shareicon"
-                android:layout_centerVertical="true"/>
 
             <TextView
                 android:id="@+id/navigation_txtpaper"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Share via"
+                android:text="Syllabus &amp; papers"
                 android:textColor="@color/colorverydarkgrey"
-                android:textSize="@dimen/_12ssp"
-                android:layout_centerVertical="true"
-                android:layout_toEndOf="@id/navigation_paperimg"
-                android:layout_marginStart="@dimen/_15sdp"/>
+                android:textSize="@dimen/_13ssp"
+                android:padding="@dimen/_7sdp"
+                android:drawablePadding="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                app:drawableStartCompat="@drawable/papericon"
+                tools:ignore="HardcodedText"
+                android:background="?attr/selectableItemBackground"/>
 
-        </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/navigation_settinglayout"
+            <TextView
+                android:id="@+id/navigation_txttimetable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/navigation_sharelayout"
-                android:background="?attr/selectableItemBackground"
-                android:padding="@dimen/_8sdp">
+                android:text="Time-table"
+                android:textColor="@color/colorverydarkgrey"
+                android:textSize="@dimen/_13ssp"
+                android:padding="@dimen/_7sdp"
+                android:drawablePadding="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                tools:ignore="HardcodedText"
+                app:drawableStartCompat="@drawable/timetablesicon"
+                android:background="?attr/selectableItemBackground"/>
 
-                <ImageView
-                    android:id="@+id/navigation_settingimg"
-                    android:layout_width="@dimen/_22sdp"
-                    android:layout_height="@dimen/_22sdp"
-                    android:src="@drawable/settingicon"
-                    android:layout_centerVertical="true"/>
 
-                <TextView
-                    android:id="@+id/navigation_txtsetting"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Settings"
-                    android:textColor="@color/colorverydarkgrey"
-                    android:textSize="@dimen/_12ssp"
-                    android:layout_centerVertical="true"
-                    android:layout_toEndOf="@id/navigation_settingimg"
-                    android:layout_marginStart="@dimen/_15sdp"/>
+            <TextView
+                android:id="@+id/navigation_txtshare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Share via"
+                android:textSize="@dimen/_13ssp"
+                android:padding="@dimen/_7sdp"
+                android:textColor="@color/colorverydarkgrey"
+                android:drawablePadding="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                tools:ignore="HardcodedText"
+                app:drawableStartCompat="@drawable/shareicon"
+                android:background="?attr/selectableItemBackground"/>
 
-            </RelativeLayout>
+            <TextView
+                android:id="@+id/navigation_txtsetting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:textSize="@dimen/_13ssp"
+                android:padding="@dimen/_7sdp"
+                android:textColor="@color/colorverydarkgrey"
+                android:drawablePadding="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                app:drawableStartCompat="@drawable/settingicon"
+                tools:ignore="HardcodedText"
+                android:background="?attr/selectableItemBackground"/>
 
-        </RelativeLayout>
+        </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="2"
-        android:orientation="horizontal"
-        android:layout_below="@id/navigation_optlayout"
-        android:layout_margin="@dimen/_8sdp">
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_weight="1"
-            android:id="@+id/navigation_signlayout"
-            android:layout_width="0dp"
-            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/navigation_txtcontact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contact us"
+            android:textColor="@color/colorverydarkgrey"
+            android:textSize="@dimen/_13ssp"
+            android:padding="@dimen/_7sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:drawableStartCompat="@drawable/callicon"
+            android:background="?attr/selectableItemBackground"
+            tools:ignore="HardcodedText" />
 
-            <RelativeLayout
-                android:id="@+id/navigation_contactlayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/navigation_aboutlayout"
-                android:padding="@dimen/_8sdp"
-                android:background="?attr/selectableItemBackground">
+        <TextView
+            android:id="@+id/navigation_txtabout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="About us"
+            android:textColor="@color/colorverydarkgrey"
+            android:textSize="@dimen/_13ssp"
+            android:padding="@dimen/_7sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:background="?attr/selectableItemBackground"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:drawableStartCompat="@drawable/aboutusicon"
+            tools:ignore="HardcodedText" />
 
-                <ImageView
-                    android:id="@+id/navigation_ebookimg"
-                    android:layout_width="@dimen/_22sdp"
-                    android:layout_height="@dimen/_22sdp"
-                    android:src="@drawable/callicon"
-                    android:layout_centerVertical="true"/>
-
-                <TextView
-                    android:id="@+id/navigation_txtebook"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Contact us"
-                    android:textColor="@color/colorverydarkgrey"
-                    android:textSize="@dimen/_12ssp"
-                    android:layout_centerVertical="true"
-                    android:layout_toEndOf="@id/navigation_ebookimg"
-                    android:layout_marginStart="@dimen/_15sdp"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/navigation_aboutlayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_above="@id/navigation_signoutlayout"
-                android:padding="@dimen/_8sdp"
-                android:background="?attr/selectableItemBackground">
-
-                <ImageView
-                    android:id="@+id/navigation_aboutimg"
-                    android:layout_width="@dimen/_22sdp"
-                    android:layout_height="@dimen/_22sdp"
-                    android:src="@drawable/aboutusicon"
-                    android:layout_centerVertical="true"/>
-
-
-                <TextView
-                    android:id="@+id/navigation_txtabout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="About us"
-                    android:textColor="@color/colorverydarkgrey"
-                    android:textSize="@dimen/_12ssp"
-                    android:layout_centerVertical="true"
-                    android:layout_toEndOf="@id/navigation_aboutimg"
-                    android:layout_marginStart="@dimen/_15sdp"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/navigation_signoutlayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:padding="@dimen/_8sdp"
-                android:background="?attr/selectableItemBackground">
-
-                <ImageView
-                    android:id="@+id/navigation_signoutimg"
-                    android:layout_width="@dimen/_22sdp"
-                    android:layout_height="@dimen/_22sdp"
-                    android:src="@drawable/logouticon"
-                    android:layout_centerVertical="true"/>
-
-
-                <TextView
-                    android:id="@+id/navigation_txtsignout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Sign out"
-                    android:textColor="@color/colorverydarkgrey"
-                    android:textSize="@dimen/_12ssp"
-                    android:layout_centerVertical="true"
-                    android:layout_toEndOf="@id/navigation_signoutimg"
-                    android:layout_marginStart="@dimen/_15sdp"/>
-
-            </RelativeLayout>
-
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/navigation_txtsignout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign out"
+            android:textColor="@color/colorverydarkgrey"
+            android:textSize="@dimen/_13ssp"
+            android:padding="@dimen/_7sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:background="?attr/selectableItemBackground"
+            android:layout_marginStart="@dimen/_5sdp"
+            tools:ignore="HardcodedText"
+            app:drawableStartCompat="@drawable/logouticon" />
 
     </LinearLayout>
 

@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ViewHolder> {
     Context context;
-    ArrayList<GallerySuitcase> arrgallerylist = new ArrayList<>();
+    ArrayList<GallerySuitcase> arrgallerylist;
 
     public GalleryAdapter(Context context, ArrayList<GallerySuitcase> arrgallerylist) {
         this.context = context;
@@ -27,7 +27,7 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ViewHold
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.customgalleryview,parent,false));
+        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.customgalleryview, parent, false));
     }
 
     @Override
@@ -42,7 +42,7 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ViewHold
         return arrgallerylist.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView img;
 

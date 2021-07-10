@@ -14,29 +14,17 @@
         android:layout_height="wrap_content"
         app:cardElevation="@dimen/_3sdp">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/fplacement_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize">
-
-        <ImageView
-            android:id="@+id/fplacement_backimg"
-            android:layout_width="@dimen/_22sdp"
-            android:layout_height="@dimen/_22sdp"
-            android:src="@drawable/arrowbackblack"/>
-
-        <TextView
-            android:id="@+id/fplacement_txtcmptitle"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/fplacement_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Off campus placement"
-            android:gravity="center"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/_16ssp"
-            android:textStyle="bold"
-            android:fontFamily="@font/cc_medium"/>
-
-    </com.google.android.material.appbar.MaterialToolbar>
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/arrowbackblack"
+            app:title="hello"
+            app:titleTextColor="@android:color/black"
+            app:subtitle="by : Vishal Kumavat"
+            app:titleTextAppearance="@style/titlestyle"
+            app:subtitleTextAppearance="@style/subtitlestyle"
+            app:subtitleTextColor="@color/colorverydarkgrey"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -44,7 +32,7 @@
         android:layout_below="@id/fplacement_cardtoolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/fplacement_llfile">
+        android:layout_above="@id/fplacement_filelayout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,24 +43,23 @@
                 android:id="@+id/fplacement_txtnews"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="All the students of batch https://www.tutorialspoint.com/how-to-create-clickable-links-in-a-textview-on-android  2019-2020 who are placed via off campus recruitment are requested to fill the given google form.\nYour responses will provide valuable feedback and are used internally to help analyse current programs and guide future institutional planning. We encourage you to complete the survey. Graduate responses are confidential and no personally identifiable information is reported in our print or online formats.Data may be made available to our academic,administrative and support departments and will not be disclosed to external organisations.\nAll the students of batch https://www.tutorialspoint.com/how-to-create-clickable-links-in-a-textview-on-android 2019-2020 who are placed via off campus recruitment are requested to fill the given google form.\nYour responses will provide valuable feedback and are used internally to help analyse current programs and guide future institutional planning. We encourage you to complete the survey. Graduate responses are confidential and no personally identifiable information is reported in our print or online formats.Data may be made available to our academic,administrative and support departments and will not be disclosed to external organisations."
+                android:text="All the +917239973921 students of batch https://www.tutorialspoint.com/how-to-create-clickable-links-in-a-textview-on-android  2019-2020 who are placed via off campus recruitment are requested to fill the given google form.\nYour responses will provide valuable feedback and are used internally to help analyse current programs and guide future institutional planning. We encourage you to complete the survey. Graduate responses are confidential and no personally identifiable information is reported in our print or online formats.Data may be made available to our academic,administrative and support departments and will not be disclosed to external organisations.\nAll the students of batch https://www.tutorialspoint.com/how-to-create-clickable-links-in-a-textview-on-android 2019-2020 who are placed via off campus recruitment are requested to fill the given google form.\nYour responses will provide valuable feedback and are used internally to help analyse current programs and guide future institutional planning. We encourage you to complete the survey. Graduate responses are confidential and no personally identifiable information is reported in our print or online formats.Data may be made available to our academic,administrative and support departments and will not be disclosed to external organisations."
                 android:textSize="@dimen/_12ssp"
-                android:autoLink="web|email"
+                android:autoLink="web|email|phone"
                 android:textIsSelectable="true"
                 android:padding="@dimen/_3sdp"
                 android:layout_margin="@dimen/_8sdp"
                 android:lineSpacingExtra="@dimen/_2sdp"
-                android:textColor="@color/colorverydarkgrey"/>
+                android:textColor="@color/colorverydarkgrey"
+                tools:ignore="HardcodedText" />
 
 
         </LinearLayout>
 
     </ScrollView>
 
-
-
     <RelativeLayout
-        android:id="@+id/fplacement_llfile"
+        android:id="@+id/fplacement_filelayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -96,7 +83,7 @@
             android:layout_below="@id/fplacement_lineone"/>
 
         <TextView
-            android:id="@+id/fplacement_filename"
+            android:id="@+id/fplacement_txtfilename"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="BE Computer Science &amp; Engineering"
@@ -108,7 +95,8 @@
             android:layout_below="@id/fplacement_lineone"
             android:layout_toEndOf="@id/fplacement_fileicon"
             android:layout_alignBottom="@id/fplacement_fileicon"
-            android:layout_alignTop="@id/fplacement_fileicon"/>
+            android:layout_alignTop="@id/fplacement_fileicon"
+            tools:ignore="HardcodedText" />
 
     </RelativeLayout>
 

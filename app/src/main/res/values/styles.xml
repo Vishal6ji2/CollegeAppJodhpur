@@ -14,5 +14,17 @@
   <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
     <item name="android:background">@android:color/transparent</item>
   </style>
-  
+
+  <style name="titlestyle" parent="@style/Base.TextAppearance.AppCompat.Title">
+    <item name="android:textSize">17sp</item>
+  </style>
+
+  <style name="subtitlestyle" parent="@style/Base.TextAppearance.AppCompat.Title">
+    <item name="android:textSize">15sp</item>
+  </style>
+
+    <style name="Circularimage">
+      <item name="cornerSize">50%</item>
+    </style>
+
 </resources>

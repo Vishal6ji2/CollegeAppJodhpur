@@ -17,13 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:id="@+id/sp_toolbar"
-            android:background="@color/colorPrimaryDark">
-
-            <ImageView
-                android:id="@+id/sp_backimg"
-                android:layout_width="@dimen/_22sdp"
-                android:layout_height="@dimen/_22sdp"
-                android:src="@drawable/arrowback"/>
+            android:background="@color/colorPrimaryDark"
+            app:navigationIcon="@drawable/arrowback">
 
             <com.google.android.material.tabs.TabLayout
                 android:layout_width="match_parent"
@@ -40,7 +35,7 @@
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.viewpager.widget.ViewPager
+    <androidx.viewpager2.widget.ViewPager2
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/sp_viewpager"/>

@@ -18,24 +18,11 @@
             android:id="@+id/aboutus_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimaryDark">
-
-            <ImageView
-                android:id="@+id/aboutus_backimg"
-                android:layout_width="@dimen/_24sdp"
-                android:layout_height="@dimen/_24sdp"
-                android:src="@drawable/arrowback"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="About us"
-                android:textColor="@android:color/white"
-                android:fontFamily="@font/cc_semibold"
-                android:gravity="center"
-                android:textSize="@dimen/_16ssp"/>
-
-        </com.google.android.material.appbar.MaterialToolbar>
+            android:background="@color/colorPrimaryDark"
+            app:navigationIcon="@drawable/arrowback"
+            app:title="About us"
+            app:titleTextColor="@android:color/white"
+            app:titleTextAppearance="@style/titlestyle"/>
 
     </androidx.cardview.widget.CardView>
 

@@ -1,117 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="@dimen/_4sdp"
-    app:cardUseCompatPadding="true"
-    app:cardElevation="@dimen/_3sdp">
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
     <RelativeLayout
+        android:id="@+id/custompost_parentlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.zolad.zoominimageview.ZoomInImageView
-            android:id="@+id/custompost_postimg"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:maxHeight="@dimen/_250sdp"
-            android:minHeight="@dimen/_150sdp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/directorimg"/>
-
-        <TextView
-            android:id="@+id/custompost_posttime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="12/11/1998"
-            android:background="@drawable/roundtext"
-            android:textColor="@android:color/black"
-            android:padding="@dimen/_4sdp"
-            android:paddingStart="@dimen/_8sdp"
-            android:paddingEnd="@dimen/_8sdp"
-            android:elevation="@dimen/_5sdp"
-            android:layout_alignBottom="@id/custompost_postimg"
-            android:layout_alignEnd="@id/custompost_postimg"
-            android:layout_marginBottom="@dimen/_5sdp"
-            android:layout_marginEnd="@dimen/_5sdp"/>
-
-        <TextView
-            android:id="@+id/custompost_txtheading"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Regarding BE semester"
-            android:textSize="@dimen/_14ssp"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"
-            android:padding="@dimen/_8sdp"
-            android:maxLines="2"
-            android:layout_below="@id/custompost_postimg"/>
-
-        <TextView
-            android:id="@+id/custompost_txtdetails"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="hide_bottom_view_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behaviorhide_bottom_view_on_scroll_behavior"
-            android:textColor="@color/colorverydarkgrey"
-            android:padding="@dimen/_8sdp"
-            android:textSize="@dimen/_12ssp"
-            android:autoLink="all"
-            android:textIsSelectable="true"
-            android:justificationMode="inter_word"
-            android:layout_below="@id/custompost_txtheading"
-            tools:targetApi="o"/>
-
-        <TextView
-            android:id="@+id/custompost_txtmore"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_1sdp"
-            android:background="@color/colorlightgray"
-            android:layout_below="@id/custompost_txtdetails"
-            android:layout_margin="@dimen/_2sdp"/>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@id/custompost_txtmore"
-            android:padding="@dimen/_4sdp">
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="@dimen/_4sdp"
+            app:cardElevation="@dimen/_3sdp">
 
 
-            <com.mikhaellopez.circularimageview.CircularImageView
-                android:id="@+id/custompost_profileimg"
-                android:layout_width="@dimen/_45sdp"
-                android:layout_height="@dimen/_45sdp"
-                android:src="@drawable/mbmlogo"
-                android:layout_centerVertical="true"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/custompost_profilename"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mukesh Singhvi MBM"
-                android:layout_gravity="center"
-                android:padding="@dimen/_8sdp"
-                android:textSize="@dimen/_12ssp"
-                android:layout_centerVertical="true"
-                android:layout_toEndOf="@id/custompost_profileimg"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/custompost_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:transitionName="images"
+                    android:orientation="horizontal"
+                    tools:ignore="UnusedAttribute" />
 
-            <TextView
-                android:id="@+id/custompost_timeago"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2h ago"
-                android:textSize="@dimen/_11ssp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"/>
+                <LinearLayout
+                    android:id="@+id/custompost_lldots"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_alignBottom="@id/custompost_recyclerview"/>
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/custompost_txtheading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Regarding BE SEMESTERS"
+                    android:textSize="@dimen/_14ssp"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/cc_medium"
+                    android:layout_alignParentStart="true"
+                    android:padding="@dimen/_8sdp"
+                    android:maxLines="1"
+                    android:maxLength="30"
+                    android:layout_below="@id/custompost_recyclerview"/>
+
+                <TextView
+                    android:id="@+id/custompost_txtdetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorverydarkgrey"
+                    android:padding="@dimen/_3sdp"
+                    android:autoLink="all"
+                    android:textSize="@dimen/_12ssp"
+                    android:justificationMode="inter_word"
+                    android:layout_below="@id/custompost_txtheading"/>
+
+                <!--<TextView
+                    android:id="@+id/custompost_txtmore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@id/custompost_txtdetails"
+                    android:text="more"
+                    android:padding="@dimen/_1sdp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_margin="@dimen/_1sdp"
+                    app:backgroundTint="@android:color/transparent"
+                    android:ellipsize="none"
+                    android:layout_alignBottom="@id/custompost_txtdetails"/>-->
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/colorlightgray"
+                    android:layout_below="@id/custompost_txtdetails"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/custompost_txtdetails"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/custompost_cardprofileimg"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        app:cardCornerRadius="@dimen/_20sdp"
+                        android:layout_centerVertical="true">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/custompost_profileimg"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorlightgray"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/profilefive"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_toEndOf="@id/custompost_cardprofileimg">
+
+                        <TextView
+                            android:id="@+id/custompost_profilename"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mukesh Singhvi MBM"
+                            android:layout_gravity="center"
+                            android:textSize="@dimen/_12ssp"
+                            android:textColor="@color/colorverydarkgrey"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/custompost_timeago"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2h ago"
+                            android:textSize="@dimen/_11ssp"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/custompost_posttime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12/11/1998"
+                        android:background="@drawable/roundtext"
+                        android:gravity="center"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
 
-</androidx.cardview.widget.CardView>
+</RelativeLayout>

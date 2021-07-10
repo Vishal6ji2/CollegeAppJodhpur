@@ -3,25 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.SyllabusFragment"
     android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
 
     <EditText
         android:id="@+id/syllabus_edtsearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Search syllabus"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:textCursorDrawable="@drawable/cursorcolor"
-        android:layout_margin="@dimen/_10sdp"/>
+        android:layout_margin="@dimen/_10sdp"
+        android:inputType="textPersonName"
+        android:imeOptions="actionDone"
+        tools:ignore="Autofill,HardcodedText" />
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/syllabus_recyclerview"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:id="@+id/syllabus_refresh">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/syllabus_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/customsyllabuslayout"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </LinearLayout>

@@ -1,26 +1,48 @@
 package com.mbm.mbmjodhpur.Fragments;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.mbm.mbmjodhpur.Adapters.PlacementNewsAdapter;
+import com.mbm.mbmjodhpur.ModelResponse.StudentAppAdminResponse;
+import com.mbm.mbmjodhpur.ModelResponse.StudentAppResponse;
 import com.mbm.mbmjodhpur.R;
-import com.mbm.mbmjodhpur.Suitcases.PlacementSuitcase;
+import com.mbm.mbmjodhpur.Sessions.AdminDashboardSession;
+import com.mbm.mbmjodhpur.Sessions.StudentDashboardSession;
 
 import java.util.ArrayList;
+
+import static com.mbm.mbmjodhpur.Activities.HomeActivity.user;
+import static com.mbm.mbmjodhpur.Activities.OtpVerifyActivity.getStudentAppAdminResponse;
+import static com.mbm.mbmjodhpur.Activities.OtpVerifyActivity.getStudentAppResponse;
+import static com.mbm.mbmjodhpur.ViewUtils.toast;
 
 public class PlacementFragment extends Fragment {
 
     RecyclerView recyclerView;
 
-    ArrayList<PlacementSuitcase> arrplacementlist = new ArrayList<>();
+    ArrayList<StudentAppResponse.Data.NewsPlacement> arrStudPlacementList = new ArrayList<>();
+
+    ArrayList<StudentAppAdminResponse.Data.Placement> arrAdminPlacementList = new ArrayList<>();
+
+    SwipeRefreshLayout refreshLayout;
+
+    ProgressBar progressBar;
+
+    StudentDashboardSession studentDashboardSession;
+
+    AdminDashboardSession adminDashboardSession;
+
+    PlacementNewsAdapter placementNewsAdapter;
 
 
     @Override
@@ -29,38 +51,59 @@ public class PlacementFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_placement, container, false);
 
-        recyclerView = view.findViewById(R.id.placement_recyclerview);
+        initViews(view);
 
+        studentDashboardSession = new StudentDashboardSession(requireActivity());
+        adminDashboardSession = new AdminDashboardSession(requireActivity());
 
-        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
-        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
-        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
-        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
-        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
-        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
-        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
-        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
-        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
-        addData(R.drawable.musicianimg,"TCS","Off campus recruitment","12:11,12nov.2020","All the students of batch who are placed via off campus recruitment are requested to fill the given google form.");
+        if (user.equals("student")){
+            getStudentAppResponse(requireActivity());
+        }else if (user.equals("admin")){
+            getStudentAppAdminResponse(requireActivity());
+        }
 
+        recyclerView.addItemDecoration(new DividerItemDecoration(requireActivity(),DividerItemDecoration.VERTICAL));
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(new PlacementNewsAdapter(getActivity(),arrplacementlist));
+        getPlacementData();
+
+        refreshLayout.setOnRefreshListener(() -> {
+
+            toast(requireActivity(),"Refresh");
+            getPlacementData();
+            refreshLayout.setRefreshing(false);
+        });
 
         return view;
     }
 
-    private void addData(int cmpimg, String cmpname, String cmptitle, String cmptime, String cmpnews) {
+    private void getPlacementData() {
 
-        PlacementSuitcase placementSuitcase = new PlacementSuitcase();
-        placementSuitcase.companyname = cmpname;
-        placementSuitcase.cmptime = cmptime;
-        placementSuitcase.companyimg = cmpimg;
-        placementSuitcase.placementtitle = cmptitle;
-        placementSuitcase.placementnews = cmpnews;
+        progressBar.setVisibility(View.VISIBLE);
 
+        arrAdminPlacementList.clear();
+        arrStudPlacementList.clear();
 
-        arrplacementlist.add(placementSuitcase);
+        if (user.equals("admin")){
+            arrAdminPlacementList = adminDashboardSession.get_PlacementList(requireActivity());
+            placementNewsAdapter = new PlacementNewsAdapter(arrAdminPlacementList, requireActivity());
+        }else if (user.equals("student")){
+            arrStudPlacementList = studentDashboardSession.get_PlacementList(requireActivity());
+            placementNewsAdapter = new PlacementNewsAdapter(requireActivity(), arrStudPlacementList);
+        }
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity()));
+        recyclerView.setAdapter(placementNewsAdapter);
+        progressBar.setVisibility(View.GONE);
+
+    }
+
+    private void initViews(View view) {
+
+        recyclerView = view.findViewById(R.id.placement_recyclerview);
+
+        progressBar = view.findViewById(R.id.placement_progressbar);
+
+        refreshLayout = view.findViewById(R.id.placement_refresh);
     }
 
 }

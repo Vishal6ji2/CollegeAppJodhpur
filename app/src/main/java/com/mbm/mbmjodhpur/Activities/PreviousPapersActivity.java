@@ -1,24 +1,21 @@
 package com.mbm.mbmjodhpur.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatSpinner;
-import androidx.core.app.NotificationCompat;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
-
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.badge.BadgeDrawable;
-import com.google.android.material.badge.BadgeUtils;
 import com.google.android.material.tabs.TabLayout;
 import com.mbm.mbmjodhpur.Adapters.TabsViewpagerAdapter;
-import com.mbm.mbmjodhpur.Fragments.PapersFragment;
-import com.mbm.mbmjodhpur.Fragments.SyllabusFragment;
 import com.mbm.mbmjodhpur.R;
+import com.mbm.mbmjodhpur.Sessions.AdminDashboardSession;
+import com.mbm.mbmjodhpur.Sessions.StudentDashboardSession;
+
+import static com.mbm.mbmjodhpur.Activities.HomeActivity.user;
+import static com.mbm.mbmjodhpur.Activities.OtpVerifyActivity.getStudentAppAdminResponse;
+import static com.mbm.mbmjodhpur.Activities.OtpVerifyActivity.getStudentAppResponse;
+
 
 public class PreviousPapersActivity extends AppCompatActivity {
 
@@ -26,9 +23,11 @@ public class PreviousPapersActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
 
-    ViewPager viewpager;
+    ViewPager2 viewpager;
 
-    ImageView backimg;
+    StudentDashboardSession studentDashboardSession;
+
+    AdminDashboardSession adminDashboardSession;
 
 
     @Override
@@ -36,33 +35,61 @@ public class PreviousPapersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_previous_papers);
 
+
         initviews();
+
+        adminDashboardSession = new AdminDashboardSession(this);
+        studentDashboardSession = new StudentDashboardSession(this);
+
+        if (user.equals("admin")){
+            getStudentAppAdminResponse(this);
+        }else if (user.equals("student")){
+            getStudentAppResponse(this);
+        }
 
         setSupportActionBar(toolbar);
 
-        backimg.setOnClickListener(new View.OnClickListener() {
+        toolbar.setNavigationOnClickListener(v -> finish());
+
+        TabsViewpagerAdapter viewpagerAdapter = new TabsViewpagerAdapter(getSupportFragmentManager(),getLifecycle());
+
+        viewpager.setAdapter(viewpagerAdapter);
+
+        tabLayout.addTab(tabLayout.newTab().setText("Past Papers"));
+        tabLayout.addTab(tabLayout.newTab().setText("Syllabus"));
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
-            public void onClick(View v) {
-                finish();
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewpager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
             }
         });
 
-        TabsViewpagerAdapter viewpagerAdapter = new TabsViewpagerAdapter(getSupportFragmentManager());
+        viewpager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                tabLayout.selectTab(tabLayout.getTabAt(position));
+            }
+        });
 
-        viewpagerAdapter.addFragment(new PapersFragment(),"Past papers");
-        viewpagerAdapter.addFragment(new SyllabusFragment(),"Syllabus");
-
-        viewpager.setAdapter(viewpagerAdapter);
-        tabLayout.setupWithViewPager(viewpager);
     }
 
     private void initviews() {
 
-        backimg = findViewById(R.id.sp_backimg);
-
         toolbar = findViewById(R.id.sp_toolbar);
 
         viewpager = findViewById(R.id.sp_viewpager);
+
         tabLayout = findViewById(R.id.sp_tablayout);
 
     }

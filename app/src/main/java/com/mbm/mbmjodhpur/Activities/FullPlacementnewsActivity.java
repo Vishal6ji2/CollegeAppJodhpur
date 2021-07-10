@@ -1,32 +1,42 @@
 package com.mbm.mbmjodhpur.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.ActivityNotFoundException;
+import android.app.DownloadManager;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
-import android.webkit.MimeTypeMap;
+import android.webkit.CookieManager;
+import android.webkit.URLUtil;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.mbm.mbmjodhpur.R;
 
+import static com.mbm.mbmjodhpur.Activities.OtpVerifyActivity.getStudentAppResponse;
+import static com.mbm.mbmjodhpur.ViewUtils.toast;
+
 public class FullPlacementnewsActivity extends AppCompatActivity {
 
-    MaterialToolbar toolbar;
-    ImageView backimg;
-    TextView txtnews,txtcmptitle;
 
-    RelativeLayout llfile;
+    MaterialToolbar toolbar;
+
+    TextView txtcmpnews,txtfilename,txtline;
 
     ImageView  fileicon;
-    TextView filename;
+
+    Intent intent;
+
+    String cmpTitle , cmpNews , fileName , uploadedBy , filepath;
+
+    RelativeLayout filelayout;
+
+    Uri fileuri;
 
 
     @Override
@@ -36,50 +46,95 @@ public class FullPlacementnewsActivity extends AppCompatActivity {
 
         initviews();
 
-        backimg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        getStudentAppResponse(this);
 
-        llfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String url = "https://docs.google.com/spreadsheets/d/1Y7Lv7A1X_PbGD9r0SLPSDUap6iMi14NKWm3B52chLus/edit#gid=0";
-                Uri uri = Uri.parse(url);
-                MimeTypeMap myMime = MimeTypeMap.getSingleton();
-                Intent newIntent = new Intent(Intent.ACTION_VIEW);
-//        String mimeType = myMime.getMimeTypeFromExtension(fileExt(getFile()).substring(1));
-//        newIntent.setDataAndType(Uri.fromFile(getFile()),mimeType);
-                newIntent.setData(uri);
-                newIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                try {
-                    startActivity(newIntent);
-                } catch (ActivityNotFoundException e) {
-                    Toast.makeText(FullPlacementnewsActivity.this, "No handler for this type of file.", Toast.LENGTH_LONG).show();
+        setSupportActionBar(toolbar);
+
+        intent = getIntent();
+
+        if (intent!=null){
+            if (intent.getStringExtra("cmpnews")!=null){
+
+                cmpTitle = intent.getStringExtra("cmptitle");
+                cmpNews = intent.getStringExtra("cmpnews");
+                fileName = intent.getStringExtra("filename");
+                uploadedBy = intent.getStringExtra("uploadedby");
+            }
+        }
+
+        toolbar.setTitle(cmpTitle);
+        toolbar.setSubtitle("by : "+uploadedBy);
+        txtcmpnews.setText(cmpNews);
+
+        toolbar.setNavigationOnClickListener(v -> finish());
+
+        filepath = intent.getStringExtra("filename");
+        if (filepath != null && !filepath.equals("")) {
+            fileuri = Uri.parse(filepath);
+            if (fileuri != null && !fileuri.toString().equals("")) {
+
+                filelayout.setVisibility(View.VISIBLE);
+                txtline.setVisibility(View.VISIBLE);
+                if (filepath.endsWith(".xlsx") || filepath.endsWith(".xls")){
+                    fileicon.setImageDrawable(ContextCompat.getDrawable(FullPlacementnewsActivity.this, R.drawable.xlsicon));
+                }else if (filepath.endsWith(".pdf")){
+                    fileicon.setImageDrawable(ContextCompat.getDrawable(FullPlacementnewsActivity.this, R.drawable.pdficon));
+                }else if (filepath.endsWith(".doc") || filepath.endsWith(".docx")){
+                    fileicon.setImageDrawable(ContextCompat.getDrawable(FullPlacementnewsActivity.this, R.drawable.docfileicon));
+                }else if (filepath.endsWith(".txt")){
+                    fileicon.setImageDrawable(ContextCompat.getDrawable(FullPlacementnewsActivity.this, R.drawable.txticon));
+                }else {
+                    fileicon.setImageDrawable(ContextCompat.getDrawable(FullPlacementnewsActivity.this, R.drawable.fileicon));
                 }
-            }
-        });
 
+                txtfilename.setText(intent.getStringExtra("filename"));
+
+                filelayout.setOnClickListener(v -> downloadfile(fileuri));
+            }
+        }else {
+            filelayout.setVisibility(View.GONE);
+            txtline.setVisibility(View.GONE);
+        }
 
     }
+
+    void downloadfile(Uri fileuri) {
+
+        DownloadManager.Request request = new DownloadManager.Request(fileuri);
+        String title = URLUtil.guessFileName(filepath,null,null);
+        request.setTitle(title);
+        request.setDescription("Downloading file please wait....");
+        String cookie = CookieManager.getInstance().getCookie(filepath);
+        request.addRequestHeader("cookie",cookie);
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOCUMENTS,title);
+
+        DownloadManager downloadManager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+        downloadManager.enqueue(request);
+
+        toast(FullPlacementnewsActivity.this,"Downloading started...");
+
+    }
+
 
     private void initviews() {
 
         toolbar = findViewById(R.id.fplacement_toolbar);
 
-        backimg = findViewById(R.id.fplacement_backimg);
+        txtcmpnews = findViewById(R.id.fplacement_txtnews);
+        txtline = findViewById(R.id.fplacement_lineone);
+        txtcmpnews = findViewById(R.id.fplacement_txtnews);
 
-        txtcmptitle = findViewById(R.id.fplacement_txtcmptitle);
-        txtnews = findViewById(R.id.fplacement_txtnews);
-        filename = findViewById(R.id.fplacement_filename);
+        txtfilename = findViewById(R.id.fplacement_txtfilename);
 
         fileicon = findViewById(R.id.fplacement_fileicon);
-        llfile = findViewById(R.id.fplacement_llfile);
+
+        filelayout = findViewById(R.id.fplacement_filelayout);
 
 
     }
+
+
     private String fileExt(String url) {
         if (url.contains("?")) {
             url = url.substring(0, url.indexOf("?"));

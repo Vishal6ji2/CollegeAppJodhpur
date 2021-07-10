@@ -1,16 +1,13 @@
 package com.mbm.mbmjodhpur.Activities;
 
+import android.os.Bundle;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
-
-import android.os.Bundle;
-import android.text.Html;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.mbm.mbmjodhpur.Adapters.AboutusAdapter;
@@ -19,13 +16,14 @@ import com.mbm.mbmjodhpur.Suitcases.AboutImgSuitcase;
 
 import java.util.ArrayList;
 
+import static com.mbm.mbmjodhpur.Activities.OtpVerifyActivity.getStudentAppResponse;
+
+
 public class AboutusActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
 
     MaterialToolbar toolbar;
-
-    ImageView backimg;
 
     ArrayList<AboutImgSuitcase> arrimglist = new ArrayList<>();
 
@@ -39,13 +37,10 @@ public class AboutusActivity extends AppCompatActivity {
 
         initviews();
 
+        getStudentAppResponse(this);
+
         setSupportActionBar(toolbar);
-        backimg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        toolbar.setNavigationOnClickListener(v -> finish());
 
         addData(R.drawable.designerimg);
         addData(R.drawable.directorimg);
@@ -70,8 +65,6 @@ public class AboutusActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.aboutus_recyclerview);
 
         toolbar = findViewById(R.id.aboutus_toolbar);
-
-        backimg = findViewById(R.id.aboutus_backimg);
 
         txtabout = findViewById(R.id.aboutus_txtabout);
 

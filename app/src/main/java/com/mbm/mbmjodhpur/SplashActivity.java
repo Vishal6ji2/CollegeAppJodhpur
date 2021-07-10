@@ -1,35 +1,25 @@
 package com.mbm.mbmjodhpur;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import com.google.android.material.badge.BadgeDrawable;
-import com.google.android.material.badge.BadgeUtils;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.mbm.mbmjodhpur.Activities.EmailVerifyActivity;
 import com.mbm.mbmjodhpur.Activities.HomeActivity;
 import com.mbm.mbmjodhpur.Activities.OnBoardingActivity;
-import com.mbm.mbmjodhpur.R;
-
-import com.mbm.mbmjodhpur.Activities.LoginActivity;
-import com.mikhaellopez.circularimageview.CircularImageView;
+import com.mbm.mbmjodhpur.Sessions.StudentLoginSession;
 
 public class SplashActivity extends AppCompatActivity {
 
-    TextView txtmbm,txteng;
-    CircularImageView logo;
+    public static int SPLASH_TIMER = 3000;
 
-    Animation txtmbmanimation,txtenganimation;
+    SharedPreferences onBoardingsp ;
 
+    StudentLoginSession loginSession;
 
     @SuppressLint("RestrictedApi")
     @Override
@@ -37,46 +27,32 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-//        txtmbm = findViewById(R.id.splash_txtmbm);
-//        txteng = findViewById(R.id.splash_txteng);
-        logo = findViewById(R.id.splash_logoimg);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
+        loginSession = new StudentLoginSession(this);
+
+        new Handler().postDelayed(() -> {
+
+            onBoardingsp = getSharedPreferences("onboardingscreen",MODE_PRIVATE);
+            boolean isFirstTime = onBoardingsp.getBoolean("firsttime",true);
+
+            boolean loginstatus = loginSession.checkStudentLogin();
+
+            if (isFirstTime) {
+
+                SharedPreferences.Editor editor = onBoardingsp.edit();
+                editor.putBoolean("firsttime",false);
+                editor.apply();
+
                 startActivity(new Intent(SplashActivity.this,OnBoardingActivity.class));
-                finish();
+            } else if (loginstatus){
+                startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+            }else {
+                startActivity(new Intent(SplashActivity.this, EmailVerifyActivity.class));
             }
-        },3000);
+            finish();
 
+        },SPLASH_TIMER);
 
-        /*txtenganimation = AnimationUtils.loadAnimation(this,R.anim.mbmlogoanim);
-        txtmbmanimation = AnimationUtils.loadAnimation(this,R.anim.moveanim);
-
-//        logo.startAnimation(AnimationUtils.loadAnimation(this,R.anim.mbmlogoanim));
-        txtmbm.startAnimation(txtmbmanimation);
-        txteng.startAnimation(txtenganimation);
-
-        txtenganimation.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-
-                startActivity(new Intent(SplashActivity.this, OnBoardingActivity.class));
-                finish();
-//                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
-*/
     }
 
 }

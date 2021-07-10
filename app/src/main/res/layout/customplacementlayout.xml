@@ -1,94 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="@dimen/_5sdp"
-    android:background="?attr/selectableItemBackground">
+    android:background="?attr/selectableItemBackground"
+    android:id="@+id/customplacement_parentlayout">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_80sdp"
-        android:background="@android:color/white">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:padding="@dimen/_2sdp">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/customplacement_cmpcard"
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="match_parent"
-            app:cardElevation="@dimen/_1sdp"
-            app:cardCornerRadius="@dimen/_8sdp"
-            app:cardUseCompatPadding="true">
+        <TextView
+            android:id="@+id/customplacement_cmpname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_red_dark"
+            android:fontFamily="@font/cc_semibold"
+            android:text="ADOBE"
+            android:maxLines="1"
+            android:paddingStart="@dimen/_4sdp"
+            android:paddingEnd="@dimen/_4sdp"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_12ssp" />
 
-            <ImageView
-                android:id="@+id/customplacement_cmpimg"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/designerimg"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"/>
-
-        </androidx.cardview.widget.CardView>
-
-        <RelativeLayout
+        <TextView
+            android:id="@+id/customplacement_cmptitle"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_toEndOf="@id/customplacement_cmpcard"
-            android:layout_marginStart="@dimen/_2sdp"
-            android:padding="@dimen/_2sdp">
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_13ssp"
+            android:text="off Campus Recruitment student"
+            android:textColor="@color/colorverydarkgrey"
+            android:textStyle="bold"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:maxLines="1"
+            android:layout_toEndOf="@id/customplacement_cmpname"/>
 
-            <TextView
-                android:id="@+id/customplacement_cmpname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/holo_red_dark"
-                android:fontFamily="@font/cc_semibold"
-                android:text="ADOBE"
-                android:maxLines="1"
-                android:longClickable="true"
-                android:paddingStart="@dimen/_4sdp"
-                android:paddingEnd="@dimen/_4sdp"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/_13ssp" />
+        <TextView
+            android:id="@+id/customplacement_cmpnews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="All the students of batch 2019-2020 who are placed via off campus recruitment are requested to fill the given google form."
+            android:layout_below="@id/customplacement_cmpname"
+            android:textColor="@color/colordarkgrey"
+            android:textSize="@dimen/_12ssp"
+            android:autoLink="all"
+            android:maxLines="2"
+            android:justificationMode="inter_word"
+            android:layout_centerVertical="true"
+            tools:ignore="UnusedAttribute" />
 
-            <TextView
-                android:id="@+id/customplacement_cmptitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/_13ssp"
-                android:fontFamily="@font/cc_semibold"
-                android:text="off Campus Recruitment student"
-                android:textColor="@android:color/black"
-                android:gravity="center"
-                android:maxLines="1"
-                android:layout_toEndOf="@id/customplacement_cmpname"/>
+        <TextView
+            android:id="@+id/customplacement_txtadmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="by: Vishal Kumavat"
+            android:layout_below="@id/customplacement_cmpnews"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_12ssp"
+            android:maxLines="1"
+            android:layout_alignParentStart="true"/>
 
-            <TextView
-                android:id="@+id/customplacement_cmpnews"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="All the students of batch 2019-2020 who are placed via off campus recruitment are requested to fill the given google form."
-                android:layout_below="@id/customplacement_cmpname"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/_12ssp"
-                android:autoLink="all"
-                android:maxLines="2"
-                android:layout_centerVertical="true"
-                android:fontFamily="@font/cc_regular"/>
-
-            <TextView
-                android:id="@+id/customplacement_cmptime"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="12:11,19nov.2020"
-                android:textColor="@android:color/black"
-                android:gravity="end"
-                android:textSize="@dimen/_10ssp"
-                android:maxLines="1"
-                android:layout_alignParentBottom="true"/>
-
-
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/customplacement_cmptime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12:11AM"
+            android:textColor="@android:color/black"
+            android:gravity="end"
+            android:textSize="@dimen/_12ssp"
+            android:maxLines="1"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/customplacement_cmpnews"/>
 
     </RelativeLayout>
 

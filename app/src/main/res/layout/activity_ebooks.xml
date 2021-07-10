@@ -13,45 +13,40 @@
         android:layout_height="wrap_content"
         app:cardElevation="@dimen/_3sdp">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:id="@+id/ebook_toolbar"
-        android:background="@color/colorPrimary">
-
-        <ImageView
-            android:id="@+id/ebook_backimg"
-            android:layout_width="@dimen/_24sdp"
-            android:layout_height="@dimen/_24sdp"
-            android:src="@drawable/arrowback"/>
-
-        <TextView
+        <com.google.android.material.appbar.MaterialToolbar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ebooks library"
-            android:textSize="@dimen/_16ssp"
-            android:fontFamily="@font/cc_semibold"
-            android:textColor="@android:color/white"
-            android:gravity="center"/>
-
-    </com.google.android.material.appbar.MaterialToolbar>
+            android:layout_height="?attr/actionBarSize"
+            android:id="@+id/ebook_toolbar"
+            android:background="@color/colorPrimary"
+            app:navigationIcon="@drawable/arrowback"
+            app:title="Ebooks Library"
+            app:titleTextColor="@android:color/white"
+            app:titleTextAppearance="@style/titlestyle"/>
 
     </androidx.cardview.widget.CardView>
 
-
-        <EditText
-            android:id="@+id/ebook_edtsearch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Search ebooks"
-            android:backgroundTint="@color/colorPrimaryDark"
-            android:textCursorDrawable="@drawable/cursorcolor"
-            android:layout_margin="@dimen/_10sdp"/>
-
-
-    <androidx.recyclerview.widget.RecyclerView
+    <EditText
+        android:id="@+id/ebook_edtsearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ebook_recyclerview"/>
+        android:hint="Search Book"
+        android:inputType="textPersonName"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:layout_margin="@dimen/_5sdp"
+        android:imeOptions="actionDone"
+        tools:ignore="Autofill,HardcodedText" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/ebook_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ebook_recyclerview"
+            tools:listitem="@layout/customebooklayout"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </LinearLayout>

@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class PapersAdapter extends RecyclerView.Adapter<PapersAdapter.ViewHolder> {
 
     Context context;
-    ArrayList<PapersSuitcase> arrpaperslist = new ArrayList<>();
+    ArrayList<PapersSuitcase> arrpaperslist;
 
     public PapersAdapter(Context context, ArrayList<PapersSuitcase> arrpaperslist) {
         this.context = context;
@@ -30,7 +30,7 @@ public class PapersAdapter extends RecyclerView.Adapter<PapersAdapter.ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.custompaperslayout,parent,false));
+        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.custompaperslayout, parent, false));
     }
 
     @Override
@@ -40,21 +40,18 @@ public class PapersAdapter extends RecyclerView.Adapter<PapersAdapter.ViewHolder
         holder.paperyear.setText(arrpaperslist.get(position).paperyear);
 
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        holder.itemView.setOnClickListener(v -> {
 
-                String url = "http://www.pdf995.com/samples/pdf.pdf";
+            String url = "http://www.pdf995.com/samples/pdf.pdf";
 
-                Uri targetUri = Uri.parse(url);
+            Uri targetUri = Uri.parse(url);
 
-                Intent intent;
-                intent = new Intent(Intent.ACTION_VIEW);
-                intent.setDataAndType(targetUri, "application/pdf");
+            Intent intent;
+            intent = new Intent(Intent.ACTION_VIEW);
+            intent.setDataAndType(targetUri, "application/pdf");
 
-                context.startActivity(intent);
+            context.startActivity(intent);
 
-            }
         });
 
     }
@@ -64,7 +61,7 @@ public class PapersAdapter extends RecyclerView.Adapter<PapersAdapter.ViewHolder
         return arrpaperslist.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView paperyear;
         ImageView paperimg;

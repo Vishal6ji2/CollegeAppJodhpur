@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="@dimen/_5sdp"
-    android:orientation="horizontal"
     android:background="?attr/selectableItemBackground">
 
      <ImageView
@@ -12,7 +10,8 @@
          android:layout_height="@dimen/_50sdp"
          android:src="@drawable/pdficon"
          android:id="@+id/customsyllabus_pdficon"
-         android:padding="@dimen/_10sdp"/>
+         android:padding="@dimen/_10sdp"
+         tools:ignore="ContentDescription" />
 
 
     <TextView
@@ -22,17 +21,8 @@
         android:text="BE Computer Science &amp; Engineering"
         android:textColor="@color/colorverydarkgrey"
         android:textSize="@dimen/_13ssp"
-        android:gravity="center"
-        android:layout_gravity="center"
         android:maxLines="1"
         android:layout_centerVertical="true"
         android:layout_toEndOf="@id/customsyllabus_pdficon"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_1sdp"
-        android:background="@color/colorlightgray"
-        android:layout_below="@id/customsyllabus_pdficon"/>
-
 
 </RelativeLayout>

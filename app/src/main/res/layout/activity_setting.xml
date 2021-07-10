@@ -17,24 +17,12 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:id="@+id/setting_toolbar"
-            android:background="@color/colorPrimaryDark">
+            android:background="@color/colorPrimaryDark"
+            app:navigationIcon="@drawable/arrowback"
+            app:title="Setting"
+            app:titleTextColor="@android:color/white"
+            app:titleTextAppearance="@style/titlestyle"/>
 
-            <ImageView
-                android:id="@+id/setting_backimg"
-                android:layout_width="@dimen/_22sdp"
-                android:layout_height="@dimen/_22sdp"
-                android:src="@drawable/arrowback"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Setting"
-                android:textSize="@dimen/_16ssp"
-                android:fontFamily="@font/cc_semibold"
-                android:textColor="@android:color/white"
-                android:gravity="center"/>
-
-        </com.google.android.material.appbar.MaterialToolbar>
 
     </androidx.cardview.widget.CardView>
 
@@ -43,7 +31,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
-        android:layout_marginTop="@dimen/_5sdp">
+        android:layout_marginTop="@dimen/_5sdp"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"

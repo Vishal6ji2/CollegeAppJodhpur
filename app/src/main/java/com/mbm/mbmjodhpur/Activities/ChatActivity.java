@@ -1,12 +1,10 @@
 package com.mbm.mbmjodhpur.Activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager2.widget.ViewPager2;
-
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.badge.BadgeDrawable;
@@ -15,11 +13,16 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import com.mbm.mbmjodhpur.Adapters.ChatPagerAdapter;
 import com.mbm.mbmjodhpur.R;
 
+import java.util.Objects;
+
+import static com.mbm.mbmjodhpur.Activities.HomeActivity.user;
+import static com.mbm.mbmjodhpur.Activities.OtpVerifyActivity.getStudentAppAdminResponse;
+import static com.mbm.mbmjodhpur.Activities.OtpVerifyActivity.getStudentAppResponse;
+
+
 public class ChatActivity extends AppCompatActivity {
 
     MaterialToolbar toolbar;
-
-    ImageView backimg;
 
     ViewPager2 viewPager2;
 
@@ -33,48 +36,48 @@ public class ChatActivity extends AppCompatActivity {
 
         initviews();
 
+        setSupportActionBar(toolbar);
+
+        if (user.equals("student")){
+            getStudentAppResponse(this);
+        }else if (user.equals("admin")){
+            getStudentAppAdminResponse(this);
+        }
+
         viewPager2.setAdapter(new ChatPagerAdapter(this));
 
-        backimg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        toolbar.setNavigationOnClickListener(v -> finish());
 
-        final TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(tabLayout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
-            @Override
-            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+        final TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(tabLayout, viewPager2, (tab, position) -> {
 
-                switch (position){
-                    case 0:
-                        tab.setText("Department");
+            switch (position){
+                case 0:
+                    tab.setText("Department");
 //                        tab.setIcon(R.drawable.chaticon);
 
-                        BadgeDrawable badgeDrawable = tab.getOrCreateBadge();
-                        badgeDrawable.setBackgroundColor(getResources().getColor(R.color.colorAccent));
-                        badgeDrawable.setVisible(true);
-                        badgeDrawable.setNumber(100);
-                        badgeDrawable.setMaxCharacterCount(3);
+                    BadgeDrawable badgeDrawable = tab.getOrCreateBadge();
+                    badgeDrawable.setBackgroundColor(ContextCompat.getColor(this,R.color.colorAccent));
+                    badgeDrawable.setVisible(true);
+                    badgeDrawable.setNumber(100);
+                    badgeDrawable.setMaxCharacterCount(3);
 
-                        break;
+                    break;
 
-                    case 1:
-                        tab.setText("College");
+                case 1:
+                    tab.setText("College");
 //                        tab.setIcon(R.drawable.chaticon);
 
-                        int no = 5;
-                        BadgeDrawable badgeDrawable1 = tab.getOrCreateBadge();
-                        badgeDrawable1.setBackgroundColor(getResources().getColor(android.R.color.white));
-                        badgeDrawable1.setBadgeTextColor(getResources().getColor(R.color.colorPrimaryDark));
-                        badgeDrawable1.setVisible(true);
-                        badgeDrawable1.setNumber(no);
-//                        badgeDrawable1.setMaxCharacterCount(3);
+                    int no = 5;
+                    BadgeDrawable badgeDrawable1 = tab.getOrCreateBadge();
+                    badgeDrawable1.setBackgroundColor(ContextCompat.getColor(this, android.R.color.white));
+                    badgeDrawable1.setBadgeTextColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
+                    badgeDrawable1.setVisible(true);
+                    badgeDrawable1.setNumber(no);
+                    badgeDrawable1.setMaxCharacterCount(3);
 
-                        break;
-                }
-
+                    break;
             }
+
         });
         tabLayoutMediator.attach();
 
@@ -82,34 +85,19 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
-                BadgeDrawable badgeDrawable = tabLayout.getTabAt(position).getOrCreateBadge();
+                BadgeDrawable badgeDrawable = Objects.requireNonNull(tabLayout.getTabAt(position)).getOrCreateBadge();
                 badgeDrawable.setVisible(false);
             }
         });
-
-/*
-         <com.mbm.mbmjodhpur.MovableFloatingActionButton
-        android:id="@+id/home_fabchat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:src="@drawable/chaticon"
-        android:layout_alignParentTop="true"
-
-        app:backgroundTint="@color/colorPrimaryDark"
-        android:layout_gravity="bottom|end"
-        android:layout_alignParentStart="true"
-        app:layout_anchorGravity="bottom|right|end"/>
-*/
-
 
     }
 
     private void initviews() {
 
-        backimg = findViewById(R.id.chat_backimg);
         toolbar = findViewById(R.id.chat_toolbar);
+
         viewPager2 = findViewById(R.id.chat_viewpager);
+
         tabLayout = findViewById(R.id.chat_tablayout);
 
     }

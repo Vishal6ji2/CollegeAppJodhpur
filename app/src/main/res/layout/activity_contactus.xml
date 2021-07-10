@@ -16,22 +16,11 @@
         <com.google.android.material.appbar.MaterialToolbar
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimaryDark">
-
-            <ImageView
-                android:layout_width="@dimen/_22sdp"
-                android:layout_height="@dimen/_22sdp"
-                android:src="@drawable/arrowback"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Contact us"
-                android:textSize="@dimen/_16ssp"
-                android:textColor="@android:color/white"
-                android:gravity="center"/>
-
-        </com.google.android.material.appbar.MaterialToolbar>
+            android:background="@color/colorPrimaryDark"
+            app:navigationIcon="@drawable/arrowback"
+            app:title="Contact us"
+            app:titleTextColor="@android:color/white"
+            app:titleTextAppearance="@style/titlestyle"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -42,7 +31,9 @@
         android:autoLink="all"
         android:textSize="@dimen/_14ssp"
         android:textAlignment="textStart"
-        android:layout_margin="@dimen/_2sdp"/>
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_2sdp"
+        android:layout_marginEnd="@dimen/_2sdp"/>
 
     <TextView
         android:layout_width="match_parent"

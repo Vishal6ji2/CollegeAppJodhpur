@@ -1,73 +1,74 @@
 package com.mbm.mbmjodhpur.Adapters;
 
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.mbm.mbmjodhpur.ModelResponse.StudentAppAdminResponse;
+import com.mbm.mbmjodhpur.ModelResponse.StudentAppResponse;
 import com.mbm.mbmjodhpur.R;
-import com.mbm.mbmjodhpur.Suitcases.EbooksSuitcase;
 
 import java.util.ArrayList;
 
-public class EbooksAdapter extends RecyclerView.Adapter<EbooksAdapter.ViewHolder> implements Filterable {
+import static com.mbm.mbmjodhpur.Activities.HomeActivity.user;
+import static com.mbm.mbmjodhpur.ViewUtils.openWebPage;
+
+public class EbooksAdapter extends RecyclerView.Adapter<EbooksAdapter.ViewHolder> implements Filterable{
 
     Context context;
-    ArrayList<EbooksSuitcase> arrebooklist = new ArrayList<>();
-    ArrayList<EbooksSuitcase> arrfilterlist = new ArrayList<>();
 
-    public EbooksAdapter(Context context, ArrayList<EbooksSuitcase> arrebooklist) {
+    ArrayList<StudentAppResponse.Data.Library> arrStudentEbookList;
+    ArrayList<StudentAppAdminResponse.Data.Library> arrAdminEbookList;
+
+
+    public EbooksAdapter(ArrayList<StudentAppResponse.Data.Library> arrEbookList,Context context) {
         this.context = context;
-        this.arrebooklist = arrebooklist;
+        this.arrStudentEbookList = arrEbookList;
+    }
+
+    public EbooksAdapter(Context context, ArrayList<StudentAppAdminResponse.Data.Library> arrEbookList) {
+        this.context = context;
+        this.arrAdminEbookList = arrEbookList;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.customebooklayout,parent,false));
+        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.customebooklayout, parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        holder.bookimg.setImageResource(arrebooklist.get(position).bookimg);
-        holder.bookname.setText(arrebooklist.get(position).bookname);
-        holder.bookauthor.setText(arrebooklist.get(position).bookauthorname);
-        holder.bookedition.setText(arrebooklist.get(position).bookedition);
+        if (user.equals("admin")){
 
+            holder.bookname.setText(arrAdminEbookList.get(position).getName());
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            holder.itemView.setOnClickListener(v -> openWebPage(context,arrAdminEbookList.get(position).getFileName()));
 
-                String url = "http://www.pdf995.com/samples/pdf.pdf";
+        }else if (user.equals("student")){
 
-                Uri targetUri = Uri.parse(url);
+            holder.bookname.setText(arrStudentEbookList.get(position).getName());
 
-                Intent intent;
-                intent = new Intent(Intent.ACTION_VIEW);
-                intent.setDataAndType(targetUri, "application/pdf");
-
-                context.startActivity(intent);
-
-
-            }
-        });
+            holder.itemView.setOnClickListener(v -> openWebPage(context,arrStudentEbookList.get(position).getFileName()));
+        }
 
     }
 
     @Override
     public int getItemCount() {
-        return arrebooklist.size();
+        if (user.equals("admin")) {
+            return arrAdminEbookList.size();
+        }else {
+            return arrStudentEbookList.size();
+        }
     }
 
     @Override
@@ -75,23 +76,26 @@ public class EbooksAdapter extends RecyclerView.Adapter<EbooksAdapter.ViewHolder
         return null;
     }
 
-    public void filterlist(ArrayList<EbooksSuitcase> filterlist) {
-        arrebooklist = filterlist;
+    public void filterlist(ArrayList<StudentAppResponse.Data.Library> filterlist,Context context) {
+        this.context = context;
+        arrStudentEbookList = filterlist;
         notifyDataSetChanged();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public void filterlist(Context context,ArrayList<StudentAppAdminResponse.Data.Library> filterlist) {
+        this.context = context;
+        arrAdminEbookList = filterlist;
+        notifyDataSetChanged();
+    }
 
-        ImageView bookimg;
-        TextView bookname,bookauthor,bookedition;
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+
+        TextView bookname;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            bookimg = itemView.findViewById(R.id.custombook_img);
-            bookname = itemView.findViewById(R.id.custombook_name);
-            bookauthor = itemView.findViewById(R.id.custombook_author);
-            bookedition = itemView.findViewById(R.id.custombook_edition);
+            bookname = itemView.findViewById(R.id.customebook_pdfname);
         }
     }
 }

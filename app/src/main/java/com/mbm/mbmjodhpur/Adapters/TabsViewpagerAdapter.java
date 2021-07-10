@@ -1,47 +1,32 @@
 package com.mbm.mbmjodhpur.Adapters;
 
-import android.content.Context;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.lifecycle.Lifecycle;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import java.util.ArrayList;
+import com.mbm.mbmjodhpur.Fragments.PapersFragment;
+import com.mbm.mbmjodhpur.Fragments.SyllabusFragment;
 
-public class TabsViewpagerAdapter extends FragmentPagerAdapter {
+public class TabsViewpagerAdapter extends FragmentStateAdapter {
 
-    Context context;
-    ArrayList<String> fragnamelist = new ArrayList<>();
-    ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
-
-    public TabsViewpagerAdapter(@NonNull FragmentManager fm) {
-        super(fm);
-    }
-
-    public void addFragment(Fragment fragment,String title){
-
-        fragnamelist.add(title);
-
-        fragmentArrayList.add(fragment);
+    public TabsViewpagerAdapter(@NonNull FragmentManager fm, Lifecycle lifecycle) {
+        super(fm,lifecycle);
     }
 
     @NonNull
     @Override
-    public Fragment getItem(int position) {
-        return fragmentArrayList.get(position);
+    public Fragment createFragment(int position) {
+
+        if (position == 0) {
+            return new PapersFragment();
+        }
+        return new SyllabusFragment();
     }
 
     @Override
-    public int getCount() {
-        return fragmentArrayList.size();
+    public int getItemCount() {
+        return 2;
     }
-
-    @Nullable
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return fragnamelist.get(position);
-    }
-
 }

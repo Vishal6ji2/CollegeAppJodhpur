@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.FullImageShowActivity"
+    android:orientation="vertical"
+    android:background="#C6000000">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/_3sdp"
+        app:cardBackgroundColor="@android:color/transparent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/fullimage_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            app:navigationIcon="@drawable/arrowback"
+            app:title="Images"
+            app:titleTextAppearance="@style/titlestyle"
+            app:titleTextColor="@android:color/white"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_gravity="center">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/fullimage_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:transitionName="images"
+            tools:ignore="UnusedAttribute" />
+
+        <LinearLayout
+            android:id="@+id/fullimage_lldots"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_alignBottom="@id/fullimage_viewpager"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

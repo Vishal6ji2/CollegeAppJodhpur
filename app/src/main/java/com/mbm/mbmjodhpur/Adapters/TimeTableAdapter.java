@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class TimeTableAdapter extends RecyclerView.Adapter<TimeTableAdapter.ViewHolder> {
     Context context;
-    ArrayList<TimetableSuitcase> arrimg = new ArrayList<>();
+    ArrayList<TimetableSuitcase> arrimg;
 
     public TimeTableAdapter(Context context, ArrayList<TimetableSuitcase> arrimg) {
         this.context = context;
@@ -27,7 +27,7 @@ public class TimeTableAdapter extends RecyclerView.Adapter<TimeTableAdapter.View
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.customtimelayout,parent,false));
+        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.customtimelayout, parent, false));
     }
 
     @Override
@@ -43,7 +43,7 @@ public class TimeTableAdapter extends RecyclerView.Adapter<TimeTableAdapter.View
         return arrimg.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView txtsem;
         ImageView semimg;

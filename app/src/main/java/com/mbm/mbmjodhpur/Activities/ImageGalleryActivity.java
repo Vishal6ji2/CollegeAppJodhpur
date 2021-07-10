@@ -1,23 +1,20 @@
 package com.mbm.mbmjodhpur.Activities;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
-
-import com.google.android.flexbox.AlignContent;
-import com.google.android.flexbox.AlignItems;
-import com.google.android.flexbox.FlexDirection;
-import com.google.android.flexbox.FlexWrap;
-import com.google.android.flexbox.FlexboxLayoutManager;
-import com.google.android.flexbox.JustifyContent;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.mbm.mbmjodhpur.Adapters.GalleryAdapter;
 import com.mbm.mbmjodhpur.R;
 import com.mbm.mbmjodhpur.Suitcases.GallerySuitcase;
 
 import java.util.ArrayList;
+
+import static com.mbm.mbmjodhpur.Activities.OtpVerifyActivity.getStudentAppResponse;
+
 
 public class ImageGalleryActivity extends AppCompatActivity {
 
@@ -33,6 +30,8 @@ public class ImageGalleryActivity extends AppCompatActivity {
 
 
         initviews();
+
+        getStudentAppResponse(this);
 
         addGalleryData(R.drawable.designerimg);
         addGalleryData(R.drawable.editorimg);
